@@ -27,6 +27,17 @@ def countOccurrencesTriple(triple, some_Z_codes):
     perc = triple_lengths.count(1)/len(triple_lengths) * 100
     return(perc)
 
+def countOccurrencesDouble(double, some_Z_codes):
+    """Counts how many times a double occurs in a given set of Z-codes."""
+    # Sort into correct body order
+    double_indices = sorted([order_of_bodies.index(x) for x in double])
+    # Find all Z-codes where this double is satisfied
+    # It will be where the set is of length one (two repeated characters)
+    double_lengths = [len(set([Z[x] for x in double_indices])) for Z in some_Z_codes]
+    # Count those of length one as a percentage
+    perc = double_lengths.count(1)/len(double_lengths) * 100
+    return(perc)
+
 # Work out all combinations of three
 import itertools
 triple_combinations = list()
@@ -42,8 +53,11 @@ with open('../../data/vettius-triples.csv', 'r') as f:
         triple_indices = sorted([order_of_bodies.index(x) for x in triple])
         vettius_triple_combinations.append([order_of_bodies[x] for x in triple_indices])
 
-# How often do Vettius combinations occur in total time span?
-vettius_triple_occurrences = [countOccurrencesTriple(v, Z_codes) for v in vettius_triple_combinations]
+double_combinations = list()
+for a, b in itertools.combinations(order_of_bodies, 2):
+    double = [a,b]
+    double_indices = sorted([order_of_bodies.index(x) for x in double])
+    double_combinations.append([order_of_bodies[x] for x in double_indices])
 
 # Use 50 year sliding window
 # 50 years = 50 * 365 = 18250
@@ -70,12 +84,24 @@ for i in range(1, 200):
     triple_occurrences = [countOccurrencesTriple(v, year_Z_codes) for v in triple_combinations]
     all_triple_occurrences.append(triple_occurrences)
 
-with open('../../data/0-CE-200-CE-occurrence-per-year.csv', 'w') as f:
+with open('../../data/0-CE-200-CE-triple-occurrence-per-year.csv', 'w') as f:
     for year, occs in enumerate(all_triple_occurrences):
         for i, t in enumerate(occs):
             f.write('%d,%s,%f\n' % (year, '-'.join(triple_combinations[i]), t))
 
+# Doubles for every year
+all_double_occurrences = []
+for i in range(1, 200):
+    print(i)
+    date_range = range((i-1)*365, i*365)
+    year_Z_codes = [Z_codes[d] for d in date_range]
+    double_occurrences = [countOccurrencesDouble(v, year_Z_codes) for v in double_combinations]
+    all_double_occurrences.append(double_occurrences)
 
+with open('../../data/0-CE-200-CE-double-occurrence-per-year.csv', 'w') as f:
+    for year, occs in enumerate(all_double_occurrences):
+        for i, t in enumerate(occs):
+            f.write('%d,%s,%f\n' % (year, '-'.join(double_combinations[i]), t))
 
 
 
