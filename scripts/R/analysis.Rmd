@@ -12,6 +12,8 @@ output:
 library(ggplot2)
 library(dplyr)
 library(cowplot)
+library(tidyr)
+library(broman)
 
 ```
 
@@ -50,11 +52,21 @@ singles.sentiments.df <- singles.sentiments %>% group_by(PLANET, SENTIMENT) %>%
   summarise(count=n()) %>%
   mutate(total=sum(count),
          prop=count/total)
+# remove 'total' variable
+singles.sentiments.df$total <- NULL
+# Make sure list is complete (some sentiments are missing where none listed in input data)
+full_data <- expand.grid(PLANET=singles.sentiments.df$PLANET, SENTIMENT=singles.sentiments.df$SENTIMENT)
+singles.sentiments.df <- unique(left_join(tbl_df(full_data),singles.sentiments.df))
+singles.sentiments.df$count[is.na(singles.sentiments.df$count)] <- 0
+singles.sentiments.df$prop[is.na(singles.sentiments.df$prop)] <- 0
 # Order planets and sentiments
 singles.sentiments.df$PLANET <- ordered(singles.sentiments.df$PLANET, 
                                        levels=ORDER_OF_BODIES)
 singles.sentiments.df$SENTIMENT <- ordered(singles.sentiments.df$SENTIMENT,
                                         levels=c("bad", "neutral", "good"))
+# Overall sentiment index
+singles.overall.sentiments <- singles.sentiments.df %>% group_by(PLANET) %>% 
+  summarise(sentiment=prop[which(SENTIMENT=="good")]-prop[which(SENTIMENT=="bad")])
 ```
 
 We then plot the sentiments of the singles. 
@@ -69,6 +81,15 @@ ggplot(singles.sentiments.df, aes(PLANET, prop, fill=SENTIMENT))+
   ylab("Proportion of sentiments listed")
 ```
 
+Also plot overall sentiment index (good - bad).
+
+```{r plot_singles_overall_sentiment}
+ggplot(singles.overall.sentiments, aes(PLANET, sentiment))+
+  geom_bar(stat="identity", fill="black")+
+  theme_basic()+
+  xlab("")+
+  ylab("Sentiment index")
+```
 # Doubles
 
 We read in the sentiments of the double conjunctions (e.g. Saturn and Jupiter). 
@@ -82,6 +103,15 @@ doubles.sentiments.df <- doubles.sentiments %>% group_by(DOUBLE, SENTIMENT) %>%
   summarise(count=n()) %>%
   mutate(total=sum(count),
          prop=count/total)
+# remove 'total' variable
+doubles.sentiments.df$total <- NULL
+# Make sure list is complete (some sentiments are missing where none listed in input data)
+full_data <- expand.grid(DOUBLE=doubles.sentiments.df$DOUBLE, SENTIMENT=doubles.sentiments.df$SENTIMENT)
+doubles.sentiments.df <- unique(left_join(tbl_df(full_data),doubles.sentiments.df))
+doubles.sentiments.df$count[is.na(doubles.sentiments.df$count)] <- 0
+doubles.sentiments.df$prop[is.na(doubles.sentiments.df$prop)] <- 0
+
+
 # Order planets and sentiments
 doubles.sentiments.df$body.1 <- sapply(stringr::str_split(doubles.sentiments.df$DOUBLE, pattern=" "),
                               function(x) x[1])
@@ -109,8 +139,12 @@ doubles.sentiments.df$order.body.string <- paste0(as.numeric(doubles.sentiments.
 doubles.sentiments.df$bodies.sorted <- ordered(doubles.sentiments.df$bodies.sorted,
                                               levels=unique(doubles.sentiments.df$bodies.sorted[order(doubles.sentiments.df$order.body.string)]))
 
-doubles.sentiments.df$SENTIMENT <- ordered(singles.sentiments.df$SENTIMENT,
-                                        levels=c("bad", "neutral", "good"))
+doubles.sentiments.df$SENTIMENT <- ordered(doubles.sentiments.df$SENTIMENT,
+                                        levels=c("bad", "good"))
+
+# Also make a dataframe with an overall sentiment index
+doubles.overall.sentiments <- doubles.sentiments.df %>% group_by(body.1, body.2, bodies.sorted, order.body.string) %>% 
+  summarise(sentiment=prop[which(SENTIMENT=="good")]-prop[which(SENTIMENT=="bad")])
 ```
 
 We then plot the sentiments of the doubles. 
@@ -121,7 +155,7 @@ ggplot(doubles.sentiments.df, aes(bodies.sorted, prop, fill=SENTIMENT))+
   geom_bar(stat="identity")+
   theme_basic()+
   xlab("")+
-  scale_fill_manual(values=c("red", "orange", "#31a354"))+
+  scale_fill_manual(values=c("red",  "#31a354"))+
   ylab("Proportion of sentiments listed")+
   theme(axis.text.x=element_text(angle=45, hjust=1))
 ```
@@ -137,7 +171,7 @@ plotDoublesWithPlanet <- function(planet){
   geom_bar(stat="identity")+
   theme_basic()+
   xlab("")+
-  scale_fill_manual(values=c("red", "orange", "#31a354"))+
+  scale_fill_manual(values=c("red", "#31a354"))+
   ylab("Proportion of sentiments listed")+
   theme(axis.text.x=element_text(angle=45, hjust=1))+
     ggtitle(planet)+
@@ -163,14 +197,29 @@ Note that Valens misses out two doubles which involve Mars: Mars + Sun, and Mars
 
 If we know the sentiment proportions associated with single planets, can we predict the sentiment of the doubles?
 
-```{r predict_double_from_single}
-getSingleScores <- function(double, sentiment="good", mean=TRUE, singles=singles.sentiments.df){
+```{r predict_double_from_single, fig.height=10, fig.width=10}
+# getSingleScores <- function(double, sentiment="good", mean=TRUE, singles=singles.sentiments.df){
+#     double.bodies <- ordered(unlist(stringr::str_split(double, pattern=" ")), 
+#                            levels=ORDER_OF_BODIES)
+#     prop <- 0
+#     for (body in double.bodies){
+#       new.prop <- as.numeric(singles[which(singles$PLANET==body & 
+#                                     singles$SENTIMENT==sentiment), "prop"]  )
+#       prop <- prop +  new.prop
+#     }
+#     if (mean==FALSE){
+#       return(prop)
+#     }
+#     else{
+#       return(prop/2)
+#     }
+# }
+getSingleScores <- function(double, mean=TRUE, singles=singles.overall.sentiments){
     double.bodies <- ordered(unlist(stringr::str_split(double, pattern=" ")), 
                            levels=ORDER_OF_BODIES)
     prop <- 0
     for (body in double.bodies){
-      new.prop <- as.numeric(singles[which(singles$PLANET==body & 
-                                    singles$SENTIMENT==sentiment), "prop"]  )
+      new.prop <- as.numeric(singles[which(singles$PLANET==body), "sentiment"])
       prop <- prop +  new.prop
     }
     if (mean==FALSE){
@@ -180,48 +229,31 @@ getSingleScores <- function(double, sentiment="good", mean=TRUE, singles=singles
       return(prop/2)
     }
 }
-doubles.sentiments.df.good <- doubles.sentiments.df[which(doubles.sentiments.df$SENTIMENT=="good"),]
 
-doubles.sentiments.df.good$mean.single.sentiments <- sapply(doubles.sentiments.df.good$bodies.sorted,
-                                                          function(x) getSingleScores(x, sentiment = "good", mean=TRUE))
-p.good <- ggplot(doubles.sentiments.df.good, aes(mean.single.sentiments, prop))+
-  geom_point(colour="#31a354")+
+doubles.overall.sentiments$mean.single.sentiments <- sapply(doubles.overall.sentiments$bodies.sorted,
+                                                          function(x) getSingleScores(x, mean=TRUE))
+# Add correlation score
+spearman.cor <- cor.test(doubles.overall.sentiments$mean.single.sentiments, doubles.overall.sentiments$sentiment, method="spearman")
+
+p.sentiments.doubles.singles <- ggplot(doubles.overall.sentiments, aes(mean.single.sentiments, sentiment))+
+    stat_smooth(method="lm", se=FALSE, colour="red")+
+  geom_point(colour="black")+
   theme_basic()+
-  geom_text(aes(label=bodies.sorted))+
+  ggrepel::geom_text_repel(aes(label=bodies.sorted))+
     coord_fixed()+
-  xlim(c(0,1))+
-  ylim(c(0,1))+
-  ggtitle("Good")
+  xlim(c(-1, 1))+
+  ylim(c(-1,1))+
+  geom_hline(yintercept = 0, linetype='dashed')+
+    geom_vline(xintercept = 0, linetype='dashed')+
+  xlab("Mean sentiment index of single planets")+
+  ylab("Sentiment index of double")+
+  annotate(geom="label", label=paste0("Spearman's rho = ", myround(spearman.cor$estimate, 3), "\n",
+                                     "p = ", myround(spearman.cor$p.value, 3)), x=1, y=-0.75, hjust=1)
+p.sentiments.doubles.singles
 
-# Check for neutral as well
-doubles.sentiments.df.neutral <- doubles.sentiments.df[which(doubles.sentiments.df$SENTIMENT=="neutral"),]
-
-doubles.sentiments.df.neutral$mean.single.sentiments <- sapply(doubles.sentiments.df.neutral$bodies.sorted,
-                                                          function(x) getSingleScores(x, "neutral", mean=TRUE))
-p.neutral <- ggplot(doubles.sentiments.df.neutral, aes(mean.single.sentiments, prop))+
-  geom_point(colour="orange")+
-  theme_basic()+
-  ggrepel::geom_text_repel(aes(label=bodies.sorted), nudge_x = 0.02, nudge_y=-0.025)+
-  coord_fixed()+
-  xlim(c(0,1))+
-  ylim(c(0,1))+
-  ggtitle("Neutral")
-
-# And bad
-doubles.sentiments.df.bad <- doubles.sentiments.df[which(doubles.sentiments.df$SENTIMENT=="bad"),]
-
-doubles.sentiments.df.bad$mean.single.sentiments <- sapply(doubles.sentiments.df.bad$bodies.sorted,
-                                                          function(x) getSingleScores(x, "bad", mean=TRUE))
-p.bad <- ggplot(doubles.sentiments.df.bad, aes(mean.single.sentiments, prop))+
-  geom_point(colour="red")+
-  theme_basic()+
-  ggrepel::geom_text_repel(aes(label=bodies.sorted), nudge_x = 0.02, nudge_y=-0.025)+
-  coord_fixed()+
-  xlim(c(0,1))+
-  ylim(c(0,1))+
-  ggtitle("Bad")
 ```
 
-```{r merge_plots, fig.height=10, fig.width=8}
-cowplot::plot_grid(p.good, p.neutral, p.bad, nrow=3)
-```
+We see that there is a strong correlation between the mean sentiment index for the component singles and the sentiment index of the double conjunction. 
+
+## Double conjuction occurrences
+
