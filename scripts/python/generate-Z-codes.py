@@ -37,19 +37,6 @@ def getDateFromJulian(jd):
     dt = Datetime(str(date_list[0]).split('.')[0]+'/'+str(date_list[1]).split('.')[0]+'/'+str(date_list[2]).split('.')[0], '09:00', '+00:00')
     return(dt)
 
-
-# Date of LRB publication
-LRB_date = Datetime('1979/10/25', '09:00', '+00:00')
-# Centre of Russell Square coordinate
-LRB_pos = GeoPos('51n55', '0w12')
-
-# Generate chart
-LRB_chart = Chart(LRB_date, LRB_pos)
-
-# Get Z-code
-LRB_Z_code = getZ(LRB_chart)
-
-
 # Start at (e.g. 10,000 BC)
 # Cycle through every day at (arbitrary) 9AM
 # Record Z-code

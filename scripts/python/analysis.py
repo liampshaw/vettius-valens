@@ -1,6 +1,6 @@
 # Read in Z-codes
 Z_codes = []
-with open('Z-codes-0-to-2020.tsv', 'r') as f:
+with open('../../data/Z-codes-0-to-2020.tsv', 'r') as f:
     for line in f.readlines():
         line = line.strip().split(',')
         Z_codes.append(line[1])
@@ -36,7 +36,7 @@ for a, b, c in itertools.combinations(order_of_bodies, 3):
     triple_combinations.append([order_of_bodies[x] for x in triple_indices])
 
 vettius_triple_combinations = list()
-with open('vettius-valens', 'r') as f:
+with open('../../data/vettius-triples.csv', 'r') as f:
     for line in f.readlines():
         triple = line.strip().split(',')
         triple_indices = sorted([order_of_bodies.index(x) for x in triple])
@@ -47,23 +47,33 @@ vettius_triple_occurrences = [countOccurrencesTriple(v, Z_codes) for v in vettiu
 
 # Use 50 year sliding window
 # 50 years = 50 * 365 = 18250
-fifty_year_block = 18250
+#fifty_year_block = 18250
+#all_triple_occurrences = []
+#for i in range(0, 200):
+#    print(i)
+#    date_range = range((i-1)*365, fifty_year_block+i*365)
+#    fifty_year_Z_codes = [Z_codes[d] for d in date_range]
+#    triple_occurrences = [countOccurrencesTriple(v, fifty_year_Z_codes) for v in triple_combinations]
+#    all_triple_occurrences.append(triple_occurrences)
+
+#with open('0-CE-200-CE-occurrence-50-year-sliding-window.csv', 'w') as f:
+#    for year, occs in enumerate(all_triple_occurrences):
+#        for i, t in enumerate(occs):
+#            f.write('%d,%s,%f\n' % (year, '-'.join(triple_combinations[i]), t))
+
+# Calculate for every year
 all_triple_occurrences = []
-for i in range(0, 200):
+for i in range(1, 200):
     print(i)
-    date_range = range((i-1)*365, fifty_year_block+i*365)
-    fifty_year_Z_codes = [Z_codes[d] for d in date_range]
-    triple_occurrences = [countOccurrencesTriple(v, fifty_year_Z_codes) for v in triple_combinations]
+    date_range = range((i-1)*365, i*365)
+    year_Z_codes = [Z_codes[d] for d in date_range]
+    triple_occurrences = [countOccurrencesTriple(v, year_Z_codes) for v in triple_combinations]
     all_triple_occurrences.append(triple_occurrences)
 
-with open('0-CE-200-CE-occurrence-50-year-sliding-window.csv', 'w') as f:
+with open('../../data/0-CE-200-CE-occurrence-per-year.csv', 'w') as f:
     for year, occs in enumerate(all_triple_occurrences):
         for i, t in enumerate(occs):
             f.write('%d,%s,%f\n' % (year, '-'.join(triple_combinations[i]), t))
-
-
-
-
 
 
 
