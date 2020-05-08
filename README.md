@@ -1,1 +1,3 @@
 This is a folder with scripts and data to analyse some aspects of the astrological theories of the 2nd century Hellenistic astrologer Vettius Valens.
+
+In Book I of the *Anthology* ([pdf](http://www.csus.edu/indiv/r/rileymt/Vettius%20Valens%20entire.pdf) trans. Mark Riley), Valens gives lists of predictions associated with planets and combinations of planets (doubles and then triples). Not all conjunctions of planets are equally likely. Here, we use a combination of sentiment analysis and [ephemeris data](https://www.astro.com/swisseph/swephinfo_e.htm) to analyse (a) the internal consistency of these predictions within Valens' system and (b) how they align with the actual frequency of occurrences of planets. 
