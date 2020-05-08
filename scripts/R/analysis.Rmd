@@ -257,3 +257,58 @@ We see that there is a strong correlation between the mean sentiment index for t
 
 ## Double conjuction occurrences
 
+Read in the frequencies of the double conjunctions. 
+
+```{r double_occurrences, fig.height=10, fig.width=10}
+double.occurrences <- read.csv('../../data/0-CE-200-CE-double-occurrence-per-year.csv', header=F,stringsAsFactors = F)
+colnames(double.occurrences) <- c("year", "double", "occurrence")
+double.occurrences.median <- double.occurrences %>% group_by(double) %>%
+  summarise(median=median(occurrence))
+order.of.doubles <- double.occurrences.median$double[order(double.occurrences.median$median, decreasing = TRUE)]
+double.occurrences.median$year <- 160
+double.occurrences.median$y <- 11
+double.occurrences.median$double <- ordered(double.occurrences.median$double,
+                                     levels=order.of.doubles)
+double.occurrences.median$median.plot <- myround(double.occurrences.median$median, 1)
+double.occurrences$double <- ordered(double.occurrences$double,
+                              levels=order.of.doubles)
+
+# Make plot
+occurrences.plot <- ggplot(double.occurrences, aes(year, occurrence, group=double))+
+  geom_line()+
+  theme_bw()+
+  xlab("Year (CE)")+
+  ylab("Z-codes in year containing double (%)")+
+  facet_wrap(~double, ncol=7)+
+  theme(panel.grid = element_blank())+
+  ylim(c(0,100))+
+  xlim(c(120, 175))+
+  theme(strip.text = element_text(size=8))+
+  geom_text(data=double.occurrences.median, 
+            aes(year, 90, label=paste0(median.plot, "%"), group=double), 
+            hjust=0, size=3)
+occurrences.plot
+```
+
+Does median occurrence relate to mean sentiment index?
+
+```{r occurrence_sentiment_doubles}
+double.occurrences.median$bodies.sorted <- ordered(gsub("-", " ",double.occurrences.median$double), 
+                                                   levels=levels(doubles.overall.sentiments$bodies.sorted))
+median.occurrences.doubles <- double.occurrences.median$median
+names(median.occurrences.doubles) <- double.occurrences.median$bodies.sorted
+# Add to sentiment
+doubles.overall.sentiments$median.occurrence <- median.occurrences.doubles[doubles.overall.sentiments$bodies.sorted]
+ggplot(doubles.overall.sentiments, aes(median.occurrence, sentiment))+
+  geom_point()+
+  theme_basic()
+```
+
+Not obviously. But perhaps there is a linear model term we can use. 
+
+```{r linear_model_doubles}
+summary(lm(sentiment ~ mean.single.sentiments + median.occurrence, data=doubles.overall.sentiments))
+
+```
+
+
