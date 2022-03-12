@@ -1,3 +1,6 @@
+
+![](figures/example_horoscope.png)
+
 This is a folder with scripts and data to analyse aspects of the astrological theories of the 2nd century Hellenistic astrologer Vettius Valens.
 
 ## Background
