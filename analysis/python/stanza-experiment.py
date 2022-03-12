@@ -1,3 +1,5 @@
+# Experimenting with using stanza NLP package to automatically assign sentiment
+
 import stanza # NLP package
 import glob
 import re
@@ -15,4 +17,3 @@ for fname in files:
 			sentiments.append(sentence.sentiment-1) # sentiment in stanza is 0,1,2 negative,neutral,positive so we want -1,0,1
 		print(combo+','+str(len(sentiments))+','+str(sum(sentiments)/len(sentiments)))
 		 
-#with open '/Users/Liam/Dropbox/Personal/Claire/Vettius Valens/Texts for analysis/names-removed-Riley English Translation (2010)/
