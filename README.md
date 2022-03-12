@@ -1,5 +1,5 @@
 
-# <img src="figures/example_horoscope.png" alt="" width="115" height="115" align="middle"> The internal logic of planetary combination in Vettius Valens
+# <img src="figures/example_horoscope.png" alt="" width="115" height="115" align="middle"> Planetary combination in Vettius Valens
 
 
 This is a folder with scripts and data to analyse aspects of the astrological theories of the 2nd century Hellenistic astrologer Vettius Valens.
