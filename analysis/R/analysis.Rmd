@@ -1,0 +1,1070 @@
+---
+title: "Analysis of Vettius Valens"
+output:
+  html_document:
+    df_print: paged
+  number_sections: yes
+  cache: yes
+  pdf_document: default
+---
+
+# Definitions
+
+```{r libraries}
+library(ggplot2)
+library(dplyr)
+library(cowplot)
+library(tidyr)
+library(broman)
+```
+```{r dirs}
+# These are relative paths assuming this script is being run from *within* analysis/R
+FIGURES.DIR <- setwd('../../figures/')
+INTERMEDIATE.DIR <- setwd('../intermediate-files/')
+
+
+
+```
+
+
+```{r setup}
+# Order of bodies
+ORDER_OF_BODIES = c('Saturn',
+                    'Jupiter',
+                    'Mars',
+                    'Sun',
+                    'Venus',
+                    'Mercury',
+                    'Moon')
+names(ORDER_OF_BODIES) <- c("Sa", "J", "Mar", "Su", "V", "Mer", "Moo")
+# For plots
+theme_basic <- function () { 
+  theme_bw(base_size=12) %+replace% 
+    theme(
+      axis.text=element_text(colour="black", family = "Times"),
+      axis.title=element_text(colour="black", family = "Times"),
+      panel.background = element_blank(),
+      panel.border = element_blank(),
+      axis.line = element_line()
+    ) %+replace% 
+    theme(
+      panel.grid=element_blank()
+    )
+}
+```
+
+# Singles
+
+We read in the sentiments of the singles. 
+
+```{r read_singles}
+singles.sentiments <- read.csv('../../data/singles-qualities.csv', 
+                              header=T, 
+                              stringsAsFactors = F)
+# Get in useful format
+singles.sentiments.df <- singles.sentiments %>% group_by(PLANET, SENTIMENT) %>%
+  summarise(count=n()) %>%
+  mutate(total=sum(count),
+         prop=count/total)
+# remove 'total' variable
+singles.sentiments.df$total <- NULL
+# Make sure list is complete (some sentiments are missing where none listed in input data)
+full_data <- expand.grid(PLANET=singles.sentiments.df$PLANET, SENTIMENT=singles.sentiments.df$SENTIMENT)
+singles.sentiments.df <- unique(left_join(tbl_df(full_data),singles.sentiments.df))
+singles.sentiments.df$count[is.na(singles.sentiments.df$count)] <- 0
+singles.sentiments.df$prop[is.na(singles.sentiments.df$prop)] <- 0
+# Order planets and sentiments
+singles.sentiments.df$PLANET <- ordered(singles.sentiments.df$PLANET, 
+                                       levels=ORDER_OF_BODIES)
+singles.sentiments.df$SENTIMENT <- ordered(singles.sentiments.df$SENTIMENT,
+                                        levels=c("bad", "neutral", "good"))
+# Overall sentiment index
+singles.overall.sentiments <- singles.sentiments.df %>% group_by(PLANET) %>% 
+  summarise(sentiment=prop[which(SENTIMENT=="good")]-prop[which(SENTIMENT=="bad")])
+```
+
+We then plot the sentiments of the singles. 
+
+```{r plot_singles}
+# Plot them
+ggplot(singles.sentiments.df, aes(PLANET, prop, fill=SENTIMENT))+
+  geom_bar(stat="identity")+
+  theme_basic()+
+  xlab("")+
+  scale_fill_manual(values=c("red", "orange", "#31a354"))+
+  ylab("Proportion of sentiments listed")
+```
+
+Also plot overall sentiment index (good - bad).
+
+```{r plot_singles_overall_sentiment}
+ggplot(singles.overall.sentiments, aes(PLANET, sentiment))+
+  geom_bar(stat="identity", fill="black")+
+  theme_basic()+
+  xlab("")+
+  ylab("Sentiment index")
+```
+# Doubles
+
+We read in the sentiments of the double conjunctions (e.g. Saturn and Jupiter). 
+
+```{r read_doubles}
+doubles.sentiments <- read.csv('../../data/doubles-qualities.csv', 
+                              header=T, 
+                              stringsAsFactors = F)
+# Get in useful format
+doubles.sentiments.df <- doubles.sentiments %>% group_by(DOUBLE, SENTIMENT) %>%
+  summarise(count=n()) %>%
+  mutate(total=sum(count),
+         prop=count/total)
+# remove 'total' variable
+doubles.sentiments.df$total <- NULL
+# Make sure list is complete (some sentiments are missing where none listed in input data)
+full_data <- expand.grid(DOUBLE=doubles.sentiments.df$DOUBLE, SENTIMENT=doubles.sentiments.df$SENTIMENT)
+doubles.sentiments.df <- unique(left_join(tbl_df(full_data),doubles.sentiments.df))
+doubles.sentiments.df$count[is.na(doubles.sentiments.df$count)] <- 0
+doubles.sentiments.df$prop[is.na(doubles.sentiments.df$prop)] <- 0
+
+
+# Order planets and sentiments
+doubles.sentiments.df$body.1 <- sapply(stringr::str_split(doubles.sentiments.df$DOUBLE, pattern=" "),
+                              function(x) x[1])
+doubles.sentiments.df$body.1 <- ordered(ORDER_OF_BODIES[doubles.sentiments.df$body.1], 
+                               levels=ORDER_OF_BODIES)
+doubles.sentiments.df$body.2 <- sapply(stringr::str_split(doubles.sentiments.df$DOUBLE, pattern=" "),
+                              function(x) x[2])
+doubles.sentiments.df$body.2 <- ordered(ORDER_OF_BODIES[doubles.sentiments.df$body.2],
+                               levels=ORDER_OF_BODIES)
+doubles.sentiments.df$bodies.sorted <- sapply(1:nrow(doubles.sentiments.df),
+                                     function(x)
+                                       paste(as.character(sort(unlist(c(doubles.sentiments.df[x,"body.1"], 
+                                                                        doubles.sentiments.df[x,"body.2"])))),
+                                             collapse=" "))
+# Make body 1 and 2 be in order of bodies as expected
+doubles.sentiments.df$body.1 <- gsub(" .*", "", doubles.sentiments.df$bodies.sorted)
+doubles.sentiments.df$body.2 <- gsub(".* ", "", doubles.sentiments.df$bodies.sorted)
+doubles.sentiments.df$body.1 <- ordered(doubles.sentiments.df$body.1,
+                                       levels=ORDER_OF_BODIES)
+doubles.sentiments.df$body.2 <- ordered(doubles.sentiments.df$body.2,
+                                       levels=ORDER_OF_BODIES)
+doubles.sentiments.df$order.body.string <- paste0(as.numeric(doubles.sentiments.df$body.1),
+                                                as.numeric(doubles.sentiments.df$body.2))
+# Order bodies again (this is hacky but it works)
+doubles.sentiments.df$bodies.sorted <- ordered(doubles.sentiments.df$bodies.sorted,
+                                              levels=unique(doubles.sentiments.df$bodies.sorted[order(doubles.sentiments.df$order.body.string)]))
+
+doubles.sentiments.df$SENTIMENT <- ordered(doubles.sentiments.df$SENTIMENT,
+                                        levels=c("bad", "good"))
+
+# Also make a dataframe with an overall sentiment index
+doubles.overall.sentiments <- doubles.sentiments.df %>% group_by(body.1, body.2, bodies.sorted, order.body.string) %>% 
+  summarise(sentiment=prop[which(SENTIMENT=="good")]-prop[which(SENTIMENT=="bad")])
+```
+
+We then plot the sentiments of the doubles. 
+
+```{r plot_doubles}
+# Plot them
+ggplot(doubles.sentiments.df, aes(bodies.sorted, prop, fill=SENTIMENT))+
+  geom_bar(stat="identity")+
+  theme_basic()+
+  xlab("")+
+  scale_fill_manual(values=c("red",  "#31a354"))+
+  ylab("Proportion of sentiments listed")+
+  theme(axis.text.x=element_text(angle=45, hjust=1))
+```
+
+A function to plot all the doubles involving a particular planet. 
+
+
+```{r plot_doubles_with_planet, fig.height=12, fig.width=12}
+plotDoublesWithPlanet <- function(planet){
+  # Subset to only doubles involving planet
+  local.planet.df <- doubles.sentiments.df[grep(planet, doubles.sentiments.df$bodies.sorted),]
+  ggplot(local.planet.df, aes(bodies.sorted, prop, fill=SENTIMENT))+
+  geom_bar(stat="identity")+
+  theme_basic()+
+  xlab("")+
+  scale_fill_manual(values=c("red", "#31a354"))+
+  ylab("Proportion of sentiments listed")+
+  theme(axis.text.x=element_text(angle=45, hjust=1))+
+    ggtitle(planet)+
+    theme(legend.position = "none")
+}
+# Make all these plots and combine them
+p.doubles.saturn <- plotDoublesWithPlanet("Saturn")
+p.doubles.jupiter <- plotDoublesWithPlanet("Jupiter")
+p.doubles.mars <- plotDoublesWithPlanet("Mars")
+p.doubles.sun <- plotDoublesWithPlanet("Sun")
+p.doubles.venus <- plotDoublesWithPlanet("Venus")
+p.doubles.mercury <- plotDoublesWithPlanet("Mercury")
+p.doubles.moon <- plotDoublesWithPlanet("Moon")
+cowplot::plot_grid(p.doubles.saturn, p.doubles.jupiter, 
+                   p.doubles.mars, p.doubles.sun,
+                   p.doubles.venus, p.doubles.mercury,
+                   p.doubles.moon, nrow=2)
+```
+
+Note that Valens misses out two doubles which involve Mars: Mars + Sun, and Mars + Moon. 
+
+## Predicting doubles from singles
+
+If we know the sentiment proportions associated with single planets, can we predict the sentiment of the doubles?
+
+```{r predict_double_from_single, fig.height=10, fig.width=10}
+# getSingleScores <- function(double, sentiment="good", mean=TRUE, singles=singles.sentiments.df){
+#     double.bodies <- ordered(unlist(stringr::str_split(double, pattern=" ")), 
+#                            levels=ORDER_OF_BODIES)
+#     prop <- 0
+#     for (body in double.bodies){
+#       new.prop <- as.numeric(singles[which(singles$PLANET==body & 
+#                                     singles$SENTIMENT==sentiment), "prop"]  )
+#       prop <- prop +  new.prop
+#     }
+#     if (mean==FALSE){
+#       return(prop)
+#     }
+#     else{
+#       return(prop/2)
+#     }
+# }
+getSingleScores <- function(conjunction, mean=TRUE, singles=singles.overall.sentiments){
+    conjunction.bodies <- ordered(unlist(stringr::str_split(conjunction, pattern=" ")), 
+                           levels=ORDER_OF_BODIES)
+    prop <- 0
+    for (body in conjunction.bodies){
+      new.prop <- as.numeric(singles[which(singles$PLANET==body), "sentiment"])
+      prop <- prop +  new.prop
+    }
+    if (mean==FALSE){
+      return(prop)
+    }
+    else{
+      return(prop/length(conjunction.bodies))
+    }
+}
+
+doubles.overall.sentiments$mean.single.sentiments <- sapply(doubles.overall.sentiments$bodies.sorted,
+                                                          function(x) getSingleScores(x, mean=TRUE))
+# Add correlation score
+spearman.cor <- cor.test(doubles.overall.sentiments$mean.single.sentiments, doubles.overall.sentiments$sentiment, method="spearman")
+
+label.string <- paste0("Spearman's rho=", myround(spearman.cor$estimate, 3), "\n",
+                                     "p = ", myround(spearman.cor$p.value, 3))
+p.sentiments.doubles.singles <- ggplot(doubles.overall.sentiments, aes(mean.single.sentiments, sentiment))+
+    stat_smooth(method="lm", se=FALSE, colour="red")+
+  geom_point(colour="black")+
+  theme_basic()+
+  ggrepel::geom_text_repel(aes(label=bodies.sorted), family="Times", size=3)+
+    coord_fixed()+
+  xlim(c(-1, 1))+
+  ylim(c(-1,1))+
+  geom_hline(yintercept = 0, linetype='dashed')+
+    geom_vline(xintercept = 0, linetype='dashed')+
+  xlab("Mean sentiment index of single planets")+
+  ylab("Sentiment index of double")+
+  annotate(geom="label", label=label.string, x=1, y=-0.75, hjust=1, family="Times")
+p.sentiments.doubles.singles
+
+```
+
+We see that there is a strong correlation between the mean sentiment index for the component singles and the sentiment index of the double conjunction. 
+
+## Double conjuction occurrences
+
+Read in the frequencies of the double conjunctions. 
+
+```{r double_occurrences, fig.height=10, fig.width=10}
+double.occurrences <- read.csv('../../data/0-CE-200-CE-double-occurrence-per-year.csv', header=F,stringsAsFactors = F)
+colnames(double.occurrences) <- c("year", "double", "occurrence")
+double.occurrences.median <- double.occurrences %>% group_by(double) %>%
+  summarise(median=median(occurrence))
+order.of.doubles <- double.occurrences.median$double[order(double.occurrences.median$median, decreasing = TRUE)]
+double.occurrences.median$year <- 160
+double.occurrences.median$y <- 11
+double.occurrences.median$double <- ordered(double.occurrences.median$double,
+                                     levels=order.of.doubles)
+double.occurrences.median$median.plot <- myround(double.occurrences.median$median, 1)
+double.occurrences$double <- ordered(double.occurrences$double,
+                              levels=order.of.doubles)
+
+# Make plot
+occurrences.plot <- ggplot(double.occurrences, aes(year, occurrence, group=double))+
+  geom_line()+
+  theme_bw()+
+  xlab("Year (CE)")+
+  ylab("Z-codes in year containing double (%)")+
+  facet_wrap(~double, ncol=7)+
+  theme(panel.grid = element_blank())+
+  ylim(c(0,100))+
+  xlim(c(120, 175))+
+  theme(strip.text = element_text(size=8))+
+  geom_text(data=double.occurrences.median, 
+            aes(year, 90, label=paste0(median.plot, "%"), group=double), 
+            hjust=0, size=3)
+occurrences.plot
+
+double.occurrences.t <- double.occurrences %>% group_by(double) %>% summarise(occurrence=sum(occurrence)/(200))
+double.occurrences.t$bodies.sorted <- gsub("-", " ", double.occurrences.t$double)
+sort(double.occurrences.t$double)
+
+df <- right_join(double.occurrences.t, doubles.overall.sentiments, by="bodies.sorted")
+```
+
+Does median occurrence relate to mean sentiment index?
+
+```{r occurrence_sentiment_doubles}
+double.occurrences.median$bodies.sorted <- ordered(gsub("-", " ",double.occurrences.median$double), 
+                                                   levels=levels(doubles.overall.sentiments$bodies.sorted))
+median.occurrences.doubles <- double.occurrences.median$median
+names(median.occurrences.doubles) <- double.occurrences.median$bodies.sorted
+# Add to sentiment
+doubles.overall.sentiments$median.occurrence <- median.occurrences.doubles[doubles.overall.sentiments$bodies.sorted]
+ggplot(doubles.overall.sentiments, aes(median.occurrence, sentiment))+
+  geom_point()+
+  theme_basic()
+```
+
+Not obviously. But perhaps there is a linear model term we can use. 
+
+```{r linear_model_doubles}
+summary(lm(sentiment ~ mean.single.sentiments + median.occurrence, data=doubles.overall.sentiments))
+```
+
+Again, it appears not. 
+
+## Triples
+
+```{r read_triples}
+triples.sentiments <- read.csv('../../data/triples-qualities.csv', 
+                              header=T, 
+                              stringsAsFactors = F)
+# Get in useful format
+triples.sentiments.df <- triples.sentiments %>% group_by(TRIPLE, SENTIMENT) %>%
+  summarise(count=n()) %>%
+  mutate(total=sum(count),
+         prop=count/total)
+# remove 'total' variable
+triples.sentiments.df$total <- NULL
+# Make sure list is complete (some sentiments are missing where none listed in input data)
+full_data <- expand.grid(TRIPLE=triples.sentiments.df$TRIPLE, SENTIMENT=triples.sentiments.df$SENTIMENT)
+triples.sentiments.df <- unique(left_join(tbl_df(full_data),triples.sentiments.df))
+triples.sentiments.df$count[is.na(triples.sentiments.df$count)] <- 0
+triples.sentiments.df$prop[is.na(triples.sentiments.df$prop)] <- 0
+
+
+# Order planets and sentiments
+triples.sentiments.df$body.1 <- sapply(stringr::str_split(triples.sentiments.df$TRIPLE, pattern=" "),
+                              function(x) x[1])
+triples.sentiments.df$body.1 <- ordered(ORDER_OF_BODIES[triples.sentiments.df$body.1], 
+                               levels=ORDER_OF_BODIES)
+triples.sentiments.df$body.2 <- sapply(stringr::str_split(triples.sentiments.df$TRIPLE, pattern=" "),
+                              function(x) x[2])
+triples.sentiments.df$body.2 <- ordered(ORDER_OF_BODIES[triples.sentiments.df$body.2],
+                               levels=ORDER_OF_BODIES)
+triples.sentiments.df$body.3 <- sapply(stringr::str_split(triples.sentiments.df$TRIPLE, pattern=" "),
+                              function(x) x[3])
+triples.sentiments.df$body.3 <- ordered(ORDER_OF_BODIES[triples.sentiments.df$body.3],
+                               levels=ORDER_OF_BODIES)
+triples.sentiments.df$bodies.sorted <- sapply(1:nrow(triples.sentiments.df),
+                                     function(x)
+                                       paste(as.character(sort(unlist(c(triples.sentiments.df[x,"body.1"], 
+                                                                        triples.sentiments.df[x,"body.2"], triples.sentiments.df[x,"body.3"])))),
+                                             collapse=" "))
+# Make body 1 and 2 be in order of bodies as expected
+triples.sentiments.df$body.1 <- sapply(stringr::str_split(triples.sentiments.df$bodies.sorted, pattern=" "),
+                              function(x) x[1])
+triples.sentiments.df$body.2 <- sapply(stringr::str_split(triples.sentiments.df$bodies.sorted, pattern=" "),
+                              function(x) x[2])
+triples.sentiments.df$body.3 <- sapply(stringr::str_split(triples.sentiments.df$bodies.sorted, pattern=" "),
+                              function(x) x[3])
+triples.sentiments.df$body.1 <- ordered(triples.sentiments.df$body.1,
+                                       levels=ORDER_OF_BODIES)
+triples.sentiments.df$body.2 <- ordered(triples.sentiments.df$body.2,
+                                       levels=ORDER_OF_BODIES)
+triples.sentiments.df$body.3 <- ordered(triples.sentiments.df$body.3,
+                                       levels=ORDER_OF_BODIES)
+
+triples.sentiments.df$order.body.string <- paste0(as.numeric(triples.sentiments.df$body.1),
+                                                as.numeric(triples.sentiments.df$body.2), 
+                                                as.numeric(triples.sentiments.df$body.3))
+# Order bodies again (this is hacky but it works)
+triples.sentiments.df$bodies.sorted <- ordered(triples.sentiments.df$bodies.sorted,
+                                              levels=unique(triples.sentiments.df$bodies.sorted[order(triples.sentiments.df$order.body.string)]))
+
+triples.sentiments.df$SENTIMENT <- ordered(triples.sentiments.df$SENTIMENT,
+                                        levels=c("bad", "neutral", "good"))
+
+# Also make a dataframe with an overall sentiment index
+triples.overall.sentiments <- triples.sentiments.df %>% group_by(body.1, body.2,body.3, bodies.sorted, order.body.string) %>% 
+  summarise(sentiment=prop[which(SENTIMENT=="good")]-prop[which(SENTIMENT=="bad")])
+```
+
+Now we see how this correlates with component singles or doubles. 
+
+```{r triples_predict_from_singles_doubles}
+getDoubleScoresForTriple <- function(triple, double.data=doubles.overall.sentiments, mean=TRUE){
+  triple.bodies <- ordered(unlist(stringr::str_split(triple, pattern=" ")), 
+                           levels=ORDER_OF_BODIES)
+  
+  # combinations
+  doubles <- ordered(combn(triple.bodies, 2), levels=ORDER_OF_BODIES)
+  doubles <- sapply(c(1, 3, 5), function(x) paste(c(doubles[x], doubles[x+1]), collapse= ' '))
+  
+  doubles.ordered <- sapply( doubles,  
+                   function(x) paste(as.character(sort(unlist(strsplit(fixed = TRUE, split=" ", x))), collapse = " ")))
+  doubles.ordered <- as.data.frame(doubles.ordered)
+  set.of.doubles <- sapply(c(1,2, 3), 
+         function(x) paste(ORDER_OF_BODIES[as.numeric(as.character(doubles.ordered[1,x]))],
+                           ORDER_OF_BODIES[as.numeric(as.character(doubles.ordered[2,x]))]))
+  
+  prop <- 0
+  i <- 0
+  props <- c()
+  for (double in set.of.doubles){
+    if (!double  %in% c("Mars Sun", "Mars Moon")){
+      new.prop <- double.data[which(double.data$bodies.sorted==double),"sentiment"]
+      prop <- prop +  new.prop
+      props <- c(props, as.numeric(new.prop))
+      i <- i+1
+    }
+ 
+  }
+  mean.prop <- prop/i
+  if (mean==TRUE){
+    return(as.numeric(mean.prop))
+  }
+  else{
+    return(sum(props))
+  }
+}
+triples.overall.sentiments$mean.double.sentiment <- sapply(triples.overall.sentiments$bodies.sorted, function(x) getDoubleScoresForTriple(x))
+
+```
+
+Now we plot this relationship. 
+
+```{r plot_triples_doubles}
+spearman.cor.triple.double <- cor.test(triples.overall.sentiments$mean.double.sentiment, triples.overall.sentiments$sentiment, method="spearman")
+p.sentiments.triples.doubles <- ggplot(triples.overall.sentiments, aes(mean.double.sentiment, sentiment))+
+    stat_smooth(method="lm", se=FALSE, colour="red")+
+  geom_point(colour="black")+
+  theme_basic()+
+  ggrepel::geom_text_repel(aes(label=bodies.sorted), size=2)+
+    coord_fixed()+
+  xlim(c(-1, 1))+
+  ylim(c(-1,1))+
+  geom_hline(yintercept = 0, linetype='dashed')+
+    geom_vline(xintercept = 0, linetype='dashed')+
+  xlab("Mean sentiment index of component doubles")+
+  ylab("Sentiment index of triple")+
+  annotate(geom="label", label=paste0("Spearman's rho = ", myround(spearman.cor.triple.double$estimate, 3), "\n",
+                                     "p = ", myround(spearman.cor.triple.double$p.value, 3)), x=1, y=-0.75, hjust=1)
+p.sentiments.triples.doubles
+```
+
+Is this stronger or weaker if we just consider component singles?
+
+```{r plot_triples_singles, fig.height=8, fig.width=10}
+triples.overall.sentiments$mean.single.sentiment <- sapply(triples.overall.sentiments$bodies.sorted, function(x) getSingleScores(x))
+spearman.cor.triple.single <- cor.test(triples.overall.sentiments$mean.single.sentiment, triples.overall.sentiments$sentiment, method="spearman")
+
+p.sentiments.triples.singles <- ggplot(triples.overall.sentiments, aes(mean.single.sentiment, sentiment))+
+    stat_smooth(method="lm", se=FALSE, colour="red")+
+  geom_point(colour="black")+
+  theme_basic()+
+  ggrepel::geom_text_repel(aes(label=bodies.sorted), size=2)+
+    coord_fixed()+
+  xlim(c(-1, 1))+
+  ylim(c(-1,1))+
+  geom_hline(yintercept = 0, linetype='dashed')+
+    geom_vline(xintercept = 0, linetype='dashed')+
+  xlab("Mean sentiment index of component singles")+
+  ylab("Sentiment index of triple")+
+  annotate(geom="label", label=paste0("Spearman's rho = ", myround(spearman.cor.triple.single$estimate, 3), "\n",
+                                     "p = ", myround(spearman.cor.triple.single$p.value, 3)), x=1, y=-0.75, hjust=1)
+# Plot both of them
+cowplot::plot_grid(p.sentiments.triples.singles+ggtitle("Triples from singles"), p.sentiments.triples.doubles+ggtitle("Triples from doubles"))
+```
+
+What does this tell us? Triples are better explained by the component singles than by the three component doubles? Is Valens' thinking primarily binary? He brings together two things and considers their mixing. 
+
+The (adjusted) R-squared for a linear model from the mean single sentiments is 0.3017. For the mean double sentiments it is 0.5603. 
+
+Valens thinks of triples as combinations of doubles more than as combinations of singles. This has potentially major implications: it's an iterative process of building things up. Combinatorial theory linked to the practice of astrology. The fundamentals of the art are known, but each specific horoscope is different. So the promise of the art is that the idiosyncratic nature of each horoscope can be worked out from the underlying singles, combined into doubles, combined into triples, and so on. (It remains to be seen if this holds up in the more detailed conceptual analysis, rather than just sentiment.)
+
+Valens comments on this at the end of the section on triples, where he says that the effect of adding another body to each combination will be clear to anybody who has been paying attention.
+
+The Sun and Moon are considered as one unit (in opposition, section 41: violent deaths). So would that mean conjunctions with Sun and Moon behave differently to the other triples? Doubles are modulated by the presence of another. 
+
+Could we model the single sentiments by the occurrence of the double conjunctions in some way? Can we use just rank of median occurrence?
+
+```{r rank_occurrences}
+doubles.overall.sentiments$rank <- rank(doubles.overall.sentiments$median.occurrence)
+summary(lm(sentiment ~ mean.single.sentiments + rank, data=doubles.overall.sentiments))
+```
+
+Look at triples occurrences.
+
+```{r triple_occurrences, fig.height=10, fig.width=10}
+triple.occurrences <- read.csv('../../data/0-CE-200-CE-triple-occurrence-per-year.csv', header=F,stringsAsFactors = F)
+colnames(triple.occurrences) <- c("year", "triple", "occurrence")
+triple.occurrences.median <- triple.occurrences %>% group_by(triple) %>%
+  summarise(median=median(occurrence))
+order.of.triples <- triple.occurrences.median$triple[order(triple.occurrences.median$median, decreasing = TRUE)]
+triple.occurrences.median$year <- 160
+triple.occurrences.median$y <- 11
+triple.occurrences.median$triple <- ordered(triple.occurrences.median$triple,
+                                     levels=order.of.triples)
+triple.occurrences.median$median.plot <- myround(triple.occurrences.median$median, 1)
+triple.occurrences.median$triple <- ordered(triple.occurrences.median$triple,
+                              levels=order.of.triples)
+triple.occurrences$triple <- ordered(triple.occurrences$triple, 
+                                            levels=order.of.triples)
+# Make plot
+occurrences.plot.triples <- ggplot(triple.occurrences, aes(year, occurrence, group=triple))+
+  geom_line()+
+  theme_bw()+
+  xlab("Year (CE)")+
+  ylab("Z-codes in year containing triple (%)")+
+  facet_wrap(~triple, ncol=7)+
+  theme(panel.grid = element_blank())+
+  ylim(c(0,25))+
+  xlim(c(120, 175))+
+  theme(strip.text = element_text(size=8))+
+  geom_text(data=triple.occurrences.median, 
+            aes(year, 90, label=paste0(median.plot, "%"), group=triple), 
+            hjust=0, size=3)
+occurrences.plot.triples
+```
+
+Relationship with sentiment.
+
+```{r triples_sentiment_occurrence}
+triples.overall.sentiments$median.occurrence <- triple.occurrences.median$median[triples.overall.sentiments$bodies.sorted]
+ggplot(triples.overall.sentiments, aes(median.occurrence, sentiment))+
+  geom_point()+
+    ggrepel::geom_text_repel(aes(label=bodies.sorted), size=2)
+# Don't trust this linear relationship - skewed by outliers, clearly no relationship 
+```
+
+
+### Textual analysis
+
+Using tidytext to look computationally at similarity of descriptions.
+ 
+First, consider just the length of the descriptions. 
+
+```{r length_analysis}
+
+# Length of descriptions play a role?
+getLengthPassage <- function(conjunction){
+  df <- tibble(word=scan(paste0('../../../Texts for analysis/names-removed-Riley English Translation (2010)/', conjunction, '.txt'), what="character", sep=NULL)) %>%
+  mutate(line=row_number())
+  return(as.numeric(nrow(df)))
+}
+# Add to doubles
+doubles.overall.sentiments$length.passage <- as.numeric(sapply(gsub(" ", "-", doubles.overall.sentiments$bodies.sorted), 
+       function(x) getLengthPassage(x)))
+# Plot
+ggplot(doubles.overall.sentiments, aes(median.occurrence, length.passage)) + 
+  geom_point()+
+  ggrepel::geom_text_repel(aes(label=bodies.sorted), size=2)
+# Note that the Sun and the Moon have the longest description
+
+# Are they explained by length of the singles?
+singles.overall.sentiments$length.passage <- as.numeric(sapply(gsub(" ", "-", singles.overall.sentiments$PLANET), 
+       function(x) getLengthPassage(x)))
+getSingleLengths <- function(conjunction, mean=TRUE, singles=singles.overall.sentiments){
+    conjunction.bodies <- ordered(unlist(stringr::str_split(conjunction, pattern=" ")), 
+                           levels=ORDER_OF_BODIES)
+    prop <- 0
+    for (body in conjunction.bodies){
+      new.prop <- as.numeric(singles[which(singles$PLANET==body), "length.passage"])
+      prop <- prop +  new.prop
+    }
+    if (mean==FALSE){
+      return(prop)
+    }
+    else{
+      return(prop/length(conjunction.bodies))
+    }
+}
+doubles.overall.sentiments$mean.length.single <- sapply(doubles.overall.sentiments$bodies.sorted, 
+                                                        function(x) getSingleLengths(x))
+ggplot(doubles.overall.sentiments, aes(mean.length.single, length.passage))+
+  geom_point()+stat_smooth(method="lm")+
+  xlab("Mean words in descriptions of component single bodies")+
+  ylab("Words in description of double")+
+  ggrepel::geom_text_repel(aes(label=bodies.sorted), size=2)
+
+
+# Triples lengths
+triples.overall.sentiments$length.passage <- as.numeric(sapply(gsub(" ", "-", triples.overall.sentiments$bodies.sorted), 
+       function(x) getLengthPassage(x)))
+triples.overall.sentiments$mean.length.single <- sapply(triples.overall.sentiments$bodies.sorted, 
+       function(x) getSingleLengths(x))
+# Are these explained by the lengths of the singles?
+ggplot(triples.overall.sentiments, aes(mean.length.single, length.passage))+
+  geom_point()+stat_smooth(method="lm")+
+  xlab("Mean words in descriptions of component single bodies")+
+  ylab("Words in description of triple")+
+  ggrepel::geom_text_repel(aes(label=bodies.sorted), size=2)
+# Weak positive relationship, heavily driven by the outliers: Saturn Jupiter Mercury and Saturn Mars Mercury. Really no clear relationship
+```
+
+```{r similarity_analysis}
+library(tidytext)
+conjunction <- "Jupiter Mars Mercury"
+df1 <- tibble(word=scan(paste0('../../../Texts for analysis/names-removed-Riley English Translation (2010)/', gsub(" ", "-", conjunction), '.txt'),what="character", sep=NULL)) %>%
+  mutate(line=row_number(), name=conjunction)
+conjunction <- "Jupiter Mars Venus"
+df2 <- tibble(word=scan(paste0('../../../Texts for analysis/names-removed-Riley English Translation (2010)/', gsub(" ", "-", conjunction), '.txt'),what="character", sep=NULL)) %>%
+  mutate(line=row_number(), name=conjunction)
+for (conjunction in as.character(triples.overall.sentiments$bodies.sorted)){
+  df <- tibble(word=scan(paste0('../../../Texts for analysis/names-removed-Riley English Translation (2010)/', gsub(" ", "-", conjunction), '.txt'),what="character", sep=NULL)) %>%
+  mutate(line=row_number(), conjunction=conjunction)
+  if (exists("full.df")){
+      full.df <- rbind(full.df, df)
+  }
+  else{
+    full.df <- df
+  }
+}
+
+# Co-occurring words
+library(widyr)
+library(stopwords)
+full.df.stop <- full.df %>% 
+    anti_join(get_stopwords())
+full.df.stop <- full.df.stop %>%
+  filter(!word %in% c("They", "men", "make", "bring", "cause", "These", "stars", "become", "men,"))
+words_by_conjunction <- full.df.stop %>%
+  pairwise_count(item=word, feature=conjunction, sort=TRUE)
+# Words that appear in the same overall description
+full.df.stop.sorted <- full.df.stop %>% 
+  count(word, sort=TRUE)
+
+# Similarity 
+for (conjunction in as.character(doubles.overall.sentiments$bodies.sorted)){
+  df <- tibble(word=scan(paste0('../../../Texts for analysis/names-removed-Riley English Translation (2010)/', gsub(" ", "-", conjunction), '.txt'),what="character", sep=NULL)) %>%
+  mutate(line=row_number(), conjunction=conjunction)
+  if (exists("doubles.descriptions")){
+      doubles.descriptions <- rbind(doubles.descriptions, df)
+  }
+  else{
+    doubles.descriptions <- df
+  }
+}
+
+data(stop_words)
+doubles.descriptions <- doubles.descriptions %>%
+  anti_join(stop_words) %>%
+  unnest_tokens(word, word)
+# We also want to remove some other words
+remove_words <- tibble(word=c("respect", "they", "these", "stars", "bring")) # All occur at least 30 times across all doubles
+doubles.descriptions <- doubles.descriptions %>%
+  anti_join(remove_words)
+# Most common word is good, second is however!
+# Do a word-by-planet matrix
+doubles.descriptions <- doubles.descriptions %>% mutate(Saturn=grepl("Saturn", conjunction), 
+                                Jupiter=grepl("Jupiter", conjunction),
+                                Mars=grepl("Mars", conjunction),
+                                Sun=grepl("Sun", conjunction),
+                                Venus=grepl("Venus", conjunction),
+                                Mercury=grepl("Mercury", conjunction),
+                                Moon=grepl("Moon", conjunction))
+
+# Look at top five for each planet
+doubles.descriptions %>% filter(Saturn==TRUE) %>%
+  count(word, sort=TRUE) # However is most common, benefics - lots of changing and modulating
+doubles.descriptions %>% filter(Jupiter==TRUE) %>%
+  count(word, sort=TRUE) # pretty much uniformly positive
+doubles.descriptions %>% filter(Mars==TRUE) %>%
+  count(word, sort=TRUE)
+doubles.descriptions %>% filter(Sun==TRUE) %>%
+  count(word, sort=TRUE)
+doubles.descriptions %>% filter(Venus==TRUE) %>%
+  count(word, sort=TRUE)
+doubles.descriptions %>% filter(Mercury==TRUE) %>%
+  count(word, sort=TRUE)
+doubles.descriptions %>% filter(Moon==TRUE) %>%
+  count(word, sort=TRUE)
+
+
+# Look at anger
+anger <- get_sentiments("nrc") %>% filter(sentiment == "anger") # Need to cite NRC!
+doubles.descriptions %>% inner_join(anger) %>%
+  count(word, sort=TRUE)
+# We can now find the angriest double: Mars Mercury
+doubles.descriptions %>% inner_join(anger) %>%
+  group_by(conjunction) %>%
+  count(word, sort=TRUE) %>%
+  count(conjunction, sort=TRUE)
+
+# Also joy - hmm we should probably normalise by length of the descriptions I think. Because Sun and Moon is the most
+joy <- get_sentiments("nrc") %>% filter(sentiment=="joy")
+doubles.descriptions %>% inner_join(joy) %>%
+  group_by(conjunction) %>%
+  count(word, sort=TRUE) %>%
+  count(conjunction, sort=TRUE)
+# Also positive
+positive <- get_sentiments("nrc") %>% filter(sentiment=="positive")
+positive.tb <- doubles.descriptions %>% inner_join(positive) %>%
+  group_by(conjunction) %>%
+  count(word, sort=TRUE) %>%
+  count(conjunction, sort=TRUE) 
+negative <- get_sentiments("nrc") %>% filter(sentiment=="negative")
+negative.tb <- doubles.descriptions %>% inner_join(negative) %>%
+  group_by(conjunction) %>%
+  count(word, sort=TRUE) %>%
+  count(conjunction, sort=TRUE) 
+# This seems to roughly line up with Claire's more detailed personal assessment. Could use to create a sentiment index
+nrc.sentiments <- right_join(positive.tb, negative.tb, by="conjunction") %>%
+  mutate(sentiment=(n.x-n.y)/(n.x+n.y)) %>%
+  order(sentiment)
+# OK there is something in this at least
+
+
+# The other thing we could investigate is whether the doubles contain words in the corresponding singles.
+for (planet in as.character(ORDER_OF_BODIES)){
+  df <- tibble(word=scan(paste0('../../../Texts for analysis/names-removed-Riley English Translation (2010)/', gsub(" ", "-", planet), '.txt'),what="character", sep=NULL)) %>%
+  mutate(line=row_number(), conjunction=planet)
+  if (exists("single.descriptions")){
+      single.descriptions <- rbind(single.descriptions, df)
+  }
+  else{
+    single.descriptions <- df
+  }
+}
+single.words <- single.descriptions %>% unnest_tokens(word, word) %>%
+  anti_join(stop_words) %>%
+  count(conjunction, word, sort=TRUE)
+total_words <- single.words %>% 
+  group_by(conjunction) %>% 
+  summarize(total = sum(n))
+
+single.words <- left_join(single.words, total_words)
+# Note that this splits hyphens, need to take that into account. Also should remove the names of the planets themselves
+# tf-idf should measure how important each word is to single
+single_tf_idf <- single.words %>%
+  bind_tf_idf(word, conjunction, n)
+single_tf_idf %>%
+  select(-total) %>%
+  arrange(desc(tf_idf))
+# Service comes out as the highest tf-idf for Mercury, which is interesting. But very small numbers. What if combine all the conjunctions with Mercury in them, then look at what distinguishes these? 
+total_mercury <- doubles.descriptions %>% 
+  count(word, Mercury, sort=TRUE) %>%
+  group_by(Mercury) %>% 
+  summarize(total = sum(n))
+mercury_counts <- doubles.descriptions %>% 
+  count(word, Mercury, sort=TRUE)
+mercury_tf_idf <- left_join(mercury_counts, total_mercury) %>% 
+  bind_tf_idf(word, Mercury, n)
+mercury_tf_idf %>%
+  select(-total) %>%
+  arrange(desc(tf_idf))
+
+
+
+
+# Look at Saturn to start with
+doubles.descriptions.saturn <- doubles.descriptions %>% mutate(Saturn=grepl("Saturn", conjunction))
+# are those with saturn more similar to saturn to those without saturn
+saturn.words <- (doubles.descriptions.saturn %>% filter(Saturn==TRUE))$word
+nonsaturn.words <- (doubles.descriptions.saturn %>% filter(Saturn==FALSE))$word
+table(saturn.words %in% (single.descriptions %>% filter(conjunction=="Saturn"))$word)
+table(saturn.words %in% (single.descriptions %>% filter(conjunction!="Saturn"))$word)
+
+table(sample(nonsaturn.words, size=length(saturn.words)) %in% (single.descriptions %>% filter(conjunction=="Saturn"))$word)
+table(sample(nonsaturn.words, size=length(saturn.words)) %in% (single.descriptions %>% filter(conjunction!="Saturn"))$word)
+
+table(sample(saturn.words, size=100) %in% sample((single.descriptions %>% filter(conjunction=="Mercury"))$word, size=100))
+
+# Get positive sentiments from Bing 2004 corpus
+positive <- get_sentiments("bing") %>% filter(sentiment == "positive")
+# Look at positive words 
+df %>%
+semi_join(positive) %>%
+count(word, sort = TRUE)
+
+```
+
+In Greek? It's possible, we just need to remove some of the words.
+
+```{r greek_analysis}
+
+single.descriptions.greek <- NULL
+for (planet in as.character(ORDER_OF_BODIES)){
+  df <- tibble(word=scan(paste0('~/Downloads/Pingree Greek/', gsub(" ", "-", planet), '.txt'),what="character", sep=NULL)) %>%
+  mutate(line=row_number(), conjunction=planet)
+  if (exists("single.descriptions.greek")){
+      single.descriptions.greek <- rbind(single.descriptions, df)
+  }
+  else{
+    single.descriptions.greek <- df
+  }
+}
+View(single.descriptions.greek %>% 
+  count(word, sort=TRUE))
+greek.remove <- tibble(word=head(single.descriptions.greek %>% 
+  count(word, sort=TRUE), 13)$word)
+single.descriptions.greek <- single.descriptions.greek %>%
+  anti_join(greek.remove)
+```
+
+## Modelling
+
+Add a dummy variable for planets.
+
+```{r dummy_variable_modelling}
+triples.overall.sentiments$Saturn <- ifelse(grepl("Saturn", triples.overall.sentiments$bodies.sorted), 1, 0)
+triples.overall.sentiments$Jupiter <- ifelse(grepl("Jupiter", triples.overall.sentiments$bodies.sorted), 1, 0)
+triples.overall.sentiments$Mars <- ifelse(grepl("Mars", triples.overall.sentiments$bodies.sorted), 1, 0)
+triples.overall.sentiments$Sun <- ifelse(grepl("Sun", triples.overall.sentiments$bodies.sorted), 1, 0)
+triples.overall.sentiments$Venus <- ifelse(grepl("Venus", triples.overall.sentiments$bodies.sorted), 1, 0)
+triples.overall.sentiments$Mercury <- ifelse(grepl("Mercury", triples.overall.sentiments$bodies.sorted), 1, 0)
+triples.overall.sentiments$Moon <- ifelse(grepl("Moon", triples.overall.sentiments$bodies.sorted), 1, 0)
+
+lm.single.planet.effects <- lm(data=triples.overall.sentiments, sentiment ~ 0 + Saturn + Jupiter + Mars + Sun + Venus + Mercury + Moon) 
+# add predictions
+triples.overall.sentiments$lm.estimate <- predict(lm.single.planet.effects, newdata = triples.overall.sentiments)
+# Add mean double sentiment
+triples.overall.sentiments$mean.double.sentiment <- sapply(triples.overall.sentiments$bodies.sorted, function(x) getDoubleScoresForTriple(x))
+
+ggplot(triples.overall.sentiments, aes(lm.estimate, mean.double.sentiment))+
+    geom_hline(yintercept = 0, linetype='dashed')+
+    geom_vline(xintercept = 0, linetype='dashed')+
+    stat_smooth(method="lm", se=FALSE, colour="red")+
+  geom_point(colour="black")+
+  theme_basic()+
+  ggrepel::geom_text_repel(aes(label=bodies.sorted), family="Times", size=3)+
+    coord_fixed()+
+  xlim(c(-1, 1))+
+  ylim(c(-1,1))+
+  xlab("Predicted sentiment")+
+  ylab("Mean sentiment of component doubles")
+
+single.planet.effects <- coef(lm.single.planet.effects)
+plot(single.planet.effects, singles.overall.sentiments$sentiment)
+AIC(lm.single.planet.effects)
+
+AIC(lm(data=triples.overall.sentiments, sentiment ~ 0+mean.double.sentiment))
+2*2-2*as.numeric(logLik(lm(data=triples.overall.sentiments, sentiment ~0+ mean.double.sentiment)))
+AIC(lm(data=triples.overall.sentiments, sentiment ~ 0+mean.single.sentiment))
+
+
+# AIC is 2k - 2log(L)
+# can get log likelihood with as.numeric(logLik(lm.single.planet.effects))
+AIC(lm.single.planet.effects)
+# 7 actual parameters + sigma (variance of error)
+2*8 - 2*as.numeric(logLik(lm.single.planet.effects))
+# k is the number of parameters *estimated* - if we fix something, it doesn't count
+
+
+
+# Looks like the mean double sentiment is the best model. Rather than the dummy variable model. Although the results of the dummy variable one are interesting and tell us about the overall effect of the planets.
+# N.B. in dummy model, Moon is never going to be defined because of the singularity - it is determined
+# by the presence of the other planets
+
+# Both Saturn and Mars have negative overall sentiments as single planets, and contribute on average
+# negatively to the component triples they are part of. Is this also the case for doubles?
+doubles.overall.sentiments$Saturn <- ifelse(grepl("Saturn", doubles.overall.sentiments$bodies.sorted), 1, 0)
+doubles.overall.sentiments$Jupiter <- ifelse(grepl("Jupiter", doubles.overall.sentiments$bodies.sorted), 1, 0)
+doubles.overall.sentiments$Mars <- ifelse(grepl("Mars", doubles.overall.sentiments$bodies.sorted), 1, 0)
+doubles.overall.sentiments$Sun <- ifelse(grepl("Sun", doubles.overall.sentiments$bodies.sorted), 1, 0)
+doubles.overall.sentiments$Venus <- ifelse(grepl("Venus", doubles.overall.sentiments$bodies.sorted), 1, 0)
+doubles.overall.sentiments$Mercury <- ifelse(grepl("Mercury", doubles.overall.sentiments$bodies.sorted), 1, 0)
+doubles.overall.sentiments$Moon <- ifelse(grepl("Moon", doubles.overall.sentiments$bodies.sorted), 1, 0)
+lm.single.planet.effects.doubles <- lm(data=doubles.overall.sentiments, sentiment ~ Saturn + Jupiter + Mars + Sun + Venus + Mercury + Moon)
+single.planet.effects.doubles <- coef(lm.single.planet.effects.doubles)[-1]
+# They are well-correlated
+effects <- data.frame(double=single.planet.effects.doubles, triple=single.planet.effects, 
+                      planet=ORDER_OF_BODIES)
+ggplot(effects, aes(double, triple))+geom_point()+theme_bw()+
+    ggrepel::geom_text_repel(aes(label=planet))+
+  xlab("Average effect on sentiment when in a double")+
+  ylab("Average effect on sentiment when in a triple")
+
+  
+cor.test(single.planet.effects.doubles, single.planet.effects)
+# rho = 0.90 (0.31-0.99)
+
+# Also look at occurrencec
+occs <- double.occurrences.t$occurrence
+names(occs) <- double.occurrences.t$bodies.sorted
+doubles.overall.sentiments$occurrence <- occs[doubles.overall.sentiments$bodies.sorted]
+lm.single.planet.effects.doubles.occ <- lm(data=doubles.overall.sentiments, sentiment ~ occurrence + Saturn + Jupiter + Mars + Sun + Venus + Mercury + Moon)
+
+
+# Predict missing triples. Three triples are missing from Valens’ enumeration. These are: Saturn, Mercury, Sun; Saturn, Mercury, Moon; Saturn, Sun, Moon. 
+# Use a linear model without Venus as a predictor. 
+new.lm.single.planet.effects <- lm(data=triples.overall.sentiments, sentiment ~ Saturn + Jupiter + Mars + Sun + Mercury + Moon)
+missing.data <- data.frame(Saturn=c(1,1,1), Mercury=c(1, 1, 0), Sun=c(1,0,1), Moon=c(0,1,1),
+                           Jupiter=c(0,0,0), Mars=c(0,0,0), Venus=c(0,0,0))
+predict(new.lm.single.planet.effects, missing.data)
+# Saturn Sun Moon would be negative
+
+# Check with component doubles model
+# Saturn Mercury Sun
+mean(c(doubles.overall.sentiments$sentiment[which(doubles.overall.sentiments$bodies.sorted=="Saturn Mercury")], 
+     doubles.overall.sentiments$sentiment[which(doubles.overall.sentiments$bodies.sorted=="Saturn Sun")],
+     doubles.overall.sentiments$sentiment[which(doubles.overall.sentiments$bodies.sorted=="Sun Mercury")]))
+# Saturn Mercury Moon
+mean(c(doubles.overall.sentiments$sentiment[which(doubles.overall.sentiments$bodies.sorted=="Saturn Mercury")], 
+     doubles.overall.sentiments$sentiment[which(doubles.overall.sentiments$bodies.sorted=="Saturn Moon")],
+     doubles.overall.sentiments$sentiment[which(doubles.overall.sentiments$bodies.sorted=="Mercury Moon")]))
+# Saturn Sun Moon
+mean(c(doubles.overall.sentiments$sentiment[which(doubles.overall.sentiments$bodies.sorted=="Saturn Sun")], 
+     doubles.overall.sentiments$sentiment[which(doubles.overall.sentiments$bodies.sorted=="Saturn Moon")],
+     doubles.overall.sentiments$sentiment[which(doubles.overall.sentiments$bodies.sorted=="Sun Moon")]))
+# The last one is not as negative as we would expect from the dummy variable singles model 
+
+```
+
+
+# Make tables summarising sentiments
+
+```{r tables}
+# 
+getLengthPassage <- function(conjunction){
+  df <- tibble(word=scan(paste0('../../../Texts for analysis/Pingree Greek/', conjunction, '.txt'), what="character", sep=NULL)) %>%
+  mutate(line=row_number())
+  return(as.numeric(nrow(df)))
+}
+single.lengths <- sapply(ORDER_OF_BODIES, function(x) getLengthPassage(x))
+names(single.lengths) <- ORDER_OF_BODIES
+single.sentiment.tab <- singles.sentiments.df %>% select(SENTIMENT, count, PLANET) %>% pivot_wider(names_from=SENTIMENT, values_from=count) 
+single.sentiment.tab$PLANET <- ordered(single.sentiment.tab$PLANET,
+                                     levels=ORDER_OF_BODIES)
+single.sentiment.tab <- single.sentiment.tab[order(single.sentiment.tab$PLANET, decreasing = FALSE),]
+single.sentiment.tab$Greek.description.length <- single.lengths[single.sentiment.tab$PLANET]
+single.sentiment.tab$good.bad.difference <- single.sentiment.tab$good -single.sentiment.tab$bad 
+single.sentiment.tab$good.bad.sum <- single.sentiment.tab$good +single.sentiment.tab$bad 
+single.sentiment.tab$difference <- single.sentiment.tab$good - single.sentiment.tab$bad
+
+single.sentiment.tab$sentiment <- paste0(single.sentiment.tab$good.bad.difference, "/", single.sentiment.tab$good.bad.sum, " (", myround(single.sentiment.tab$good.bad.difference/single.sentiment.tab$good.bad.sum, 2), ")")
+write.csv(single.sentiment.tab, file='single-sentiments.csv')
+```
+
+```{r occurrence.plots}
+double.occurrences <- read.csv('../../data/0-CE-200-CE-double-occurrence-per-year.csv', header=F,stringsAsFactors = F)
+colnames(double.occurrences) <- c("year", "double", "occurrence")
+double.occurrences.averages <- double.occurrences %>% group_by(double) %>%
+  summarise(median=median(occurrence), mean=mean(occurrence))
+double.occurrences.averages$bodies.sorted <- gsub("-", " ", double.occurrences.averages$double)
+double.occurrences.averages$bodies.sorted  <- ordered(double.occurrences.averages$bodies.sorted,
+                                                    levels=levels(doubles.sentiments.df$bodies.sorted))
+plot.double.occurrence.df <- right_join(double.occurrences.averages, doubles.overall.sentiments, by="bodies.sorted")
+# Make plot
+doubles.occurrences.plot <- ggplot(plot.double.occurrence.df, aes(mean, sentiment))+
+  geom_point()+
+  theme_basic()+ylim(c(-1,1))+
+  ylab("Overall sentiment of conjunction")+xlab("Mean occurrence of conjunction (% of Z-codes 1-200 CE)")+
+  ggrepel::geom_text_repel(aes(label=bodies.sorted), family="Times", size=2)+
+  geom_hline(linetype='dashed', yintercept = 0)
+
+triple.occurrences <- read.csv('../../data/0-CE-200-CE-triple-occurrence-per-year.csv', header=F,stringsAsFactors = F)
+colnames(triple.occurrences) <- c("year", "triple", "occurrence")
+triple.occurrences.averages <- triple.occurrences %>% group_by(triple) %>%
+  summarise(median=median(occurrence), mean=mean(occurrence))
+triple.occurrences.averages$bodies.sorted <- gsub("-", " ", triple.occurrences.averages$triple)
+triple.occurrences.averages$bodies.sorted  <- ordered(triple.occurrences.averages$bodies.sorted,
+                                                    levels=levels(triples.sentiments.df$bodies.sorted))
+plot.triple.occurrence.df <- right_join(triple.occurrences.averages, triples.overall.sentiments, by="bodies.sorted")
+# Make plot
+plot.double.triple.occurrence.df <- rbind(plot.double.occurrence.df[,c("bodies.sorted", "mean", "sentiment")], plot.triple.occurrence.df[,c("bodies.sorted", "mean", "sentiment")])
+plot.double.triple.occurrence.df$type <- c(rep("double", nrow(plot.double.occurrence.df)), 
+                                               rep("triple", nrow(plot.triple.occurrence.df)))
+occurrences.plot <- ggplot(plot.double.triple.occurrence.df, aes(mean, sentiment, colour=type))+
+    geom_hline(linetype='dashed', yintercept = 0)+
+  geom_point()+
+  theme_basic()+ylim(c(-1,1))+
+  ylab("Overall sentiment of conjunction")+xlab("Mean occurrence of conjunction (% of Z-codes 1-200 CE)")+
+  ggrepel::geom_text_repel(aes(label=bodies.sorted), family="Times", size=2)+
+  scale_color_manual(values=c("red", "black"))+
+  theme(legend.position = c(0.85, 0.1), 
+        legend.text=element_text(family="Times"),
+        legend.title = element_blank())
+
+ggsave(occurrences.plot, file='occurrences-plot.pdf', width = 6, height=6)
+ggsave(occurrences.plot, file='occurrences-plot.png', width = 6, height=6, units = "in", dpi=300)
+
+# ALSO CHECK LENGTH OF DESCRIPTIONS
+plot.double.triple.occurrence.df$length <- sapply(gsub(" ", "-", plot.double.triple.occurrence.df$bodies.sorted), function(x) getLengthPassage(x))
+length.occurrences.plot <-  ggplot(plot.double.triple.occurrence.df, aes(mean, length, colour=type))+
+  geom_point()+
+  theme_basic()+
+  ylab("Number of words in description")+xlab("Mean occurrence of conjunction (% of Z-codes 1-200 CE)")+
+  scale_y_continuous(breaks=seq(0, 125, 25), limits=c(0, 125))+
+  ggrepel::geom_text_repel(aes(label=bodies.sorted), family="Times", size=2)+
+  scale_color_manual(values=c("red", "black"))+
+  theme(legend.position = c(0.85, 0.1), 
+        legend.text=element_text(family="Times"),
+        legend.title = element_blank())
+# Add single lengths
+single.lengths <- sapply(ORDER_OF_BODIES, function(x) getLengthPassage(x))
+names(single.lengths) <- ORDER_OF_BODIES
+lengths.df <- rbind(plot.double.triple.occurrence.df[,c("type", "length")], data.frame(type=rep("single", 7), length=single.lengths))
+lengths.df$type <- ordered(lengths.df$type,
+                           levels=c("single", "double", "triple"))
+length.boxplot <- ggplot(lengths.df, aes(type, length, colour=type))+
+  geom_boxplot(width=0.5, outlier.shape = NA)+
+  geom_jitter(height=0, width=0.2)+
+  theme_basic()+
+    scale_color_manual(values=c("blue", "red","black"))+
+  theme(legend.position = "none")+
+  scale_y_continuous(breaks=seq(0, 275, 25), limits=c(0, 275))+
+  ylab("Number of words in description")+
+  xlab("")
+ggsave(length.boxplot, file='lengths-boxplot.pdf', width = 4, height=6)
+ggsave(length.boxplot, file='lengths-boxplot.png', width = 4, height=6, units = "in", dpi=300)
+
+length.plot <- cowplot::plot_grid(plotlist=list(length.boxplot, length.occurrences.plot),
+                   rel_widths = c(0.4, 0.6))
+ggsave(length.plot, file='lengths-plot.pdf', width = 8, height=6)
+
+```
+
+```{r write_csv}
+write.csv(doubles.overall.sentiments, file='../../data/doubles-sentiments.csv')
+write.csv(triples.overall.sentiments, file='../../data/triples-sentiments.csv')
+```
+
+
+```{r stanza}
+# Analysis using stanza
+stanza.df <- read.csv('../../data/stanza-sentiments.csv', header=T, stringsAsFactors = F)
+rownames(stanza.df) <- stanza.df$combination
+triples.stanza.df <- stanza.df[as.character(triples.overall.sentiments$bodies.sorted),]
+triples.compare.df <- data.frame(triple=triples.stanza.df$combination, 
+           stanza.sentiment=triples.stanza.df$sentiment,
+           claire.sentiment=triples.overall.sentiments$sentiment)
+plot.triples.compare <- ggplot(triples.compare.df, aes(claire.sentiment, stanza.sentiment))+
+  geom_point()+
+  theme_basic()+
+  xlab("Sentiment (Claire data)")+
+  ylab("Sentiment (NLP)")+
+  coord_fixed()+
+  ggtitle("Triples")+
+  xlim(c(-1,1))+
+  ylim(c(-1,1))
+
+# Doubles
+doubles.stanza.df <- stanza.df[as.character(doubles.overall.sentiments$bodies.sorted),]
+doubles.compare.df <- data.frame(triple=doubles.stanza.df$combination, 
+           stanza.sentiment=doubles.stanza.df$sentiment,
+           claire.sentiment=doubles.overall.sentiments$sentiment)
+plot.doubles.compare <- ggplot(doubles.compare.df, aes(claire.sentiment, stanza.sentiment))+
+  geom_point()+
+  theme_basic()+
+  xlab("Sentiment (Claire data)")+
+  ylab("Sentiment (NLP)")+
+  coord_fixed()+
+  ggtitle("Doubles")+
+  xlim(c(-1,1))+
+  ylim(c(-1,1))
+
+cowplot::plot_grid(plot.doubles.compare, plot.triples.compare)
+  
+```

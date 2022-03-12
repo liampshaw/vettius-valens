@@ -1,0 +1,20 @@
+"","body.1","body.2","bodies.sorted","order.body.string","sentiment","mean.single.sentiments","median.occurrence"
+"1","Saturn","Jupiter","Saturn Jupiter","12",1,-0.00666666666666665,4.931507
+"2","Saturn","Mars","Saturn Mars","13",-0.714285714285714,-0.521944444444444,8.493151
+"3","Saturn","Sun","Saturn Sun","14",-0.333333333333333,-0.00666666666666665,8.219178
+"4","Saturn","Venus","Saturn Venus","15",-0.384615384615385,-0.0698245614035088,9.041096
+"5","Saturn","Mercury","Saturn Mercury","16",0.375,-0.212222222222222,7.39726
+"6","Saturn","Moon","Saturn Moon","17",-0.157894736842105,-0.181666666666667,16.712329
+"7","Jupiter","Mars","Jupiter Mars","23",0.571428571428571,0.0847222222222222,8.219178
+"8","Jupiter","Sun","Jupiter Sun","24",0.466666666666667,0.6,13.69863
+"9","Jupiter","Venus","Jupiter Venus","25",0.875,0.536842105263158,13.972603
+"10","Jupiter","Mercury","Jupiter Mercury","26",1,0.394444444444444,8.219178
+"11","Jupiter","Moon","Jupiter Moon","27",1,0.425,0
+"12","Mars","Venus","Mars Venus","35",-0.909090909090909,0.0215643274853801,8.767123
+"13","Mars","Mercury","Mars Mercury","36",-0.583333333333333,-0.120833333333333,6.849315
+"14","Sun","Venus","Sun Venus","45",0.833333333333333,0.536842105263158,8.219178
+"15","Sun","Mercury","Sun Mercury","46",0.7,0.394444444444444,8.493151
+"16","Sun","Moon","Sun Moon","47",0.909090909090909,0.425,6.849315
+"17","Venus","Mercury","Venus Mercury","56",0.5,0.331286549707602,51.780822
+"18","Venus","Moon","Venus Moon","57",-0.538461538461539,0.361842105263158,7.945205
+"19","Mercury","Moon","Mercury Moon","67",0.625,0.219444444444444,29.041096
