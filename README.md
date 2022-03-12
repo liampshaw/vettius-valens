@@ -1,5 +1,6 @@
 
-![](figures/example_horoscope.png)
+# <img src="figures/example_horoscope.png" alt="" width="115" height="115" align="middle">Valens analysis
+
 
 This is a folder with scripts and data to analyse aspects of the astrological theories of the 2nd century Hellenistic astrologer Vettius Valens.
 
