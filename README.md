@@ -12,11 +12,12 @@ Repository currently (12/03/22) in process of being cleaned up.
 
 ## This repository
 
-* `data` - raw data 
-* `analysis`-
-*          -`R` - R scripts (models of sentiment)
-*          -`python` - python (calculation of Z-codes)
-*	  -`figures` - versions of figures from the manuscript
-*          -`intermediate-files` - files made during analysis process
-
+```
+data - raw data 
+analysis
+	R - R scripts (models of sentiment)
+    	python - python (calculation of Z-codes)
+    	figures - versions of figures from the manuscript
+        intermediate-files - files made during analysis process
+```
 
