@@ -61,6 +61,8 @@ doubles.overall.sentiments$Moon <- ifelse(grepl("Moon", doubles.overall.sentimen
 
 doubles.overall.sentiments$length <- sapply(gsub(" ", "-", doubles.overall.sentiments$bodies.sorted), function(x) getLengthPassage(x))
 
+write.csv(doubles.overall.sentiments, '../intermediate-files/doubles.csv', row.names = F)
+
 # Table
 # Table of sentiments
 double.sentiment.tab <- doubles.sentiments.df %>% select(SENTIMENT, count, bodies.sorted) %>% pivot_wider(names_from=SENTIMENT, values_from=count) 
@@ -76,3 +78,4 @@ double.sentiment.tab <- double.sentiment.tab[,c("bodies.sorted", "Greek.descript
 colnames(double.sentiment.tab) <- c("Combination", "No. of words (Greek)", "p", "n", "Total terms", "Sentiment")
 double.sentiment.tab$`No. of words (Greek)` <- myround(double.sentiment.tab$`No. of words (Greek)`, 1)
 xtable(double.sentiment.tab)
+

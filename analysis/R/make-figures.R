@@ -10,12 +10,12 @@ library(xtable)
 # Functions
 source('functions.R')
 
+# Generate the tables of sentiments. 
+# Saves outputs from raw input data into analysis/intermediate-files
 # SINGLE SENTIMENTS
 source('singles-sentiments-load.R')
-
 # DOUBLE SENTIMENTS
 source('doubles-sentiments-load.R')
-
 # TRIPLES SENTIMENTS
 source('triples-sentiments-load.R')
 
@@ -61,7 +61,7 @@ occurrences.plot <- ggplot(plot.double.triple.occurrence.df, aes(mean, sentiment
         legend.title = element_blank())
 
 # Make Figure 2
-ggsave(occurrences.plot, file='../../figures/Figure-2-occurrences-length.pdf', width = 6, height=6)
+ggsave(occurrences.plot, file='../figures/Figure-2-occurrences-length.pdf', width = 6, height=6)
 
 # Length of descriptions
 plot.double.triple.occurrence.df$length <- sapply(gsub(" ", "-", plot.double.triple.occurrence.df$bodies.sorted), function(x) getLengthPassage(x))
@@ -94,7 +94,7 @@ length.boxplot <- ggplot(lengths.df, aes(type, length, colour=type))+
 length.plot <- cowplot::plot_grid(plotlist=list(length.boxplot, length.occurrences.plot),
                                   rel_widths = c(0.4, 0.6))
 # Make Figure 1
-ggsave(length.plot, file='../../figures/Figure-1-lengths.pdf', width = 8, height=6)
+ggsave(length.plot, file='../figures/Figure-1-lengths.pdf', width = 8, height=6)
 
 
 
@@ -122,6 +122,7 @@ lm.triples.mean.double.plus.single <- lm(data=triples.overall.sentiments, sentim
 
 # We prefer the minimum AIC
 AIC(lm.triples.dummy, lm.triples.mean.single, lm.triples.mean.double, lm.triples.mean.double.plus.single)
+BIC(lm.triples.dummy, lm.triples.mean.single, lm.triples.mean.double, lm.triples.mean.double.plus.single)
 
 # All doubles and triples with dummy model
 col.names <- c("Saturn", "Jupiter", "Mars", "Sun", "Venus", "Mercury", "Moon", "sentiment")
@@ -166,7 +167,7 @@ sentiment.effect.plot <- ggplot(dummy.df, aes(body, group=type, ymin=min, ymax=m
         legend.text=element_text(family="Times", size=8),
         legend.key.size = unit(0.05, "in"),
         legend.title = element_blank())
-ggsave(sentiment.effect.plot, file='../../figures/Figure-3-sentiment-effect.pdf', width=6, height=4)
+ggsave(sentiment.effect.plot, file='../figures/Figure-3-sentiment-effect.pdf', width=6, height=4)
 
 
 
@@ -190,7 +191,7 @@ p.double.single <- ggplot(doubles.overall.sentiments, aes(mean.single.sentiment,
   annotate('text', -0.6, 0.8,
            label=corr.label, parse=TRUE, 
            hjust=1, size=5, family='Times')
-ggsave(p.double.single, file='../../figures/Figure-4-doubles-modelled-by-singles.pdf', width=5, height=6)
+ggsave(p.double.single, file='../figures/Figure-4-doubles-modelled-by-singles.pdf', width=5, height=6)
 
 corr.label <- paste0("italic(r)==", myround(cor.test(triples.overall.sentiments$mean.single.sentiment, triples.overall.sentiments$sentiment, method="pearson")$estimate, 2))
 p.triple.single <- ggplot(triples.overall.sentiments, aes(mean.single.sentiment, sentiment))+
@@ -244,4 +245,4 @@ p.triple.double.single <- ggplot(triples.overall.sentiments, aes(mean.double.plu
            hjust=1, size=5, family='Times')
 p.together <- cowplot::plot_grid(p.triple.single+ggtitle("(a) Component singles"), p.triple.double+ggtitle("(b) Component doubles"),
                                  p.triple.double.single+ggtitle("(c) Component doubles and singles"), nrow=1)
-ggsave(p.together, file='../../figures/Figure-5-triples-modelled.pdf', width=14, height=6)
+ggsave(p.together, file='../figures/Figure-5-triples-modelled.pdf', width=14, height=6)

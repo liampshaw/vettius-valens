@@ -25,7 +25,7 @@ singles.overall.sentiments <- singles.sentiments.df %>% group_by(PLANET) %>%
 singles.overall.sentiments$length <- sapply(gsub(" ", "-", singles.overall.sentiments$PLANET), function(x) getLengthPassage(x))
 
 # Write to file
-write.csv(singles.overall.sentiments, file='../intermediate-files/singles.csv')
+write.csv(singles.overall.sentiments, file='../intermediate-files/singles.csv', row.names = F)
 
 # Table of sentiments
 single.lengths <- sapply(ORDER_OF_BODIES, function(x) getLengthPassage(x))

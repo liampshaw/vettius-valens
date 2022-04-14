@@ -80,6 +80,8 @@ triples.overall.sentiments$Moon <- ifelse(grepl("Moon", triples.overall.sentimen
 # Add lengths
 triples.overall.sentiments$length <- sapply(gsub(" ", "-", triples.overall.sentiments$bodies.sorted), function(x) getLengthPassage(x))
 
+write.csv(triples.overall.sentiments, '../intermediate-files/triples.csv', row.names = F)
+
 
 # Table of sentiments
 triple.sentiment.tab <- triples.sentiments.df %>% select(SENTIMENT, count, bodies.sorted) %>% pivot_wider(names_from=SENTIMENT, values_from=count) 

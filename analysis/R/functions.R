@@ -58,11 +58,12 @@ getDoubleScoresForTriple <- function(triple, double.data=doubles.overall.sentime
   doubles <- sapply(c(1, 3, 5), function(x) paste(c(doubles[x], doubles[x+1]), collapse= ' '))
   
   doubles.ordered <- sapply( doubles,  
-                             function(x) paste(as.character(sort(unlist(strsplit(fixed = TRUE, split=" ", x))), collapse = " ")))
+                             function(x) paste(as.character(unlist(strsplit(fixed = TRUE, split=" ", x)), collapse = " ")))
   doubles.ordered <- as.data.frame(doubles.ordered)
+  
   set.of.doubles <- sapply(c(1,2, 3), 
-                           function(x) paste(ORDER_OF_BODIES[as.numeric(as.character(doubles.ordered[1,x]))],
-                                             ORDER_OF_BODIES[as.numeric(as.character(doubles.ordered[2,x]))]))
+                           function(x) paste(ORDER_OF_BODIES[as.numeric(ordered(doubles.ordered[1,x], levels=ORDER_OF_BODIES))],
+                                             ORDER_OF_BODIES[as.numeric(ordered(doubles.ordered[2,x], levels=ORDER_OF_BODIES))]))
   
   prop <- 0
   i <- 0
@@ -93,22 +94,27 @@ getDoubleSingleScoresForTriple <- function(triple, double.data=doubles.overall.s
   doubles <- sapply(c(1, 3, 5), function(x) paste(c(doubles[x], doubles[x+1]), collapse= ' '))
   
   doubles.ordered <- sapply( doubles,  
-                             function(x) paste(as.character(sort(unlist(strsplit(fixed = TRUE, split=" ", x))), collapse = " ")))
+                             function(x) paste(as.character(unlist(strsplit(fixed = TRUE, split=" ", x)), collapse = " ")))
   doubles.ordered <- as.data.frame(doubles.ordered)
   set.of.doubles <- sapply(c(1,2, 3), 
-                           function(x) paste(ORDER_OF_BODIES[as.numeric(as.character(doubles.ordered[1,x]))],
-                                             ORDER_OF_BODIES[as.numeric(as.character(doubles.ordered[2,x]))]))
+                           function(x) paste(ORDER_OF_BODIES[as.numeric(ordered(doubles.ordered[1,x], levels=ORDER_OF_BODIES))],
+                                             ORDER_OF_BODIES[as.numeric(ordered(doubles.ordered[2,x], levels=ORDER_OF_BODIES))]))
   
   # Get the single scores
-  single.bodies <- as.numeric(unique(unlist(doubles.ordered)))
-  single.bodies <- as.character(ORDER_OF_BODIES[as.numeric(apply(doubles.ordered, MARGIN=2, function(x) single.bodies[which(!single.bodies %in% x)]))])
+  single.bodies <- unique(unlist(doubles.ordered))
+  
+  #single.body.scores <- apply(doubles.ordered, MARGIN=2, function(x) single.bodies[which(!single.bodies %in% x]))
+  #single.bodies <- as.character(ORDER_OF_BODIES[as.numeric(apply(doubles.ordered, MARGIN=2, function(x) single.bodies[which(!single.bodies %in% x)]))])
   prop <- 0
   i <- 0
   props <- c()
   for (double in set.of.doubles){
     if (!double  %in% c("Mars Sun", "Mars Moon")){
-      new.prop <- as.numeric(double.data[which(double.data$bodies.sorted==double),"sentiment"])
-      new.prop <- 2/3 * new.prop +1/3 *getSingleScores(single.bodies[which(set.of.doubles==double)])
+      double.score <- as.numeric(double.data[which(double.data$bodies.sorted==double),"sentiment"])
+      # single that is not in double
+      left.out.single <- single.bodies[which(!single.bodies %in% stringr::str_split(set.of.doubles[1], " ")[[1]])]
+      # proportion is 2/3 double + 1/3 left out single
+      new.prop <- 2/3 * double.score + 1/3 *getSingleScores(left.out.single)
       prop <- prop +  new.prop
       props <- c(props, as.numeric(new.prop))
       i <- i+1
