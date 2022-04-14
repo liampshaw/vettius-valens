@@ -24,23 +24,24 @@ doubles.sentiments.df$body.2 <- sapply(doubles.sentiments.df$PLANETS,
                                        function(x) stringr::str_split(x, pattern=" ")[[1]][2])
 #doubles.sentiments.df$body.2 <- ordered(ORDER_OF_BODIES[doubles.sentiments.df$body.2],
 #                                        levels=ORDER_OF_BODIES)
-doubles.sentiments.df$bodies.sorted <- sapply(1:nrow(doubles.sentiments.df),
-                                              function(x)
-                                                paste(as.character(sort(unlist(c(doubles.sentiments.df[x,"body.1"], 
-                                                                                 doubles.sentiments.df[x,"body.2"])))),
-                                                      collapse=" "))
+doubles.sentiments.df$bodies.sorted <- paste(doubles.sentiments.df$body.1, doubles.sentiments.df$body.2)
+#doubles.sentiments.df$bodies.sorted <- sapply(1:nrow(doubles.sentiments.df),
+ #                                             function(x)
+  #                                              paste(as.character(sort(unlist(c(doubles.sentiments.df[x,"body.1"], 
+   #                                                                              doubles.sentiments.df[x,"body.2"])))),
+    #                                                  collapse=" "))
 # Make body 1 and 2 be in order of bodies as expected
 #doubles.sentiments.df$body.1 <- gsub(" .*", "", doubles.sentiments.df$bodies.sorted)
 #doubles.sentiments.df$body.2 <- gsub(".* ", "", doubles.sentiments.df$bodies.sorted)
-#doubles.sentiments.df$body.1 <- ordered(doubles.sentiments.df$body.1,
-#                                        levels=ORDER_OF_BODIES)
-#doubles.sentiments.df$body.2 <- ordered(doubles.sentiments.df$body.2,
-#                                        levels=ORDER_OF_BODIES)
+doubles.sentiments.df$body.1 <- ordered(doubles.sentiments.df$body.1,
+                                        levels=ORDER_OF_BODIES)
+doubles.sentiments.df$body.2 <- ordered(doubles.sentiments.df$body.2,
+                                        levels=ORDER_OF_BODIES)
 doubles.sentiments.df$order.body.string <- paste0(as.numeric(doubles.sentiments.df$body.1),
-                                                  as.numeric(doubles.sentiments.df$body.2))
+                                                 as.numeric(doubles.sentiments.df$body.2))
 # Order bodies again (this is hacky but it works)
-#doubles.sentiments.df$bodies.sorted <- ordered(doubles.sentiments.df$bodies.sorted,
-#                                               levels=unique(doubles.sentiments.df$bodies.sorted[order(doubles.sentiments.df$order.body.string)]))
+doubles.sentiments.df$bodies.sorted <- ordered(doubles.sentiments.df$bodies.sorted,
+                                               levels=unique(doubles.sentiments.df$bodies.sorted[order(doubles.sentiments.df$order.body.string)]))
 
 doubles.sentiments.df$SENTIMENT <- ordered(doubles.sentiments.df$SENTIMENT,
                                            levels=c("bad", "good"))
@@ -65,8 +66,8 @@ write.csv(doubles.overall.sentiments, '../intermediate-files/doubles.csv', row.n
 
 # Table
 # Table of sentiments
-double.sentiment.tab <- doubles.sentiments.df %>% select(SENTIMENT, count, bodies.sorted) %>% pivot_wider(names_from=SENTIMENT, values_from=count) 
-double.sentiment.tab$bodies.sorted <- ordered(double.sentiment.tab$bodies.sorted,
+double.sentiment.tab <- doubles.sentiments.df %>% select(SENTIMENT, count, PLANETS) %>% pivot_wider(names_from=SENTIMENT, values_from=count) 
+double.sentiment.tab$bodies.sorted <- ordered(double.sentiment.tab$PLANETS,
                                        levels=levels(doubles.overall.sentiments$bodies.sorted))
 double.sentiment.tab <- double.sentiment.tab[order(double.sentiment.tab$bodies.sorted, decreasing = FALSE),]
 double.sentiment.tab$Greek.description.length <- doubles.overall.sentiments$length

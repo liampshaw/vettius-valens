@@ -25,7 +25,7 @@ theme_basic <- function () {
 
 # LENGTH OF DESCRIPTIONS
 getLengthPassage <- function(conjunction){
-  df <- tibble(word=scan(paste0('../../../Texts for analysis/Pingree Greek/', conjunction, '.txt'), what="character", sep=NULL)) %>%
+  df <- tibble(word=scan(paste0('../../data/texts/Greek-Pingree/', conjunction, '.txt'), what="character", sep=NULL)) %>%
     mutate(line=row_number())
   return(as.numeric(nrow(df)))
 }
