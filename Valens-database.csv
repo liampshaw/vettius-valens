@@ -1,0 +1,1340 @@
+﻿TYPE,PLANETS,GREEK,ENGLISH,SENTIMENT
+single,Sun,βασιλείαν,kingship,good
+single,Sun,ἡγεμονίαν,rule,good
+single,Sun,νοῦν,intellect,good
+single,Sun,φρόνησιν,intelligence,good
+single,Sun,μορφήν,beauty,good
+single,Sun,κίνησιν,motion,neutral
+single,Sun,ὕψος τύχης,loftiness of fortune,good
+single,Sun,θεῶν χρηματισμόν,ordinance of gods,good
+single,Sun,κρίσιν,judgement,good
+single,Sun,δημοσίωσιν,public reputation,good
+single,Sun,πρᾶξιν,action,good
+single,Sun,προστασίαν ὀχλικήν,authority over masses,good
+single,Sun,πατέρα,father,neutral
+single,Sun,δεσπότην,master,neutral
+single,Sun,φιλίαν,friendship,good
+single,Sun,ἔνδοξα πρόσωπα,noble people,good
+single,Sun,τιμὰς εἰκόνων,honours of pictures,good
+single,Sun,τιμὰς ἀνδριάντων,honours of statues,good
+single,Sun,τιμὰς στεμμάτων,honours of garlands,good
+single,Sun,ἀρχιερατείας,high priesthoods,good
+single,Sun,πατρίδος,[rule over] homeland,good
+single,Sun,κεφαλῆς,head,neutral
+single,Sun,ὀφθαλμοῦ δεξιοῦ,right eye,neutral
+single,Sun,καρδίας,heart,neutral
+single,Sun,νεύρων,nerves,neutral
+single,Sun,χρυσοῦ,gold,neutral
+single,Sun,σίτου καὶ κριθῶν,wheat and barley,neutral
+single,Sun,ἠμερινῆς,diurnal,neutral
+single,Sun,κίτρινος,yellow,neutral
+single,Sun,δριμύς,bitter,neutral
+single,Moon,ζωήν,life,neutral
+single,Moon,σῶμα,body,neutral
+single,Moon,μητέρα,mother,good
+single,Moon,σύλληψιν,conception,neutral
+single,Moon,μορφήν,beauty,good
+single,Moon,πρόσωπον,appearance,neutral
+single,Moon,θεάν,sight,neutral
+single,Moon,συμβίωσιν ἤτοι γάμον νομικόν,living together and legal marriage,good
+single,Moon,τροφόν,nurture,good
+single,Moon,ἀδελφὸν μείζονα,older brother,neutral
+single,Moon,οἰκουρίαν,housekeeping,good
+single,Moon,βασίλισσαν,queen,good
+single,Moon,δέσποιναν,mistress,neutral
+single,Moon,χρήματα,possessions,good
+single,Moon,τύχην,fortune,good
+single,Moon,πόλιν,city,good
+single,Moon,ὄχλων συστροφήν,assembly of people,neutral
+single,Moon,λήμματα,gains,good
+single,Moon,ἀναλώματα,expenses,bad
+single,Moon,οἰκίαν,household,good
+single,Moon,πλοῖα,voyages,neutral
+single,Moon,ξενιτείας,travel,neutral
+single,Moon,πλάνας,wanderings,neutral
+single,Moon,ὀφθαλμοῦ ἀριστεροῦ,left eye,neutral
+single,Moon,στομάχου,stomach,neutral
+single,Moon,μαζῶν,breasts,neutral
+single,Moon,φύσης,breath,neutral
+single,Moon,σπληνός,spleen,neutral
+single,Moon,μηνίγγων,membrane around brain / spinal cord,neutral
+single,Moon,μυελοῦ,marrow,neutral
+single,Moon,ὑδρωπικοὺς,dropsy,bad
+single,Moon,ἀσήμου,silver,neutral
+single,Moon,ὑέλου,glass,neutral
+single,Moon,νυκτερινῆς,nocturnal,neutral
+single,Moon,πράσινος,green,neutral
+single,Moon,ἁλμυρά,salty,neutral
+single,Saturn,μικρολόγους,petty,bad
+single,Saturn,βασκάνους,malignant,bad
+single,Saturn,πολυμερίμνους,care-worn,bad
+single,Saturn,ἑαυτοὺς καταρρίπτοντας,self-depreciating,bad
+single,Saturn,μονοτρόπους,solitary,bad
+single,Saturn,τυφώδεις,deceitful,bad
+single,Saturn,ἀποκρύπτοντας τὴν δολιότητα,secretive in trickery,bad
+single,Saturn,αὐστηρούς,strict,neutral
+single,Saturn,κατανενευκότας,downcast,bad
+single,Saturn,ὑποκρινομένην τὴν ὅρασιν,hypocritical air,bad
+single,Saturn,αὐχμηρούς,squalid,bad
+single,Saturn,μελανοείμονας,Black-clad,bad
+single,Saturn,προσαιτητικούς,dogged,bad
+single,Saturn,καταστύγνους,Sad-looking,bad
+single,Saturn,κακοπαθεῖς,miserable,bad
+single,Saturn,πλευστικούς,nautical,neutral
+single,Saturn,πάρυγρα πράσσοντας,waterside trades,neutral
+single,Saturn,ταπεινότητας,humblings,bad
+single,Saturn,νωχελίας,sluggishness,bad
+single,Saturn,ἀπραξίας,unemployment,bad
+single,Saturn,ἐγκοπὰς τῶν πρασσομένων,obstacles in business,bad
+single,Saturn,πολυχρονίους δίκας,interminable lawsuits,bad
+single,Saturn,ἀνασκευὰς πραγμάτων,subversion of business,bad
+single,Saturn,κρυβάς,secrets,bad
+single,Saturn,συνοχάς,imprisonment,bad
+single,Saturn,δεσμά,chains,bad
+single,Saturn,πένθη,grief,bad
+single,Saturn,κατιτιασμούς,accusations,bad
+single,Saturn,δάκρυα,tears,bad
+single,Saturn,ὀρφανίας,bereavement,bad
+single,Saturn,αἰχμαλωσίας,capture,bad
+single,Saturn,ἐκθέσεις,exposures of children,bad
+single,Saturn,γεηπόνους,serfs,neutral
+single,Saturn,γεωργοὺς,farmers,neutral
+single,Saturn,μισθωτάς κτημάτων,renters of property,neutral
+single,Saturn,τελώνας,tax farmers,neutral
+single,Saturn,βιαίους πράξεις,violent in action,bad
+single,Saturn,δόξας μεγάλας,great ranks,good
+single,Saturn,τάξεις ἐπισήμους,distinguished positions,good
+single,Saturn,ἐπιτροπείας,supervisions,good
+single,Saturn,ἀλλοτρίων διοικητὰς,management of others' property,good
+single,Saturn,ἀλλοτρίων τέκνων πατέρας,fathership of others' children,neutral
+single,Saturn,μολύβδου,lead,neutral
+single,Saturn,ξύλων,wood,neutral
+single,Saturn,λίθων,stone,neutral
+single,Saturn,σκελῶν,legs,neutral
+single,Saturn,γονάτων,knees,neutral
+single,Saturn,νεύρων,tendons,neutral
+single,Saturn,ἰχώρων,lymph,neutral
+single,Saturn,φλέγματος,phlegm,neutral
+single,Saturn,κύστεως,bladder,neutral
+single,Saturn,νεφρῶν καὶ τῶν ἐντὸς ἀποκρύφων,kidneys and other internal organs,neutral
+single,Saturn,σινῶν ἐκ ψύξεως καὶ ὑγρότητος,injuries from cold and moisture,bad
+single,Saturn,ὑδρωπικῶν,dropsy,bad
+single,Saturn,νεύρων ἀλγηδόνων,neuralgia,bad
+single,Saturn,ποδάγρας,gout,bad
+single,Saturn,βηχός,cough,bad
+single,Saturn,δυσεντερίας,dysentry,bad
+single,Saturn,κηλῶν,hernia,bad
+single,Saturn,σπασμῶν,spasms,bad
+single,Saturn,δαιμονισμοῦ,possession,bad
+single,Saturn,κιναιδίας,homosexuality,bad
+single,Saturn,ἀκαθαρσίας,depravity,bad
+single,Saturn,ἀγάμους,bachelors,bad
+single,Saturn,χηρείας,widows,bad
+single,Saturn,ὀρφανίας,bereavements,bad
+single,Saturn,ἀτεκνίας,childlessness,bad
+single,Saturn,θανάτους βιαίους ἐν ὕδατι,violent deaths by water,bad
+single,Saturn,θανάτους βιαίους δι᾽ ἀγχόνης,violent deaths by strangulation,bad
+single,Saturn,θανάτους βιαίους δια δεσμῶν,violent deaths by imprisonment,bad
+single,Saturn,θανάτους βιαίους δια δυσεντερίας,violent deaths by dysentry,bad
+single,Saturn,πτώσεις ἐπὶ στόμα,falling on the face,bad
+single,Saturn,ἡμερινῆς,diurnal,neutral
+single,Saturn,καστορίζων,Castor-coloured (dark red?),neutral
+single,Saturn,στυφός,astringent,neutral
+single,Jupiter,τέκνωσιν,childbearing,neutral
+single,Jupiter,γονήν,engendering,neutral
+single,Jupiter,ἐπιθυμίαν,desire,neutral
+single,Jupiter,ἔρωτας,loves,neutral
+single,Jupiter,συστάσεις,political ties,good
+single,Jupiter,γνώσεις,acquaintance,good
+single,Jupiter,φιλίας μεγάλων ἀνδρῶν,friendships with great men,good
+single,Jupiter,εὐπορίας,prosperity,good
+single,Jupiter,ὀψώνια,salaries,good
+single,Jupiter,δωρεὰς μεγάλας,great gifts,good
+single,Jupiter,καρπῶν εὐφορίας,abundance of crops,good
+single,Jupiter,δικαιοσύνην,justice,good
+single,Jupiter,ἀρχάς,offices,good
+single,Jupiter,πολιτείας,officeholding,good
+single,Jupiter,δόξας,ranks,good
+single,Jupiter,προστασίας ἱερῶν,authority over temples,good
+single,Jupiter,μεσιτείας κρίσεων,arbitrations,neutral
+single,Jupiter,πίστεις,trusts,good
+single,Jupiter,κληρονομίας,inheritance,good
+single,Jupiter,ἀδελφότητα,brotherhood,good
+single,Jupiter,κοινωνίαν,fellowship,good
+single,Jupiter,εὐποίησιν,beneficence,good
+single,Jupiter,ἀγαθῶν βεβαίωσιν,secure possession of goods,good
+single,Jupiter,κακῶν ἀπαλλαγήν,relief from troubles,good
+single,Jupiter,δεσμῶν λύσιν,release from bonds,good
+single,Jupiter,ἐλευθερίαν,freedom,good
+single,Jupiter,παρακαταθήκην,deposits in trust,good
+single,Jupiter,χρήματα,money,good
+single,Jupiter,οἰκονομίας,stewardships,good
+single,Jupiter,μηρῶν,thighs,neutral
+single,Jupiter,ποδῶν,feet,neutral
+single,Jupiter,σπορᾶς,sperm,neutral
+single,Jupiter,μήτρας,uterus,neutral
+single,Jupiter,ἥπατος,liver,neutral
+single,Jupiter,δεξιῶν μερῶν,right side,neutral
+single,Jupiter,ὀδόντων,teeth,neutral
+single,Jupiter,κασσιτέρου,tin,neutral
+single,Jupiter,ἡμερινῆς,diurnal,neutral
+single,Jupiter,φαιὸς καὶ μᾶλλον λευκός,greyish white,neutral
+single,Jupiter,γλυκύς,sweet,neutral
+single,Mars,βίας,force,neutral
+single,Mars,πολέμους,wars,neutral
+single,Mars,ἁρπαγάς,plunderings,bad
+single,Mars,κραυγάς,screams,bad
+single,Mars,ὕβρεις,violence,bad
+single,Mars,μοιχείας,adultery,bad
+single,Mars,ἀφαιρέσεις ὑπαρχόντων,loss of property,bad
+single,Mars,ἐκπτώσεις,banishment,bad
+single,Mars,φυγαδείας,exile,bad
+single,Mars,γονέων ἀπαλλοτριώσεις,alienation from parents,bad
+single,Mars,αἰχμαλωσίας,capture,bad
+single,Mars,φθορὰς γυναικῶν,deaths of women,bad
+single,Mars,ἐμβρυοτομίας,abortions,bad
+single,Mars,συνηθείας,love affairs,bad
+single,Mars,γάμους,marriages,good
+single,Mars,ἀγαθῶν ἀφαιρέσεις,loss of goods,bad
+single,Mars,ψεύσματα,lies,bad
+single,Mars,κενὰς ἐλπίδας,vain hopes,bad
+single,Mars,βιαίους κλοπάς,violent robbery,bad
+single,Mars,λῃστείας,banditry,bad
+single,Mars,συλήσεις,looting,bad
+single,Mars,διακοπὰς φίλων,quarrels among friends,bad
+single,Mars,ὀργήν,anger,bad
+single,Mars,μάχην,fighting,bad
+single,Mars,λοιδορίαν,verbal abuse,bad
+single,Mars,ἔχθρας,hatreds,bad
+single,Mars,δίκας,lawsuits,bad
+single,Mars,φόνους βιαίους,violent murders,bad
+single,Mars,τομὰς,slashings,bad
+single,Mars,αἱμαγμούς,bloodshed,bad
+single,Mars,πυρετῶν ἐπιφοράς,attacks of fever,bad
+single,Mars,ἑλκώσεις,ulcers,bad
+single,Mars,ἐξανθήματα,boils,bad
+single,Mars,ἐμπρησμούς,burns,bad
+single,Mars,δεσμά,chains,bad
+single,Mars,βασάνους,torture,bad
+single,Mars,ἀρρενόητα,masculinity,good
+single,Mars,ἐπιορκίαν,false oaths,bad
+single,Mars,πλάνην,wanderings,neutral
+single,Mars,πρεσβείας ἐπὶ κακοῖς,embassies under difficult circumstances,bad
+single,Mars,διὰ πυρὸς ἤ διὰ σιδήρου πράσσοντας,actions involving fire or iron,neutral
+single,Mars,χειροτέχνας,craftwork,good
+single,Mars,σκληρουργούς,masonry,good
+single,Mars,ἀρχὰς,commands,good
+single,Mars,στρατείας,military leadership,good
+single,Mars,πολεμάρχας,military campaigns,good
+single,Mars,ὁπλιστάς,infantrymen,neutral
+single,Mars,ἡγεμονίας,governorships,good
+single,Mars,κυνηγεσίας,hunting,neutral
+single,Mars,θήρας,wild animals,neutral
+single,Mars,πτώσεις ἀπο ὕψους ἢ τετραπόδων,falls from heights or animals,bad
+single,Mars,ἐπισκιασμούς,weak vision,bad
+single,Mars,ἀποπληξίας,strokes,bad
+single,Mars,κεφαλῆς,head,neutral
+single,Mars,ἕδρας,bum,neutral
+single,Mars,μορίου,genitals,neutral
+single,Mars,αἵματος,blood,neutral
+single,Mars,σπερματικῶν πόρων,sperm ducts,neutral
+single,Mars,χολῆς,bile,neutral
+single,Mars,σκυβάλων ἐκκρίσεως,elimination of excrement,neutral
+single,Mars,ὀπισθίων μερῶν,back parts,neutral
+single,Mars,ἀναποδισμοῦ,back,neutral
+single,Mars,ὑπτιασμοῦ,underside,neutral
+single,Mars,σκληρὸν,hard,neutral
+single,Mars,ἀπότομον,abrupt,bad
+single,Mars,σιδήρου,iron,neutral
+single,Mars,κόσμου ἱματίων,decoration of clothes,neutral
+single,Mars,οἴνου,wine,neutral
+single,Mars,ὀσπρίων,beans,neutral
+single,Mars,νυκτερινῆς,nocturnal,neutral
+single,Mars,ἐρυθρός,red,neutral
+single,Mars,πικρός,bitter,neutral
+single,Venus,ἐπιθυμίαν,desire,neutral
+single,Venus,ἔρως,love affairs,neutral
+single,Venus,μητέρα,mother,neutral
+single,Venus,τροφόν,nurture,good
+single,Venus,ἱερωσύνας,priesthoods,good
+single,Venus,γυμνασιαρχίας,school superintendences,good
+single,Venus,χρυσοφορίας,high offices with right to wear gold ring,good
+single,Venus,στεμματηφορίας,offices with right to crown,good
+single,Venus,εὐφροσύνας,cheerfulness,good
+single,Venus,φιλίας,friendship,good
+single,Venus,ὁμιλίας,companionship,good
+single,Venus,ἐπικτήσεις ὑπαρχόντων,acquisition of property,good
+single,Venus,ἀγορασμοὺς κόσμου,purchase of ornaments,neutral
+single,Venus,συναλλαγὰς ἐπὶ τὸ ἀγαθόν,agreements on favourable terms,good
+single,Venus,γάμους,marriages,good
+single,Venus,τέχνας καθαρίους,pure trades,good
+single,Venus,ἐυφωνίας,fine voices,good
+single,Venus,μουσουργίας,taste for music,neutral
+single,Venus,ἡδυμελείας,sweet singing,good
+single,Venus,εὐμορφίας,beauty,good
+single,Venus,ζωγραφίας,painting,good
+single,Venus,χρωμάτων κράσεις καὶ ποικιλτικήν πορφυροβαφίαν καὶ μυρεψικήν,"mixing of colours in embroidery, dyeing and unguent making",neutral
+single,Venus,τούς τε τούτων προπάτορας καὶ κυρίους,"inventors of embroidery, dyeing, unguent making",good
+single,Venus,τούς τε τούτων κυρίους,"masters of embroidery, dyeing, unguent making",good
+single,Venus,τέχνας,craftsmanship,good
+single,Venus,ἐμπορικὰς,trade,good
+single,Venus,ἐργασίας σμαράγδου τε καὶ λιθείας,work in emeralds or precious stones,neutral
+single,Venus,ἐλεφαντουργίας,work in ivory,neutral
+single,Venus,χρυσονήτας,gold-spinners,neutral
+single,Venus,χρυσοκοσμήτας,gold workers,neutral
+single,Venus,κουρεῖς,barbers,neutral
+single,Venus,φιλοκαθαρίους,people fond of cleanliness,neutral
+single,Venus,φιλοπαιγνίους,people fond of toys,neutral
+single,Venus,ἀγορανομίας,supervisor of weights and measures,good
+single,Venus,ἐμπορίας,markets,neutral
+single,Venus,ἐργαστήρια,factories,neutral
+single,Venus,δόσεις / λήψεις,giving / receiving,neutral
+single,Venus,γέλωτα,laughter,good
+single,Venus,ἱλαρίαν,good cheer,good
+single,Venus,κόσμον,ornamentation,good
+single,Venus,θήρας ἐξ ὑγρῶν,beasts of the sea,neutral
+single,Venus,ἐκ βασιλικῶν γυναικῶν ἢ οἰκείων ὠφελείας,favour from royal women or one's female relatives,good
+single,Venus,δόξας περιττάς,high rank,good
+single,Venus,τραχήλου,neck,neutral
+single,Venus,προσώπου,face,neutral
+single,Venus,χειλέων,lips,neutral
+single,Venus,ὀσφρήσεως,sense of smell,neutral
+single,Venus,τῶν ἐμπροσθίων μερῶν ἀπὸ ποδὸς ἕως κεφαλῆς,front parts from head to feet,neutral
+single,Venus,συνουσίας μορίων,parts of intercourse,neutral
+single,Venus,πνεύμονος,lungs,neutral
+single,Venus,ἑτέρας τροφῆς δεκτικὴ καὶ ἡδονῆς,recipient of support and pleasure from others,good
+single,Venus,λίθων πολυτίμων,precious stones,neutral
+single,Venus,ποικίλου κόσμου,fancy jewellery,neutral
+single,Venus,ἐλαίας,olive,neutral
+single,Venus,νυκτερινῆς,nocturnal,neutral
+single,Venus,λευκή,white,neutral
+single,Venus,ἐλλιπωτάτη,very greasy,neutral
+single,Mercury,παιδείαν,education,good
+single,Mercury,γράμματα,letters,good
+single,Mercury,ἔλεγχον,disputation,neutral
+single,Mercury,λόγον,reasoning,good
+single,Mercury,ἀδελφότητα,brotherhood,good
+single,Mercury,ἑρμηνείαν,interpretation,neutral
+single,Mercury,κηρυκείαν,embassies,good
+single,Mercury,ἀριθμόν,number,neutral
+single,Mercury,ψῆφον,accounts,neutral
+single,Mercury,γεωμετρίαν,geometry,neutral
+single,Mercury,ἐμπορίαν,markets,neutral
+single,Mercury,νεότητα,youth,good
+single,Mercury,παίγνια,games,neutral
+single,Mercury,κλοπήν,theft,bad
+single,Mercury,κοινότητα,association,good
+single,Mercury,ἀγγελίαν,communication,good
+single,Mercury,ὑπηρεσίαν,service,neutral
+single,Mercury,κέρδος,gain,good
+single,Mercury,εὑρέματα,discoveries,good
+single,Mercury,ἀκολουθίαν,obedience,neutral
+single,Mercury,ἄθλησιν,sport,neutral
+single,Mercury,πάλην,wrestling,neutral
+single,Mercury,φωνασκίαν,declamation,neutral
+single,Mercury,σφραγίζεσθαι,certification,neutral
+single,Mercury,ἐπιστέλλειν,writing letters,neutral
+single,Mercury,ἱστάναι,supervision,good
+single,Mercury,κρέμασθαι,weighing and measuring,neutral
+single,Mercury,δοκιμάζειν,testing coins,neutral
+single,Mercury,ἀκούειν,hearing,neutral
+single,Mercury,ποικιλεύεσθαι,versatility,neutral
+single,Mercury,δοτὴρ διανοίας,giver of forethought,good
+single,Mercury,δοτὴρ φρονήσεως,giver of intelligence,good
+single,Mercury,ἀδελφῶν,brothers,neutral
+single,Mercury,τέκνων νεωτέρων,younger children,neutral
+single,Mercury,πάσης ἀγοραίου καὶ τραπεζιτικῆς ποιητής,all business and banking,neutral
+single,Mercury,ἱεροτεύκτας,temple builders,neutral
+single,Mercury,πλάστας,modellers,neutral
+single,Mercury,ἀγαλματογλύφους,sculptors,neutral
+single,Mercury,ἰατρούς,doctors,neutral
+single,Mercury,γραμματικούς,secretaries,neutral
+single,Mercury,νομικούς,lawyers,neutral
+single,Mercury,ῥήτορας,orators,neutral
+single,Mercury,φιλοσόφους,philosophers,neutral
+single,Mercury,ἀρχιτέκτονας,architects,neutral
+single,Mercury,μουσικούς,musicians,neutral
+single,Mercury,μάντεις,prophets,neutral
+single,Mercury,θύτας,diviners,neutral
+single,Mercury,ὀρνεοσκόπους,augurs,neutral
+single,Mercury,ὀνειροκρίτας,dream interpreters,neutral
+single,Mercury,πλοκεῖς,braiders,neutral
+single,Mercury,ὑφάντας,weavers,neutral
+single,Mercury,μεθοδικοὺς,systematic physicians,neutral
+single,Mercury,πολεμικῶν ἢ στρατηγικῶν ἔργων προεστῶτας,those in charge of war or strategy,good
+single,Mercury,ἐπιχειροῦντας παράδοξα καὶ μεθοδικὰ διὰ ψήφων,those undertaking unusual systematic work in accounting,neutral
+single,Mercury,ἐπιχειροῦντας παράδοξα καὶ μεθοδικὰ διὰ παραλογισμῶν,those undertaking unusual systematic work with reasoning,neutral
+single,Mercury,ἰσχυροπαίκτας,weight lifters,neutral
+single,Mercury,μιμῳδούς,mimes,neutral
+single,Mercury,ἐπιδείξεως τὸν βίον ποριζομένους,those making livelihood with skill,neutral
+single,Mercury,πλάνης τὸν βίον ποριζομένους,those making livelihood with deception,bad
+single,Mercury,ἀλητείας τὸν βίον ποριζομένους,those making livelihood with gambling,bad
+single,Mercury,ἀκαταστασίας τὸν βίον ποριζομένους,those making livelihood with sleight of hand,bad
+single,Mercury,οὐρανιών ἴδριας ἤ καὶ ἐρευνητὰς,skilled interpreters of the heavens,good
+single,Mercury,εἴδησιν,knowledge,good
+single,Mercury,προπωλήν,selling,neutral
+single,Mercury,ὑπηρεσίαν,service,neutral
+single,Mercury,ἐμπορίαν,trade,good
+single,Mercury,διδασκαλίαν,teaching,good
+single,Mercury,γεωργίας,farming,neutral
+single,Mercury,νεωκορίας,temple service,good
+single,Mercury,δημοσίας,public employment,good
+single,Mercury,αὐθέντησιν,authority,good
+single,Mercury,προμίσθωσιν,rentals,neutral
+single,Mercury,ἐργολαβίαν ἐπίδειξιν,labour contracting,neutral
+single,Mercury,ῥυθμικὴν,rhythmical performance,neutral
+single,Mercury,προεστάναι λειτουργίας,display of public service,neutral
+single,Mercury,δορυφορίας,acquisition of attendants,good
+single,Mercury,λινοστολίας θεῶν,right of wearing temple linen,good
+single,Mercury,ἀνωμάλους,capricious,bad
+single,Mercury,πολυπερισπάστους,disturbed,bad
+single,Mercury,χειρῶν,hands,neutral
+single,Mercury,ὤμων,shoulders,neutral
+single,Mercury,δακτύλων,fingers,neutral
+single,Mercury,ἄρθρων,joints,neutral
+single,Mercury,κοιλίας,belly,neutral
+single,Mercury,ἀκοῆς,hearing,neutral
+single,Mercury,ἀρτηρίας,arteries,neutral
+single,Mercury,ἐντέρων,intestines,neutral
+single,Mercury,γλώσσης,tongue,neutral
+single,Mercury,χαλκοῦ,copper,neutral
+single,Mercury,νομίσματος παντός,all coins,neutral
+double,Saturn Jupiter,ὠφελείας ἐκ νεκρικῶν,benefits from legacies,good
+double,Saturn Jupiter,εἰσποιήσις,adoptions,good
+double,Saturn Jupiter,ἐγγαίων κτημάτων κυρίους,masters of property consisting of land,good
+double,Saturn Jupiter,ἐπιτρόπους,guardians,good
+double,Saturn Jupiter,ἀλλοτρίων διοικητάς,managers of others' property,good
+double,Saturn Jupiter,οἰκονομικούς,stewards,good
+double,Saturn Jupiter,φορολόγους,tax gatherers,good
+double,Saturn Mars,ἐναντιωμάτων ,reversals,bad
+double,Saturn Mars,καθαιρέσων,ruin,bad
+double,Saturn Mars,στάσεις οἰκείων,family quarrels,bad
+double,Saturn Mars,ἀνευνοησίας,disharmony,bad
+double,Saturn Mars,ἔχθρας,hatred,bad
+double,Saturn Mars,δόλους,treachery,bad
+double,Saturn Mars,ἐπιβουλὰς,plots,bad
+double,Saturn Mars,κακοποιίας,malevolence,bad
+double,Saturn Mars,κρίσεις,trials,bad
+double,Saturn Mars,ἐπισήμους,distinguished,good
+double,Saturn Mars,λαμπρὰς,noble,good
+double,Saturn Mars,ἀβεβαίους περὶ εὐδαιμονίαν,unsteady in happiness,bad
+double,Saturn Mars,ἀπροσδοκήτους κινδύνους,prone to unexpected dangers,bad
+double,Saturn Mars,ἀπροσδοκήτους προδοσίας,prone to treachery,bad
+double,Saturn Mercury,πρακτικοί,productive,good
+double,Saturn Mercury,διαβολὰς ἕνεκεν μυστικῶν,slanders about religion,bad
+double,Saturn Mercury,κρίσεις,lawsuits,bad
+double,Saturn Mercury,χρεωστίας,debts,bad
+double,Saturn Mercury,γραπτῶν χάριν ταραχάς,alarms due to documents,bad
+double,Saturn Mercury,ἀργυρικῶν χάριν ταραχάς,alarms due to money,bad
+double,Saturn Mercury,οὐκ ἀπόρους,not without resources,good
+double,Saturn Mercury,οὐδε ἀσυνέτους,not unintelligent,good
+double,Saturn Mercury,πολυπείρους,much experience,good
+double,Saturn Mercury,πολυΐστορας,witnesses to much,good
+double,Saturn Mercury,προγνωστικούς,with much awareness,good
+double,Saturn Mercury,φιλομαθεῖς,curious,good
+double,Saturn Mercury,περιέργους,far-seeing,good
+double,Saturn Mercury,ἀποκρύφων μύστας,seekers after mystic lore,good
+double,Saturn Mercury,εὐσεβοῦντας εἰς τὸ θεῖον,revering the gods,good
+double,Saturn Mercury,δυσσυνειδήτους,much on consciences,good
+double,Saturn Venus,σύμφωνοι περὶ πράξεις,beneficial for business,good
+double,Saturn Venus,εὐεπίβολοι περὶ πλοκὰς,success in entanglements,good
+double,Saturn Venus,εὐεπίβολοι περὶ συναρμογάς,success in marriage,good
+double,Saturn Venus,συμπαθεῖς οὐ μεχρι τέλους,sympathetic not until the end,good
+double,Saturn Venus,ὠφέλιμοι οὐ μεχρι τέλους,helpful not until the end,bad
+double,Saturn Venus,ψόγους,abuse,bad
+double,Saturn Venus,χωρισμοὺς,divorces,bad
+double,Saturn Venus,ἀστασίας,inconstancy,bad
+double,Saturn Venus,θανάτους,death,bad
+double,Saturn Venus,ἀγνέσιν ἐπιπλοκὰς ποιουμένους,entangling people with base-born,bad
+double,Saturn Venus,δημοσίαις ἐπιπλοκὰς ποιουμένους,entangling people with the lowly,bad
+double,Saturn Venus,βλάβεις περιπίπτοντας,falling into harm,bad
+double,Saturn Venus,κρίσεσι περιπίπτοντας,falling into lawsuits,bad
+double,Saturn Moon,ὠφέλιμοι,helpful not until the end,bad
+double,Saturn Moon,περιποιητικοὶ,productive of money,good
+double,Saturn Moon,κτημάτων,possessions,good
+double,Saturn Moon,θεμελίων,estates,good
+double,Saturn Moon,ναυκληρίας,ship ownership,good
+double,Saturn Moon,ἐκ θανατικῶν εὐεργετικοί,profits from deceased,good
+double,Saturn Moon,μειζόνων συστάσεις,association with great,good
+double,Saturn Moon,δωρεὰς,gifts,good
+double,Saturn Moon,ἐχθρῶν καθαιρέσεις,discomfiture of enemies,good
+double,Saturn Moon,ἀβεβαίους τῇ κτήσει,unsteady with respect to possessions,bad
+double,Saturn Moon,ἀστάτους εἰς γυναικὸς,insecure with respect to women,bad
+double,Saturn Moon,ἐπιλύπους διά χωρισμοὺς (εἰς γυναικος),painful because of separations with respect to wife,bad
+double,Saturn Moon,ἐπιλύπους διά μίση (εἰς γυναικος),painful because of hatred with respect to wife,bad
+double,Saturn Moon,ἐπιλύπους διά πένθη (εἰς γυναικος),painful because of grief with respect to wife,bad
+double,Saturn Moon,σωματικὰ πάθη,bodily suffering,bad
+double,Saturn Moon,καταπτώσεις αἰφνιδίους,sudden fits,bad
+double,Saturn Moon,ἡγεμονικῶν τόπων ἀλγήσεις,pains of the governing faculties,bad
+double,Saturn Moon,νεύρων ἀλγήσεις,pains of the nerves,bad
+double,Saturn Moon,ἀναγκαίων προσώπων θανάτους,deaths of important figures,bad
+double,Saturn Sun,μετα φθόνον κτήσεις παρεχόμενοι καὶ ἀφαιρούμενοι,giving and taking away possessions maliciously,bad
+double,Saturn Sun,μετα φθόνον φιλίας παρεχόμενοι καὶ ἀφαιρούμενοι,giving and taking away friendships maliciously,bad
+double,Saturn Sun,ἔχθρας λαθραίας πρὸς μείζονα πρόσωπα ὑπομένοντες,suffer secret enmities from the great,bad
+double,Saturn Sun,ἀπειλὰς λαθραίας πρὸς μείζονα πρόσωπα ὑπομένοντες,suffer secret threats from the great,bad
+double,Saturn Sun,ἐπιβουλεύονται,plotted against,bad
+double,Saturn Sun,ἐπιφθόνως μέχρι τέλους,live hated to the end,bad
+double,Saturn Sun,ὑποκριτικῶς,play their part well,good
+double,Saturn Sun,τῶν πλείστων περιγίνονται,outlive most of their enemies,good
+double,Saturn Sun,οὐκ ἄποροι,not without resources,good
+double,Saturn Sun,ἐπιτάραχοι,disturbed,bad
+double,Saturn Sun,ἀνεξίκακοι,long-suffering,bad
+double,Saturn Sun,ἐγκρατεῖς περὶ ἐναντίων ἐπιφοράς,self-controlled in onslaught of reversals,good
+double,Jupiter Sun,λαμπρούς,noble,good
+double,Jupiter Sun,ἐπιδόξους,distinguished,good
+double,Jupiter Sun,ἀρχικούς,rulers,good
+double,Jupiter Sun,ἡγεμονικούς,governors,good
+double,Jupiter Sun,τυρρανικούς,dictators,good
+double,Jupiter Sun,παρεκτικούς,vigorous,good
+double,Jupiter Sun,ὑπο ὄχλων τιμωμένους,honoured by the crowd,good
+double,Jupiter Sun,ὑπο ὄχλων εὐφημουμένους,blessed by the crowd,good
+double,Jupiter Sun,εὐπόρους,wealthy,good
+double,Jupiter Sun,πλουσίους,rich,good
+double,Jupiter Sun,μετὰ πλείστης φαντασίας διεξάγοντας,living with much spectable,good
+double,Jupiter Sun,κατά τινας χρόνους ἐν ἀνωμαλίαις,sometimes involved in uncertainties,bad
+double,Jupiter Sun,κατά τινας χρόνους ἐν φθόνοις,sometimes involved in hostility,bad
+double,Jupiter Sun,φαντασίαις μείζοσι περιτρέψας,resort to greater showiness,bad
+double,Jupiter Sun,οἴησιν ἀληθείας ἀπεργάζεται,make a pretence of the truth,bad
+double,Jupiter Moon,ἀγαθοί,good,good
+double,Jupiter Moon,περικτητικοί,acquisitive,good
+double,Jupiter Moon,δεσπότας κόσμου,masters of adornments,good
+double,Jupiter Moon,δεσπότας σωμάτων,masters of slaves,good
+double,Jupiter Moon,ἀρχὰς ἐπισήμους,bestow distinguished offices,good
+double,Jupiter Moon,ὠφελουμένους ἔκ γυναικῶν,benefit from women,good
+double,Jupiter Moon,ὠφελουμένους ἔκ ἐπισήμων προσώπων,benefit from distinguished people,good
+double,Jupiter Moon,εὐεργετουμένους ἀπὸ οἰκεων,treated well by family,good
+double,Jupiter Moon,εὐεργετουμένους ἀπὸ τέκνων,treated well by fchildren,good
+double,Jupiter Moon,δωρεῶν καταξιουμένους,thought worthy of gifts,good
+double,Jupiter Moon,τιμῶν καταξιουμένους,thought worthy of honours,good
+double,Jupiter Moon,χρηματοφύλακας,treasurers,good
+double,Jupiter Moon,πολλὰ πιστευομένους δανειστικοὺς,people who lend much in trusts,good
+double,Jupiter Moon,θησαυρῶν εὑρετάς,finders of treasure,good
+double,Jupiter Moon,εὐχρηματίστους,wealthy,good
+double,Jupiter Mars,ἐπιδόξους,glorious,good
+double,Jupiter Mars,φαντασίωδες,showy,good
+double,Jupiter Mars,φίλους μειζόνων,friends of the great,good
+double,Jupiter Mars,φίλους βασιλέων,friends of kings,good
+double,Jupiter Mars,στρατιωτικούς,generals,good
+double,Jupiter Mars,ἐπισήμους,distinguished,good
+double,Jupiter Mars,ὀψωνίων μετόχους,receivers of stipends,good
+double,Jupiter Mars,ἐν δημοσίοις ἀναστροφὰς ποιουμένους,career in public affairs,good
+double,Jupiter Mars,στρατιωτικοῖς ἀναστροφὰς ποιουμένους,career in campaigns,good
+double,Jupiter Mars,τιμῆς καταξιομένους,worthy of honour,good
+double,Jupiter Mars,δόξης καταξιουμένους,worthy of status,good
+double,Jupiter Mars,ἀνωμάλους τῷ βίῳ,uncertain in livelihoods,bad
+double,Jupiter Mars,ἀνωμάλους τῷ ἤθει,uncertain in characters,bad
+double,Jupiter Mars,κτηθέντων ἀποβολὰς ποιουμένους,throwing away possessions,bad
+double,Jupiter Venus,ἀγαθοί,good,good
+double,Jupiter Venus,σύμφωνοι,in harmony,good
+double,Jupiter Venus,περιποιητικοὶ δόξης,productive of rank,good
+double,Jupiter Venus,περιποιητικοὶ ὠφελείας,productive of profit,good
+double,Jupiter Venus,ἐπάγοντες ἐπικτήσεις,bringing acquisitions,good
+double,Jupiter Venus,ἐπάγοντες δωρεάς,bringing gifts,good
+double,Jupiter Venus,ἐπάγοντες κόσμους,bringing adornments,good
+double,Jupiter Venus,σωμάτων δεσποτείας,control over slaves,good
+double,Jupiter Venus,τέκνων γονάς,begetting of children,good
+double,Jupiter Venus,ἀρχιερωσύνας,high priesthoods,good
+double,Jupiter Venus,προστασίας ὄχλων,pre-eminence among masses,good
+double,Jupiter Venus,στεμματηφορίας,honours of garlands,good
+double,Jupiter Venus,χρυσοφορίας,gold crowns,good
+double,Jupiter Venus,ἀδριάντων καταξιουμένους,worthy of statues,good
+double,Jupiter Venus,εἰκόνων καταξιουμένους,worthy of images,good
+double,Jupiter Venus,ἀνωμάλους περὶ γάμους καὶ τέκνα,uncertain in relationship with wife and children,bad
+double,Jupiter Mercury,ἀγαθοί,good,good
+double,Jupiter Mercury,σύμφωνοι,harmonious,good
+double,Jupiter Mercury,διοικητικοί,supervisory,good
+double,Jupiter Mercury,πραγμάτων οἰκονόμους,managers of affairs,good
+double,Jupiter Mercury,ἐν πίστεσι γινομένους,in posts of trust,good
+double,Jupiter Mercury,ἐν χειρισμοῖς γινομένους,in posts of administration,good
+double,Jupiter Mercury,ἐπιτροπικούς,guardians,good
+double,Jupiter Mercury,ἀπὸ λόγων ἀναγομένους,making career with documents,good
+double,Jupiter Mercury,ἀπὸ ψήφων ἀναγομένους,making career with accounts,good
+double,Jupiter Mercury,ἐν παιδείαις δοξαζομένους,respected in education,good
+double,Jupiter Mercury,πολυφίλους ἐυσυστάτους,approachable with many friends,good
+double,Jupiter Mercury,μισθῶν καταξιουμένους,worthy of pay,good
+double,Jupiter Mercury,ὀψωνίων καταξιουμένους,worthy of stipends,good
+double,Jupiter Mercury,θησαυρῶν εὑρετάς,finders of treasure,good
+double,Jupiter Mercury,παραθηκῶν ὠφελουμένους δανειστικούς,moneylenders who profit from deposits,good
+double,Sun Venus,σύμφωνοι,harmonious,good
+double,Sun Venus,ἐπίδοξοι,glorious,good
+double,Sun Venus,ἀγαθῶν δοτήρες,bestowers of good,good
+double,Sun Venus,συστάσεις ἀρρενικῶν κὰι θηλυκῶν ,associations of male and female,good
+double,Sun Venus,δωρεάς,gifts,good
+double,Sun Venus,καταγραφάς,conveyances,good
+double,Sun Venus,περὶ ἐπιβολὰς εὐεπιτεύκτους,successful in enterprises,good
+double,Sun Venus,προστασίας ἀναλαμβάνοντες ὀχλικὰς,taking on leadership,good
+double,Sun Venus,προστασίας ἀναλαμβάνοντες πίστεις,taking on trusts,good
+double,Sun Venus,τόπων προεστῶτας,in charge of places,good
+double,Sun Venus,ὀψωνίων καταξιουμένους,worthy of stipends,good
+double,Sun Venus,περὶ γυναικὸς καὶ τέκνων οὐκ ἀλύπους,not without grief with respect to wife and children,bad
+double,Venus Moon,ἀγαθοί περὶ δόξας,good with respect to rank,good
+double,Venus Moon,ἀγαθοί περὶ περικτήσεις,good with respect to acquisitions,good
+double,Venus Moon,ἀγαθοί περὶ πραγμάτων ἀφορμάς,good with respect to the start of business,good
+double,Venus Moon,ἄστατοι περὶ συμβιώσεις,unsteady with respect to living together,bad
+double,Venus Moon,ἄστατοι περὶ φιλίας,unsteady with respect to friendships,bad
+double,Venus Moon,ἄστατοι περὶ συναρμογὰς,unsteady with respect to marriage,bad
+double,Venus Moon,ἔχθρας ἐπιφέροντες,bringing rivalry,bad
+double,Venus Moon,συγγενικῶν ἢ φίλων κακουργίας,ill treatment from relatives and friends,bad
+double,Venus Moon,συγγενικῶν ἢ φίλων ταραχάς,upset from relatives and friends,bad
+double,Venus Moon,οὐκ ἀγαθοί περὶ τέκνων,not good with respect to children,bad
+double,Venus Moon,οὐκ ἀγαθοί περὶ σωμάτων,not good with respect to slaves,bad
+double,Venus Moon,ἀπαραμόνους κτήσεις,possessions are fleeting,bad
+double,Venus Moon,ψυχικὰς ἀνίας,mental anguish,bad
+double,Mars Venus,ἀσύμφωνοι,at odds,bad
+double,Mars Venus,ἀστάτους γνώμαις,mentally unstable,bad
+double,Mars Venus,ἀκρατεῖς,weak,bad
+double,Mars Venus,ζηλοτύπους,rivalries,bad
+double,Mars Venus,αὐτόχειρας,murders,bad
+double,Mars Venus,πολυφίλους,many friends,good
+double,Mars Venus,ἐπιψόγους,blameworthy,bad
+double,Mars Venus,αἰσχρούς,shameless,bad
+double,Mars Venus,εὐμετανοήτους,fickle,bad
+double,Mars Venus,ἀδιαφόρους μίξεσιν ἀρρενικῶν καὶ θηλυκῶν,prone to sex with men and women,bad
+double,Mars Venus,κακουργίας,malicious,bad
+double,Mars Venus,φαρμακείας ἐπηβόλους,plotters of poisonings,bad
+double,Mars Venus,οὔτε καλοῖς οὔτε φαύλοις ἐμιμένοντας,remain with neither good nor bad,bad
+double,Mars Venus,περὶ φιλίας διαβαλλομένους,slandered because of friendships,bad
+double,Mars Venus,περὶ φιλίας κακολογουμένους,reviled because of friendships,bad
+double,Mars Venus,εὐδαπάνους,spendthrift,bad
+double,Mars Venus,ἀκροθιγεῖς περὶ πράξεις,flitting from one occupation to another,bad
+double,Mars Venus,πολλῶν ἐπιθυμητάς,eager for many things,bad
+double,Mars Venus,ὑπὸ θηλυκῶν ἀδικουμένους,wronged by women,bad
+double,Mars Venus,θηλυκῶν χάριν κρίσεις ὑπομένοντας,suffer crises because of women,bad
+double,Mars Venus,θηλυκῶν χάριν ταραχὰς ὑπομένοντας,suffer upsets because of women,bad
+double,Mars Venus,θηλυκῶν χάριν χρεωστίας ὑπομένοντας,suffer debts because of women,bad
+double,Venus Mercury,σύμφωνοι,harmonious,good
+double,Venus Mercury,εὐομίλους,sociable,good
+double,Venus Mercury,ἐπιχαρεῖς,gracious,good
+double,Venus Mercury,φιλοφίλους,gregarious,good
+double,Venus Mercury,φιληδόνους,hedonistic,good
+double,Venus Mercury,περὶ παιδείαν νοῦν ἔχοντας,paying attention to education,good
+double,Venus Mercury,περὶ σωφροσύνην νοῦν ἔχοντας,paying attention to sensibility,good
+double,Venus Mercury,τιμὰς λαμβάνοντας,receiving honours,good
+double,Venus Mercury,δωρεὰς λαμβάνοντας,receiving gifts,good
+double,Venus Mercury,"τοῖς ἐν μετρίᾳ τύχῃ, καθεστηκόσι λήψεις","those of middling fortune, receiving of goods",good
+double,Venus Mercury,"τοῖς ἐν μετρίᾳ τύχῃ, ἀγορασμοὺς","those of middling fortune, selling",good
+double,Venus Mercury,"τοῖς ἐν μετρίᾳ τύχῃ, συναλλγὰς","those of middling fortune, exchanges",good
+double,Venus Mercury,ἔπαισχρον βίον ,shameful livelihood,bad
+double,Venus Mercury,περὶ γυναικὸς ἀστάτους,unsteady with respect to women,bad
+double,Venus Mercury,περὶ γυναικὸς ἀδιαφόρους ,fickle with respect to women,bad
+double,Venus Mercury,ἐυμετανοήτους περὶ συμβολάς (μετα γυναικῶν),changeable in agreements with women,bad
+double,Sun Mercury,πολυφίλους,many friends,good
+double,Sun Mercury,ὑποκριτικοὺς,adaptable,good
+double,Sun Mercury,ποικίλους,flexible,good
+double,Sun Mercury,ἐγκρατεῖς,self-controlled,good
+double,Sun Mercury,ἐν δημοσίοις τόποις ἀναστροφὰς ἔχοντας,spend careers in public,good
+double,Sun Mercury,καθαρίους,pure,good
+double,Sun Mercury,περισσόφρονας,sensible,good
+double,Sun Mercury,κριτικούς,of good judgement,good
+double,Sun Mercury,καλῶν ἐραστάς,lovers of beauty,good
+double,Sun Mercury,πολυΐστορας,learned,good
+double,Sun Mercury,μύστας θείων,initiates into mysteries,good
+double,Sun Mercury,εὐεργετικούς,beneficent,good
+double,Sun Mercury,φιλοσυνήθεις,fond of associates,good
+double,Sun Mercury,αὐτάρκεις,independent,good
+double,Sun Mercury,θρασυδείλους,boastful,bad
+double,Sun Mercury,γενναίως καταπίπτοντα φέροντας περὶ δόξας δυσεπιπτεύκτους,endure reversals nobly,good
+double,Sun Mercury,ἀνωμάλους περὶ βίον,unsteady in livelihood,bad
+double,Sun Mercury,ἐν ὑψοταπεινώμασι ,experiencing vicissitudes,bad
+double,Sun Mercury,οὐκ ἀπόρους,not poverty-stricken,good
+double,Sun Mercury,ἀναβιβάζοντας κατὰ γενέσεως ὑπόστατιν,find success proportional to basis of nativities,neutral
+double,Mercury Moon,ἀγαθοί περὶ συστάσεις ἀρρενικῶν καὶ θηλυκῶν,good with respect to union of men and women,good
+double,Mercury Moon,ἀγαθοί περὶ δόξας ἀρρενικῶν καὶ θηλυκῶν,good with respect to status of men and women,good
+double,Mercury Moon,ἀγαθοί περὶ λόγου δύναμιν,good with respect to power of speech,good
+double,Mercury Moon,ἀγαθοί περὶ παιδείας δύναμιν,good with respect to power of education,good
+double,Mercury Moon,ἀγαθοί περὶ λοιπὰς ἐγχειρήσεις,good concerning commerce,good
+double,Mercury Moon,ἀγαθοί περὶ συναλλαγάς,good concerning enterprises,good
+double,Mercury Moon,κοινωνικοὺς,people who act together,good
+double,Mercury Moon,μηχανικοὺς,resourceful,good
+double,Mercury Moon,πολυπείρους,experienced,good
+double,Mercury Moon,περιέργους,inquisitive,good
+double,Mercury Moon,ἀπὸ μειζόνων τελῶν προβιβαζομένους,advance by great expenditure,good
+double,Mercury Moon,πολυκινήτους,changeable,good
+double,Mercury Moon,ἀνεπιμόνους πράξεσιν,not perservering in activities,bad
+double,Mercury Moon,ἀνεπιμόνους γνώμαις πρὸς τὸ μέλλον,not perservering in intentions for future,bad
+double,Mercury Moon,γενναίους πρὸς φαῦλα,noble in face of adversity,good
+double,Mercury Moon,ἀνωμάλους περὶ βίον,unsteady in livelihood,bad
+double,Mars Mercury,οὐκ ἀγαθοί,not good,bad
+double,Mars Mercury,ἔχθρας,hostilities,bad
+double,Mars Mercury,κρίσεις,judgements,bad
+double,Mars Mercury,ἐναντιώματα,reversals,bad
+double,Mars Mercury,κακοτροπίας,malice,bad
+double,Mars Mercury,προδοσίας,betrayals,bad
+double,Mars Mercury,ἀπὸ κρειττόνων ἢ ὑποτακτικῶν ἀδικουμένους,wrongs from superiors or inferiors,bad
+double,Mars Mercury,ἀθλητικούς,athletes,good
+double,Mars Mercury,στρατιωτικοὺς,generals,good
+double,Mars Mercury,καθηγεμόνας,commanders,good
+double,Mars Mercury,εὐεργετικούς,beneficent,good
+double,Mars Mercury,περιέργους,inquisitive of occult,good
+double,Mars Mercury,ποικίλως βίον περιερχομένους,varied livelihood,bad
+double,Mars Mercury,γίνονται ἐν πλαστογραφίαις νοσφισμῶν,resort to forgery to embezzle,bad
+double,Mars Mercury,ἁρπαγῆς,stealing,bad
+double,Mars Mercury,συλήσεως,looting,bad
+double,Mars Mercury,ἐγγύαις περιπίπτοντες,falling into debt,bad
+double,Mars Mercury,δάνεσι περιπίπτοντες,falling into expenses,bad
+double,Mars Mercury,περιβοησίας ἀναδέχονται,bring on themselves infamy,bad
+double,Mars Mercury,κραυγὰς ἀναδέχονται,bring on themselves pursuit,bad
+double,Mars Mercury ,ἐν αἰτίαις γενόμενοι,meet with accusations,bad
+double,Mars Mercury ,ἐν συνοχαῖς γενόμενοι ,meet with imprisonment,bad
+double,Mars Mercury,τῶν κτηθέντων ἀποβολὰς ὑπομένουσιν,suffer loss of goods,bad
+double,Mars Mercury,τῶν κτηθέντων ἀφαιρέσεις ὑπομένουσιν,suffer confiscation of goods,bad
+double,Sun Moon,ἀγαθοί,good,good
+double,Sun Moon,συστάσεις μειζόνων,productive of associations,good
+double,Sun Moon,δόξας ,high rank,good
+double,Sun Moon,κτήσεις θεμελίων,possession of estates,good
+double,Sun Moon,κτήσεις κτημάτων,possession of property,good
+double,Sun Moon,κτήσεις χρημάτων,possession of money,good
+double,Sun Moon,κτήσεις κόσμου,possession of adornment,good
+double,Sun Moon,πρὸς ἐπιβολὰς πραγμάτων εὐεπιτεύκτος,successful in business enterprises,good
+double,Sun Moon,ἐπωφελεῖς,receive profit,good
+double,Sun Moon,ἀρχικοὶ πόλεων,leaders of cities,good
+double,Sun Moon,πραγμάτων προϊστάμενοι,in charge of affairs,good
+double,Sun Moon,ὄχλων προεστῶτες,pre-eminence among masses,good
+double,Sun Moon,εὐφαντασίωτοι,high public image,good
+double,Sun Moon,δωρηματικοί,munificent,good
+double,Sun Moon,ἡγεμονικοί,governing,good
+double,Sun Moon,τυρρανικοί,ruling,good
+double,Sun Moon,ἀνυπότακτοι,unsurpassed,good
+double,Sun Moon,βασιλικὸν κτῆμα,possessing kingly property,good
+double,Sun Moon,βασιλικὸν φρόνημα,possessing kingly spirit,good
+double,Sun Moon,ἀπὸ μετρίας τύχης ἀναβιβαζόμενοι,from middling fortune rise,good
+double,Sun Moon,εὐδαίμονες γινόμενοι μακαρίζονται,are lucky and called blessed,good
+double,Sun Moon,ἀνεπίμονον τὸ ἀγαθὸν ,good does not last,bad
+triple,Saturn Jupiter Sun,ἀνωμαλος,unsteady,bad
+triple,Saturn Jupiter Sun,ἀβέβαιος,insecure,bad
+triple,Saturn Jupiter Sun,περικτηθέντων ἀποβολας,loss of possessions,bad
+triple,Saturn Jupiter Sun,ἐπιφθόνοις ἀιτίας,bad rumours,bad
+triple,Saturn Jupiter Sun,ἀδοκήτων ὠφελείας,unexpected help,good
+triple,Saturn Jupiter Sun,νεκρικῶν ὠφελείας,help from legacies,good
+triple,Saturn Jupiter Sun,δόξῃ προσαυξήσααντες,augment reputation,good
+triple,Saturn Jupiter Sun,καθαιρέσεις,ruin,bad
+triple,Saturn Jupiter Sun,αἰτίας,rumours,bad
+triple,Saturn Jupiter Sun,αἰφνιδίους κινδύνους,sudden dangers,bad
+triple,Saturn Jupiter Sun,ἐπιβουλάς,plots,bad
+triple,Saturn Jupiter Sun,προστασίας,pre-eminence,good
+triple,Saturn Jupiter Sun,ἐπιτροπὰς ἀλλοτρίων πραγμάτων,management of others' business,good
+triple,Saturn Jupiter Sun,φορολογίας,tax gathering,good
+triple,Saturn Jupiter Sun,μισθώσεις,salaries,good
+triple,Saturn Jupiter Sun,ἀνωμαλος,unsteady,bad
+triple,Saturn Jupiter Sun,ἐπιφοβος,worrying,bad
+triple,Saturn Jupiter Moon,σύμφωνος,harmony,good
+triple,Saturn Jupiter Moon,δόξας,rank,good
+triple,Saturn Jupiter Moon,ὠφελείας,profit,good
+triple,Saturn Jupiter Moon,συστάσεις μειζόνων,associations with the great,good
+triple,Saturn Jupiter Moon,δωρεάς,gifts,good
+triple,Saturn Jupiter Moon,ἐπι ξένης / ἀπο ξένων κατορθώσεις ἰδιων πραγμάτων,succeed abroad / with foreigners in own business,good
+triple,Saturn Jupiter Moon,ἐπι ξένης / ἀπο ξένων κατορθώσεις ἀλλοτρίων πραγμάτων,succeed abroad / with foreigners in others' business,good
+triple,Saturn Jupiter Moon,εὐεργετοῦνται ἀπο θηλυκῶν,benefit from women,good
+triple,Saturn Jupiter Moon,περικτήσει θεμελίων καὶ χωρῶν,gain possession of estates and lands,good
+triple,Saturn Jupiter Moon,ναύκληροι,be ship-owners,good
+triple,Saturn Jupiter Moon,δι᾽ὑγρῶν διῳκονόμησαν βιον,get living from water,good
+triple,Saturn Jupiter Mars,ἐνδόξους,famous,good
+triple,Saturn Jupiter Mars,ἀρχιερατικούς,Like a high priest,good
+triple,Saturn Jupiter Mars,ήγεμονικούς,governing,good
+triple,Saturn Jupiter Mars,ἐπιτροπικούς,influential,good
+triple,Saturn Jupiter Mars,προεστῶτας (ὄχλων καὶ χωρῶν καὶ στρατιωτικῶν),rulers (of crowds / lands / armies),good
+triple,Saturn Jupiter Mars,οὐ κεκοσμημένους,not decorated (financially),bad
+triple,Saturn Jupiter Mars,ἐναντιώμασι,reversals (subject to),bad
+triple,Saturn Jupiter Mars,κατηγορίαις,accusations (subject to),bad
+triple,Saturn Jupiter Mars,βιαίοις περικυλιομένους,violent confrontations,bad
+triple,Saturn Jupiter Mars,ἐπιφοβος,worries,bad
+triple,Saturn Jupiter Mars,κτημάτων,properties,good
+triple,Saturn Jupiter Mars,θεμελίων,estates,good
+triple,Saturn Jupiter Mars,νεκρικῶν ὠφελείας,benefit from dead,good
+triple,Saturn Jupiter Mars,δόξαν ἥττονας,low reputation,bad
+triple,Saturn Jupiter Venus,άγαθοι,good,good
+triple,Saturn Jupiter Venus,ὠφέλιμοι,helpful in occupations,good
+triple,Saturn Jupiter Venus,περικτητικοί,bring possessions,good
+triple,Saturn Jupiter Venus,συστάσεις ἀρρενικῶν καὶ θηλυκῶν,associations of men and women,good
+triple,Saturn Jupiter Venus,φιλίας,friendships,good
+triple,Saturn Jupiter Venus,προβιβασμούς,advancement,good
+triple,Saturn Jupiter Venus,νεκρικῶν εὐεργεσίας,benefits from legacies,good
+triple,Saturn Jupiter Venus,ἐπιψόγους,slandered,bad
+triple,Saturn Jupiter Venus,ἐπιφθόνους,envied,bad
+triple,Saturn Jupiter Venus,ἀνωμάλους συναρμογάς,unstable marriages,bad
+triple,Saturn Jupiter Venus,ψύξεις,embarrassments,bad
+triple,Saturn Jupiter Venus,ἔχθρας,hostilities,bad
+triple,Saturn Jupiter Venus,κρίσεις,judgements,bad
+triple,Saturn Jupiter Venus,φιλοσυνήθεις,fond of associates,good
+triple,Saturn Jupiter Venus,εὐσυμβιώτους,easy to live with,good
+triple,Saturn Jupiter Venus,πολλαῖς ἡδομένους φιλίαις,much joy from friends,good
+triple,Saturn Jupiter Venus,οὐ δια παντὸς εὐσταθοῦντους,not entirely tranquil,bad
+triple,Saturn Jupiter Venus,οὐδε ἀλυπως,not without grief (from children / slaves),bad
+triple,Saturn Jupiter Mercury,πρακτικοὺς,vigorous,good
+triple,Saturn Jupiter Mercury,οἰκονομικούς,stewards,good
+triple,Saturn Jupiter Mercury,πιστούς,trustworthy,good
+triple,Saturn Jupiter Mercury,προεστῶτας ὄχλων,pre-eminent among crowds,good
+triple,Saturn Jupiter Mercury,κελεὐοντας και ἐνακουομένους,commanding and obeyed,good
+triple,Saturn Jupiter Mercury,χρημάτων χεριστὰς,handlers of money,good
+triple,Saturn Jupiter Mercury,διευθυντάς λόγων ἤ ψήφων,directors of documents and accounts,good
+triple,Saturn Jupiter Mercury,ἐλευθέριον ἤθος,independent nature,good
+triple,Saturn Jupiter Mercury,ὑποκριτικὸν ἤθος,adaptable nature,good
+triple,Saturn Jupiter Mercury,κακοῦργοι φαίνομενοι,appear malevolent,bad
+triple,Saturn Jupiter Mercury,πανοῦργοι φαίνομενοι,appear wicked,bad 
+triple,Saturn Jupiter Mercury,ἐπιθυμηται ἀλλοτρίων,covetous of others' property,bad
+triple,Saturn Jupiter Mercury,παραιρέται,thievish,bad
+triple,Saturn Jupiter Mercury,πλεονέκται,greedy,bad
+triple,Saturn Jupiter Mercury,ταραχὰς ὑπομενοῦσι,suffer upsets,bad
+triple,Saturn Jupiter Mercury,κρίσεις ὑπομενοῦσι,suffer judgements,bad
+triple,Saturn Jupiter Mercury,χρεωστλιας ὄχλικας,public infamy,bad
+triple,Saturn Jupiter Mercury,περιβοησίας ὄχλικας,public disgrace,bad
+triple,Saturn Jupiter Mercury,πρᾶξιν εὐημερίᾳ,success in matters,good
+triple,Saturn Jupiter Mercury,πιστει,trustworthy,good
+triple,Saturn Jupiter Mercury,δωρεῶν καταξιωθέντες,worthy of gifts,good
+triple,Saturn Jupiter Mercury,τιμῶν καταξιωθέντες,worthy of honours,good
+triple,Saturn Jupiter Mercury,εὐμετάδοτον,generous,good
+triple,Saturn Jupiter Mercury,ἰδιους και ἀλλοτρίους εὐεργετήσουσιν,benefit own and others,good
+triple,Saturn Jupiter Mercury,μυστηρίων μεθέξουσι,take part in mysteries,neutral
+triple,Saturn Jupiter Mercury,ἐννοηματικοι ἕσονται,follow curious arts,neutral
+triple,Saturn Jupiter Mercury,ἀφέλειαν ἐμφαίνοντες,pretend to be straightforward,bad
+triple,Saturn Mars Sun,βιαιων,forcible,neutral
+triple,Saturn Mars Sun,ἐπικινδύνων,dangerous,bad
+triple,Saturn Mars Sun,θρασεις,bold,good
+triple,Saturn Mars Sun,ἁδρεπηβόλους,ambitious,good
+triple,Saturn Mars Sun,κακούργους,wicked,bad
+triple,Saturn Mars Sun,ἀθέους,atheists,bad
+triple,Saturn Mars Sun,προδότας,traitors,bad
+triple,Saturn Mars Sun,ἀνυποτάκτους,insubordinates,bad
+triple,Saturn Mars Sun,μισοῖδίους,hate own family,bad
+triple,Saturn Mars Sun,ἰδιας χωριζομένους,abandon own family,bad
+triple,Saturn Mars Sun,ἐπηρειαις,slanders,bad
+triple,Saturn Mars Sun,κινδυνοις,dangers,bad
+triple,Saturn Mars Sun,ἀπὸ ὕψους πτώσεις,falls from high places,bad 
+triple,Saturn Mars Sun,ἀπο τετραπόδων πτώσεις,falls from animals,bad
+triple,Saturn Mars Sun,ἐμπρησμῶν φόβους,scared of burns,bad
+triple,Saturn Mars Sun,ἐπιμοχθους,toilsome,bad
+triple,Saturn Mars Sun,μη φυλασσοντας τα περικτώμενα,don't guard possessions,bad
+triple,Saturn Mars Sun,ἀλλοτρίων ἐπιθυμητάς,covetous of others' property,bad
+triple,Saturn Mars Sun,ἐκ κακῶν πορίζοντας,profit from crime,bad
+triple,Saturn Mars Moon,παραβολους ἐν πραξεων,venturesome in business,good
+triple,Saturn Mars Moon,ἐπιβολας,noble,good
+triple,Saturn Mars Moon,δυσπεπτικους,ineffective,bad
+triple,Saturn Mars Moon,ἐναντιωμασι περιτρπομενους,meeting reversals,bad
+triple,Saturn Mars Moon,βιαιοις περιτρεπομενους,meeting reversals,bad
+triple,Saturn Mars Moon,βιασι,violent,bad
+triple,Saturn Mars Moon,φιλερημοι,reclusive,bad
+triple,Saturn Mars Moon,κακοῦργοι,wicked,bad
+triple,Saturn Mars Moon,ἁρπαγες,greedy,bad
+triple,Saturn Mars Moon,λῃστρικον,thievish,bad
+triple,Saturn Mars Moon,κρισι περιπιπτοντες,become defendents in trials,bad
+triple,Saturn Mars Moon,συνεχων καταιτιασμῶν πεῖραν λαμβάνοντες,experiencing jail,bad
+triple,Saturn Mars Moon,ἐπισινεις,injured,bad
+triple,Saturn Mars Moon,ἐμπαθεῖς,diseased,bad
+triple,Saturn Mars Moon,βιαιον τελος,violent death,bad
+triple,Saturn Mars Venus,ἐπιτήδειοι κατ᾽ἀρχάς πράξεις,initially favourable for business,good
+triple,Saturn Mars Venus,ἐπιτήδειοι κατ᾽ἀρχάς φιλίας,initially favourable for friendships,good
+triple,Saturn Mars Venus,ἐπιτήδειοι κατ᾽ἀρχάς συναλλαγὰς ,initially favourable for associations,good
+triple,Saturn Mars Venus,ὠφελειας,profit,good
+triple,Saturn Mars Venus,δοξας,rank,good
+triple,Saturn Mars Venus,συστασεις,political associations,good
+triple,Saturn Mars Venus,ὑστερου ἐπιταραχοι,"later, disturbed",bad
+triple,Saturn Mars Venus,επιδικοι,liable to lawsuits,bad
+triple,Saturn Mars Venus,ἀντιζηλίας,liable to hatred/envy,bad
+triple,Saturn Mars Venus,προδοσίας,liable to treachery,bad
+triple,Saturn Mars Venus,καταιτιασμους ,become accusers,bad
+triple,Saturn Mars Venus,ὑομενουσιν ἐχθρας ἀρρενικὰ καὶ θηλυκὰ,endure hostility from men and women,bad 
+triple,Saturn Mars Venus,ψογοις ἀπαισχροις,shameful faults,bad
+triple,Saturn Mars Venus,μοιχειάις,adultery,bad
+triple,Saturn Mars Venus,περιβοησιας,subject of scandal,bad
+triple,Saturn Mars Venus,δειγματισμοὺς,denunciated,bad
+triple,Saturn Mars Venus,ἀθεμίτοις μιξεσι,unnatural fetishes / sexual vices,bad
+triple,Saturn Mars Venus,συνιστορες κακουργων,criminal accomplices,bad
+triple,Saturn Mars Venus,συνιστορες φαρμακων,accomplices in poisonings,bad
+triple,Saturn Mars Mercury,κακουργίας,crime,bad
+triple,Saturn Mars Mercury,δόλους,treachery,bad
+triple,Saturn Mars Mercury,κρίσεις,judgements,bad
+triple,Saturn Mars Mercury,ταραχάς,alarms,bad
+triple,Saturn Mars Mercury,ἐγγυαις (γραπτων μυστικων),debt for scriptures / mysteries,bad
+triple,Saturn Mars Mercury,ἀγῶνας,tribulations,bad
+triple,Saturn Mars Mercury,καθαιρέσεις,ruin,bad
+triple,Saturn Mars Mercury,δριμεῖς,keen,good
+triple,Saturn Mars Mercury,εὐσυνέτους περὶ πράξεις,intelligent in business,good
+triple,Saturn Mars Mercury,ποικίλως βιον,varied life,good
+triple,Saturn Mars Mercury,κακολογουμενους δια βιαιους,maligned because of violence,bad
+triple,Saturn Mars Mercury,ἐπιμόχθων πράξεων,toilsome business,bad
+triple,Saturn Mars Mercury,ἐπικινδύνων πράξεων,dangerous business,bad
+triple,Saturn Mars Mercury,ἐνδείαις περιπίπτοντες,fall into poverty,bad
+triple,Saturn Mars Mercury,θεους βλασφημοῦσιν,blaspheme gods,bad
+triple,Saturn Mars Mercury,ἐπίορκοι,oathbreakers,bad
+triple,Saturn Mars Mercury,ἄθεοι,atheists,bad
+triple,Saturn Mars Mercury,καταιτιασμους ,criminal charges,bad
+triple,Saturn Mars Mercury,συνοχὰς,imprisonments,bad
+triple,Saturn Mars Mercury,καθυπερτερήσουσιν ἑτερων,prevail in struggles for others,good
+triple,Saturn Mars Mercury,ὠφεληθεντες ἀπο λογων,profit from documents,good
+triple,Saturn Mars Mercury,ὠφεληθεντες ἀπο ψήφων,profit from accounts,good
+triple,Saturn Mars Mercury,ὠφεληθεντες ἀπο στρατειων,profit from office,good
+triple,Saturn Mars Mercury,τῷ βίῳ προαυξήσουσιν,increased livelihood,good
+triple,Saturn Sun Venus,συστάσεων μεγαλων,lofty associations,good
+triple,Saturn Sun Venus,συστάσεων τιμῶν,honours,good
+triple,Saturn Sun Venus,συστάσεων πραξειν,good deeds,good
+triple,Saturn Sun Venus,δοξῆς,high rank,good
+triple,Saturn Sun Venus,προφανείας,distinction,good
+triple,Saturn Sun Venus,προστασιας ὀχλικῆς,pre-eminence among masses,good
+triple,Saturn Sun Venus,ἀπαράμονοι προς κτῆσιν,unstable with respect to property,bad
+triple,Saturn Sun Venus,ἀνωμαλίας,ups and downs,bad
+triple,Saturn Sun Venus,φιλίας διαλύουσιν,dissolve friendships,bad
+triple,Saturn Sun Venus,βιου μειώσεις,reduction of livelihood,bad
+triple,Saturn Sun Venus,δειγματισμοὺς θηλυκων,exposure because of women,bad
+triple,Saturn Sun Venus,δειγματισμοὺς μυστικων,exposure because of religion,bad
+triple,Saturn Sun Venus,ζημίας θηλυκων,punishments because of women,bad
+triple,Saturn Sun Venus,ζημίας μυστικων,punishments because of religion,bad
+triple,Saturn Sun Venus,ἀστατους μιξεις,unstable with respect to sex,bad
+triple,Saturn Sun Venus,ἀστατους συνουσίας,unstable with respect to relationships,bad
+triple,Saturn Venus Moon,ἀνωμαλίας,vicissitudes,bad
+triple,Saturn Venus Moon,ἀστασιας βίου,instability of life,bad
+triple,Saturn Venus Moon,ἀστασιας γυναικος,instability with wife,bad
+triple,Saturn Venus Moon,ἀστασιας μητρὸς,instability with mother,bad
+triple,Saturn Venus Moon,ἀστασιας τέκνων,instability with children,bad
+triple,Saturn Venus Moon,κακοθημείας,bad manners,bad
+triple,Saturn Venus Moon,ἀχαριστίας,ingratitude,bad
+triple,Saturn Venus Moon,ἀντιζηλίας,jealousy,bad
+triple,Saturn Venus Moon,στάσεις,quarrels,bad
+triple,Saturn Venus Moon,χωρισμούς,divorces,bad
+triple,Saturn Venus Moon,ψόγους,censure,bad
+triple,Saturn Venus Moon,δειγματισμοὺς,public exposure,bad
+triple,Saturn Venus Moon,ἀθεμίτους μίξεις,unnatural fetishes / sexual vices,bad
+triple,Saturn Venus Moon,οὐκ ἀπόρους πραξεις,not without resource in business,good
+triple,Saturn Venus Moon,εὐεπινοήτους,accomplished,good
+triple,Saturn Venus Moon,νεκρικῶν ὠφελουμένους,profiting from legacies,good
+triple,Saturn Venus Moon,οὐ φυλασσοντας,don't retain wealth,bad
+triple,Saturn Venus Moon,ἐπιβουλευμένους ὑπο πολλῶν,plotted against by many,bad
+triple,Saturn Venus Moon,συνίστορας κακουργίας,accomplices in crime,bad
+triple,Saturn Venus Moon,συνίστορας φαρμακείας ,accomplices in poisonings,bad
+triple,Saturn Venus Moon,παραινέτας γυναικῶν,seducers of women,bad
+triple,Saturn Venus Mercury,συνετούς,intelligent ,good
+triple,Saturn Venus Mercury,νοεροὺς,clever,good
+triple,Saturn Venus Mercury,πραξεων ἀφορμας εὐφυεῖς,shrewd and designing in business,good
+triple,Saturn Venus Mercury,ἀπαρμονους πρωτας πραξεις,unsteady in first enterprises,bad
+triple,Saturn Venus Mercury,ψύχοντας προωτας πραξεις,frozen in first enterprises,bad
+triple,Saturn Venus Mercury,ἑτέρων ἐπιθυμητάς,covetous of others' property,bad
+triple,Saturn Venus Mercury,πουΐστορας,accomplices in many crimes,bad
+triple,Saturn Venus Mercury,περιέργους,seekers of curious lore,neutral
+triple,Saturn Venus Mercury,ποικίλους,flexible,good
+triple,Saturn Venus Mercury,ἰατρικους,healing,good
+triple,Saturn Venus Mercury,ἡδομένους τῃ καινότητι,enjoying newness,good
+triple,Saturn Venus Mercury,ἡδομένους τῃ μεταβολῃ,enjoying change,good
+triple,Saturn Venus Mercury,ἡδομένους τῃ ξενιτειᾳ,enjoying travel,good
+triple,Saturn Venus Mercury,ταραχαῖς (θηλυκῶν),disturbances with respect to women,bad
+triple,Saturn Venus Mercury,κρίσει ,judgements,bad
+triple,Saturn Venus Mercury,γυναικῶν ὑπομέναντες,wronged by women,bad
+triple,Saturn Venus Mercury,ἀδικίας,injustices,bad
+triple,Saturn Venus Mercury,μείωσιν βιου,loss of livelihood,bad
+triple,Saturn Venus Mercury,κακωικὰς αἰτλίας,bad accusations,bad
+triple,Saturn Venus Mercury,ἀβεβαιοι περι γυναικος και τεκνων,insecure with respect to wife and children,bad
+triple,Saturn Venus Mercury,ἐπίλυπο περι γυναικος και τεκνων,pained with respect to wife and children,bad
+triple,Jupiter Sun Moon,ἐνδόξους,distinguished,good
+triple,Jupiter Sun Moon,λαμπρούς,brilliant,good
+triple,Jupiter Sun Moon,πολυγνωστους,prominent,good
+triple,Jupiter Sun Moon,προεστῶτας δημοσίων,supervisors of public affairs,good
+triple,Jupiter Sun Moon,προεστῶτας ποιτικῶν,supervisors of civic affairs,good
+triple,Jupiter Sun Moon,προεστῶτας βασιλικῶν,supervisors of royal affairs,good
+triple,Jupiter Sun Moon,ἡγεμονικούς ,governors,good
+triple,Jupiter Sun Moon,στραταρχικούς,generals,good
+triple,Jupiter Sun Moon,ἀνυποτάκτους,men without peer,good
+triple,Jupiter Sun Moon,τυραννους,tyrants,bad
+triple,Jupiter Sun Moon,ἐπιφθόνους,envied,bad
+triple,Jupiter Sun Moon,κακολογουμενους,maligned,bad
+triple,Jupiter Sun Moon,προδιδομενους,betrayed,bad
+triple,Jupiter Sun Moon,μισοῖδίους,hate own family,bad
+triple,Jupiter Sun Moon,εὐμετανοήτους,change minds,bad
+triple,Jupiter Sun Moon,ποικίλους,fickle,bad
+triple,Jupiter Sun Moon,ἀστάτους ταίς γνωμαις,mentally unstable,bad
+triple,Jupiter Sun Moon,ὑψαύχενας,arrogant,bad
+triple,Jupiter Sun Moon,ὑπὲρ ἑαυτους φρονοῦντας,thinking of themselves,bad
+triple,Jupiter Sun Moon,ὑψοταπεινώμασι,falling into vicissitudes,bad
+triple,Jupiter Sun Moon,βίον φαντασίᾳ συγκεκοσμημένους,adorned with the pomp of wealth,good
+triple,Jupiter Sun Moon,οὐ μέχρι τέλους εὐαιμονίαις,don't stay happy to the end,bad
+triple,Jupiter Sun Moon,σφαλλομένους,falter,bad
+triple,Jupiter Sun Moon,ὀδυνηρὸν ἔχοντας,come to grief,bad
+triple,Jupiter Mars Moon,εὐεπιβόλους,shrewd,good
+triple,Jupiter Mars Moon,θρασεῖς,bold,good
+triple,Jupiter Mars Moon,δημοσίους,public,good
+triple,Jupiter Mars Moon,πολυφίλους,many friends,good
+triple,Jupiter Mars Moon,προβιβασμούς ἀπὸ μικρᾶς ὑψομένους,advancing to high place from humble beginnings,good
+triple,Jupiter Mars Moon,πίστεως καταξιουμένους,thought worthy of trust,good
+triple,Jupiter Mars Moon,στρατιωτικούς,governors,good
+triple,Jupiter Mars Moon,ἀθλητικούς,athletes,good
+triple,Jupiter Mars Moon,ἐνδόξους,distinguished men,good
+triple,Jupiter Mars Moon,ἡγεμονικούς ,leaders,good
+triple,Jupiter Mars Moon,ὄχλων προεστῶτας,supervisors of crowds,good
+triple,Jupiter Mars Moon,τόπων προεστῶτας,supervisors of places,good
+triple,Jupiter Mars Moon,τιμῶν μεταλαμβάνοντας,have a share of offices,good
+triple,Jupiter Mars Moon,ὀψωνίων μεταλαμβάνοντας,have a share of stipends,good
+triple,Jupiter Mars Moon,ἱερωσυνης μεταλαμβάνοντας,have a share of priesthoods,good
+triple,Jupiter Mars Moon,ἐναντιωμασι ,reversals (subject to),bad
+triple,Jupiter Mars Moon,κατηγορίαις,criminal charges,bad
+triple,Jupiter Mars Moon,προδιδομένους ὑπο ἰδίων,betrayed by own,bad
+triple,Jupiter Mars Moon,προδιδομένους ὑπο θηλυκῶν,betrayed by women,bad
+triple,Jupiter Mars Moon,περικτηθεντων μειωσιν,loss of possessions,bad
+triple,Jupiter Mars Moon,ἐξ ὑστερου περικτωμενους ἀπο μυστικων,later recover possessions because of mysteries,good
+triple,Jupiter Mars Sun,ἐπιταράχους,disturbances,bad
+triple,Jupiter Mars Sun,ἐπικινδυνους,dangers,bad
+triple,Jupiter Mars Sun,θερμοτέρους,enthusiastic in business,good
+triple,Jupiter Mars Sun,εὐεπιτεύκτους,effective in business,good
+triple,Jupiter Mars Sun,δόξης μετέχοντας,share of glory,good
+triple,Jupiter Mars Sun,στρατωτικούς,leaders,good
+triple,Jupiter Mars Sun,ἡγεμονικούς ,governors,good
+triple,Jupiter Mars Sun,δημοσιων πραγάτων προεστῶτας,supervisors of public affairs,good
+triple,Jupiter Mars Sun,ἐπισφαλες δια το φθονους μειζόνων,fall because of the hatred of the great,bad
+triple,Jupiter Mars Sun,ἀπειλάς,threats,bad
+triple,Jupiter Mars Sun,προδοσίας,betrayals,bad
+triple,Jupiter Mars Sun,οἰκείων ἐπιβουλάς,plots from families,bad
+triple,Jupiter Mars Sun,καταιτιασμούς,criminal charges,bad
+triple,Jupiter Mars Sun,τῃ τῶν μειζόνων προσαγωγῇ ἀναβιβασθέντες,lifted by favour of the great,good
+triple,Jupiter Mars Sun,καθῃρέθησαν,destroyed,bad
+triple,Jupiter Mars Mercury,πρακτικούς,vigorous,good
+triple,Jupiter Mars Mercury,θερμούς,enthusiastic,good
+triple,Jupiter Mars Mercury,κεκινημένους,active,good
+triple,Jupiter Mars Mercury,ὀψωνίων ἐν δημοσιοις τόποις,salary for public business,good
+triple,Jupiter Mars Mercury,ὀψωνίων ἐν στρατιωτικοῦς,salary for military assignment,good
+triple,Jupiter Mars Mercury,ὀψωνίων βασιλικὰ,salary for royal business,good
+triple,Jupiter Mars Mercury,ὀψωνίων πολιτικὰ,salary for civic business,good
+triple,Jupiter Mars Mercury,ἀνωμάλους περὶ τὸν βίον,unsteady in livelihood,good
+triple,Jupiter Mars Mercury,περικτωμένων ἀναλωτάς,spendthrift of goods,good
+triple,Jupiter Mars Mercury,εὐνοήτους,intelligent,good
+triple,Jupiter Mars Mercury,εὐπιστους,trustworthy,good
+triple,Jupiter Mars Mercury,οἰκονόμους,economic,good
+triple,Jupiter Mars Mercury,ῥᾳδίως ἁμαρτήματα διορθοῦντας,easily correcting mistakes,good
+triple,Jupiter Mars Mercury,αἰτίας ἑτέροις ἐπιφέροντας,transferring criticism to others,neutral
+triple,Jupiter Mars Mercury,κακολογουμένους,maligned,bad
+triple,Jupiter Mars Mercury,ἐναντιώμασι ,reversals (subject to),bad
+triple,Jupiter Mars Mercury,ἀθλητικούς,athletes,good
+triple,Jupiter Mars Mercury,στεφανηφόρους,prizewinners,good
+triple,Jupiter Mars Mercury,ἀσκητὰς,trainers,good
+triple,Jupiter Mars Mercury,πολύΐστορας,skilled at many things,good
+triple,Jupiter Mars Mercury,φιλεκδημητὰς,fond of travelling,good
+triple,Jupiter Mars Mercury,ἐπὶ ξένης πορίζοντας,profiting abroad,good
+triple,Jupiter Mars Mercury,ἰδίων ἀστοχοῦντας,failing at their own estates,bad
+triple,Jupiter Mars Venus,πολυφίλους,many friends,good
+triple,Jupiter Mars Venus,φιλοσυνήθεις,easy to get on with,good
+triple,Jupiter Mars Venus,καταξιουμένους συστάσεών μειζόνων,worthy of association with the great,good
+triple,Jupiter Mars Venus,καταξιουμένους ὠφελεῖων μειζόνων,worthy of help from the great,good
+triple,Jupiter Mars Venus,προκοπαῖς,successful,good
+triple,Jupiter Mars Venus,γυναικῶν προβιβαζομένους,successful with women,good
+triple,Jupiter Mars Venus,ἀρχιερατικούς,high priests,good
+triple,Jupiter Mars Venus,στεφανηφόρους,prizewinners,good
+triple,Jupiter Mars Venus,ἀθλητικούς,athletes,good
+triple,Jupiter Mars Venus,ἱερῶν προεστῶτας,supervisors of temples,good
+triple,Jupiter Mars Venus,ὄχλων προεστῶτας,supervisors of crowds,good
+triple,Jupiter Mars Venus,ἡδοναῖς ἐξυπηρετουμένους,cater to own pleasures,bad
+triple,Jupiter Mars Venus,ἀστάτως,unsteady,bad
+triple,Jupiter Mars Venus,ἀνωμάλως,ups and downs,bad
+triple,Jupiter Mars Venus,ἐπιψόγους τὰς συνελεύσις,blameworthy in sex,bad
+triple,Jupiter Mars Venus,ἀδιαφόρους τὰς συνελεύσις,indiscriminate in sex,bad
+triple,Jupiter Mars Venus,δειγματισμούς ὑπομένοντας,experience public exposure,bad
+triple,Jupiter Mars Venus,προδοσίας ὑπομένονιας,experience public betrayal,bad
+triple,Jupiter Mars Venus,λυπουμένους περὶ τέκνων,grieved with respect to children,bad
+triple,Jupiter Mars Venus,λυπουμένους περὶ σωμάτων,grieved with respect to slaves,bad
+triple,Jupiter Mars Venus,ἐπιπλοκαῖς ἡδομένους,enjoying new associations,good
+triple,Jupiter Mars Venus,χωρισμούς γυναικῶν,separations from women,bad
+triple,Jupiter Sun Mercury,εὐκατορθώτους,easily successful in business,good
+triple,Jupiter Sun Mercury,πολυφίλους,many friends,good
+triple,Jupiter Sun Mercury,καταξιουμένους πίστεων,worthy of trust,good
+triple,Jupiter Sun Mercury,καταξιουμένους τιμῶν,worthy of honours,good
+triple,Jupiter Sun Mercury,καταξιουμένους οἰκονομιῶν,worthy of stewardship,good
+triple,Jupiter Sun Mercury,συστάσεών τε μειζόνων,associations with the great,good
+triple,Jupiter Sun Mercury,προκοπῶν,success,good
+triple,Jupiter Sun Mercury,ἀπὸ μικρᾶς τύχης ἀναβιβαζομένους,rise from humble origins,good
+triple,Jupiter Sun Mercury,συγκεκοσμημένους,decorated,good
+triple,Jupiter Sun Mercury,προς περικτήσις ἀπαραμόνους,lose possessions,bad
+triple,Jupiter Sun Mercury,εὐαλώτους,easily deceived,bad
+triple,Jupiter Sun Mercury,ἐνδεῖς κατά τινας χρόνας,poor for a while,bad
+triple,Jupiter Sun Mercury,μυστικῶς διαπρασσομένους,do things for religion,neutral
+triple,Jupiter Sun Mercury,οὐκ αβίους ,not without livelihood,good
+triple,Jupiter Sun Mercury,ἐξ ἀπροσδοκητων ὠφελουμένους,benefit from unexpected sources,good
+triple,Jupiter Sun Mercury,ἐξ μειζόνων ὠφελουμένους,benefit from people in high places,good
+triple,Jupiter Mercury Moon,ἀγαθούς,noble,good
+triple,Jupiter Mercury Moon,περικτητικοὺς,propertied,good
+triple,Jupiter Mercury Moon,πράξεις εὐεπιβόλους,shrewd,good
+triple,Jupiter Mercury Moon,συλλεκτικούς,thrifty,good
+triple,Jupiter Mercury Moon,δωρεῶν μεταλαμβάνοντας,share of gifts,good
+triple,Jupiter Mercury Moon,πίστεων μεταλαμβάνοντας,share of trusts,good
+triple,Jupiter Mercury Moon,μυστικούς,religious,good
+triple,Jupiter Mercury Moon,συνετους,intelligent,good
+triple,Jupiter Mercury Moon,λογικούς,eloquent,good
+triple,Jupiter Mercury Moon,χρημάτων φύλακας,guardians of property,good
+triple,Jupiter Mercury Moon,παραθηκῶν φύλακας,guardians of deposits,good
+triple,Jupiter Mercury Moon,ἀναγομένους ἀπὸ λόγων,make careers from documents,neutral
+triple,Jupiter Mercury Moon,ἀναγομένους ἀπὸ ψήφων,make careers from accounts,neutral
+triple,Jupiter Mercury Moon,δανειστικούς,lavish,good
+triple,Jupiter Mercury Moon,φορολόγους,tax gatherers,good
+triple,Jupiter Mercury Moon,μισθωτάς,stipend holders,good
+triple,Jupiter Mercury Moon,πολυφίλους,many friends,good
+triple,Jupiter Mercury Moon,πολυγνώστους,well known,good
+triple,Jupiter Mercury Moon,ἐπιτροπικούς,trustees,good
+triple,Jupiter Mercury Moon,διοικητὰς πραγμάτων,administrators of business,good
+triple,Jupiter Mercury Moon,εὐμεταδότους,generous,good
+triple,Jupiter Mercury Moon,ἀθλητικούς,athletes,good
+triple,Jupiter Mercury Moon,στεφανηφόρους,prizewinners,good
+triple,Jupiter Mercury Moon,καταξιουμένους τιμῶν,worthy of honours,good
+triple,Jupiter Mercury Moon,καταξιουμένους εἰκόνων,worthy of pictures,good
+triple,Jupiter Mercury Moon,καταξιουμένους ἀνδριάντων,worthy of statues,good
+triple,Jupiter Mercury Moon,θησαυρῶν εὑρετὰς,discoverers of treasure,good
+triple,Jupiter Mercury Moon,ναῶν ἐπιστατας,overseers of temples,good
+triple,Jupiter Mercury Moon,ἱερῶν ἐπιστάτας,overseers of shrines,good
+triple,Jupiter Mercury Moon,ἀνακτίσουσί τόπους,rebuild places,good
+triple,Jupiter Mercury Moon,καταφυτεύσουσι τόπους,replant places,good
+triple,Jupiter Mercury Moon,συγκοσμήσαντες τόπους,restore places,good
+triple,Jupiter Mercury Moon,ἀειμνήστου φήμης,eternal fame,good
+triple,Jupiter Venus Mercury,ἀγαθοί,good,good
+triple,Jupiter Venus Mercury,περικτήσιν βιου,possession of livelihood,good
+triple,Jupiter Venus Mercury,εὐημερίας πράξεων,success in business,good
+triple,Jupiter Venus Mercury,συνετοί,intelligent,good
+triple,Jupiter Venus Mercury,ἁπλοῖ,straightforward,good
+triple,Jupiter Venus Mercury,εὐμετάδοισι,generous,good
+triple,Jupiter Venus Mercury,ἡδεῖς,sweet,good
+triple,Jupiter Venus Mercury,φιλοσυμβίωτοι,loving their families,good
+triple,Jupiter Venus Mercury,εὐφραντικοί,cheerful,good
+triple,Jupiter Venus Mercury,παιδείας μέτοχοι,participants in education,good
+triple,Jupiter Venus Mercury,μούσης μέτοχοι,participants in culture,good
+triple,Jupiter Venus Mercury,καθάριοι,pure,good
+triple,Jupiter Venus Mercury,εὐπρεπεῖς,decent,good
+triple,Jupiter Venus Mercury,καταξιουμένοι τιμῆς,worthy of honours,good
+triple,Jupiter Venus Mercury,καταξιουμένοι δόξης,worthy of rank,good
+triple,Jupiter Venus Mercury,μετὰ μειζόνων ἀναστρεφόμενοι,associated with the great,good
+triple,Jupiter Venus Mercury,πίστεων μεταλαμβάνοντας,share in trusts,good
+triple,Jupiter Venus Mercury,οἰκονομιῶν μεταλαμβάνοντας,share in stewardship,good
+triple,Jupiter Venus Mercury,συγκοσμούμενοι τῷ βίῳ,honoured with livelihoods,good
+triple,Jupiter Venus Mercury,φιλοτρόποι,foster young,good
+triple,Jupiter Venus Mercury,φιλασκηταὶ,fond of education,good
+triple,Jupiter Venus Mercury,σωμάτων κυριεύουσι,masters of slaves,good
+triple,Jupiter Venus Mercury,ἐν τέκνων μοίρας ἀνατρέφουσι τινας,rear some slaves like children,good
+triple,Jupiter Venus Mercury,ἐν τέκνων μοίρας εὐεργετοῦσι τινας,benefit some slaves like children,good
+triple,Jupiter Venus Mercury,ἀπὸ θεῶν τὰ μέλλοντα προγινώσκουσι,know future from gods,good
+triple,Jupiter Venus Mercury,φιλόθεοι,pious,good
+triple,Jupiter Venus Mercury,περὶ γυναικὸς καὶ τέκνων ἄσταιοι,unsteady with respect to wife and children,bad
+triple,Jupiter Venus Mercury,περὶ γυναικὸς καὶ τέκνων ἐπίλυποι,grieved with respect to wife and children,bad
+triple,Jupiter Sun Venus,εὐφαντασιώτους,spectacular,good
+triple,Jupiter Sun Venus,ἐπιδόξους,glorious,good
+triple,Jupiter Sun Venus,μικρολόγους,petty,bad
+triple,Jupiter Sun Venus,ἀνωμάλους ταῖς γνώμαις,mentally unstable,bad
+triple,Jupiter Sun Venus,ὑψαύχενας,arrogant,bad
+triple,Jupiter Sun Venus,παρεκτικοὺς,liberal,good
+triple,Jupiter Sun Venus,εὐεργετικούς,beneficent,good
+triple,Jupiter Sun Venus,εὐμετανοήτους,changeable,good
+triple,Jupiter Sun Venus,ἑτέρων δόξαις καὶ περικτήσεων ἐπαιρομένους,exalted with help of another's fame and possessions,good
+triple,Jupiter Sun Venus,ἀπὸ μικρᾶς τύχης ἀναβιβαζομένους,coming from humble origins,neutral
+triple,Jupiter Sun Venus,ἀρχιερεῖς,high-priests,good
+triple,Jupiter Sun Venus,στεφανηφόροι,prizewinners,good
+triple,Jupiter Sun Venus,ἀρχικοί,leaders,good
+triple,Jupiter Sun Venus,ἡγεμονικοί,governors,good
+triple,Jupiter Sun Venus,δημοσίων πραγμάτων προεστῶτες,preeminent in public matters,good
+triple,Jupiter Sun Venus,ὄχλων ἀφηγούμενοι,protectors of masses,good
+triple,Jupiter Sun Venus,καταξιουμένοι δωρεῶν,worthy of gifts,good
+triple,Jupiter Sun Venus,καταξιουμένοι τιμῶν,worthy of honours,good
+triple,Jupiter Sun Venus,τῷ βίῳ συγκοσμοῦνται,granted livelihoods,good
+triple,Jupiter Sun Venus,περὶ συνελεύσεις ἀθέμιτοι,unnatural fetishes / sexual vices,bad
+triple,Jupiter Sun Venus,περὶ συνελεύσεις ἐπίψογοι,blameworthy in sex,bad
+triple,Jupiter Sun Venus,ἐπὶ γυναικὶ εὐφρανθήσονται,happy with wives,good
+triple,Jupiter Sun Venus,ἐπὶ τέκνοις εὐφρανθήσονται,happy with children,good
+triple,Jupiter Venus Moon,πρακτικούς,vigorous,good
+triple,Jupiter Venus Moon,ἐνδόξους,famous,good
+triple,Jupiter Venus Moon,ἀρχιερατικούς,high priests,good
+triple,Jupiter Venus Moon,στεφανηφόρους,prizewinners,good
+triple,Jupiter Venus Moon,ἱερῶν προεστῶτας,overseers of temples,good
+triple,Jupiter Venus Moon,ναῶν προεστῶτας,overseers of shrines,good
+triple,Jupiter Venus Moon,δωρηματικούς,benefactors,good
+triple,Jupiter Venus Moon,φιλδόξους,eager for fame,bad
+triple,Jupiter Venus Moon,ὄχλων ἡδοναῖς ἐξυπηρετοῦντας,catering to pleasures of masses,bad
+triple,Jupiter Venus Moon,πόλεών πίστεις ἀναδεχομένους,receive trusts of cities,good
+triple,Jupiter Venus Moon,χωρῶν πίστεις ἀναδεχομένους,receive trusts of villages,good
+triple,Jupiter Venus Moon,τιμῶν καταξιουμένους,worthy of honours,good
+triple,Jupiter Venus Moon,εὐφημουμένους,well-spoken,good
+triple,Jupiter Venus Moon,ἀντιζηλουμένους ἀπό οἰκείων,envied by family,neutral
+triple,Jupiter Venus Moon,ἀντιζηλουμένους ἀπό φιλικῶν,envied by friends,neutral
+triple,Jupiter Venus Moon,ἔχθρας ὑπομένοντας,experience hostility,bad
+triple,Jupiter Venus Moon,ἀντικαταστάσεις ὑπομένοντας,experience opposition,bad
+triple,Jupiter Venus Moon,περὶ γυναικὸς καὶ συνθηείας ἀστάτους,unsteady with respect to wife and close friends,bad
+triple,Jupiter Venus Moon,περὶ γυναικὸς καὶ συνθηείας φιλονείκους,quarrelsome with respect to wife and close friends,bad
+triple,Jupiter Venus Moon,μετὰ ζηλοτυπιῶν διάγοντας,live with jealousy,bad
+triple,Jupiter Venus Moon,μετὰ χωρισμῶν διάγοντας,live with separation,bad
+triple,Jupiter Venus Moon,μετ᾽ ἀνάγκης διάγοντας,live with pain,bad
+triple,Jupiter Venus Moon,μετεώρους,in suspense,bad
+triple,Jupiter Venus Moon,συγγενέσι συνέρχονται,close with relatives,good
+triple,Jupiter Venus Moon,οὐδε ἀτάραχον τὴν συνοίκησιν,not undisturbed home life,bad
+triple,Jupiter Venus Moon,ἐν μετουσίαις γινομένους,get into partnerships,neutral
+triple,Jupiter Venus Moon,περὶ βίον εὐφαντασίωτοι,spectacular in manner of life,good
+triple,Jupiter Venus Moon,οὐ ἀληθείας ἀνάμεστοι,full of false show,bad
+triple,Sun Venus Moon,ἐνδόξους,famous,good
+triple,Sun Venus Moon,πρακτικούς,vigorous,good
+triple,Sun Venus Moon,ἐν φαντασίαις,live with ostentation,bad
+triple,Sun Venus Moon,κακοήθεις,malicious,bad
+triple,Sun Venus Moon,ἐπιψόγους,blameworthy,bad
+triple,Sun Venus Moon,ὑπὸ τῶν πλείστων διαβαλλομένους,slandered by most people,bad
+triple,Sun Venus Moon,φθονουμένους ὑπὸ μειζόντων,envied and hated by the great,bad
+triple,Sun Venus Moon,φθονουμένους ὑπὸ φιλικῶν,envied and hated by family,bad
+triple,Sun Venus Moon,ἐν προκοπῇ,succeed,good
+triple,Sun Venus Moon,κτήσει γινομένους,gain possessions,good
+triple,Sun Venus Moon,τῇ τύχῃ ὑψουμένους,raised high by fortune,good
+triple,Sun Venus Moon,ἀνωμάλους περὶ γυναικὸς καὶ τέκνων,unsteady with respect to wife and children,bad
+triple,Sun Venus Moon,φιλόφιλοι,fond of friends,good
+triple,Sun Venus Moon,ἐν ξενιτείαις γινόμενοι,travel much,good
+triple,Sun Venus Moon,ἐπὶ ξένης εὐτυχοῦντες,good fortune abroad,good
+triple,Mars Venus Moon,οὐκ ἀπόρους,not without resources,good
+triple,Mars Venus Moon,οὐδε ἀπράκτους,not inactive,good
+triple,Mars Venus Moon,ποικίλους,fickle,bad
+triple,Mars Venus Moon,ἀστάτους ταῖς γνώμαις,mentally unstable,bad
+triple,Mars Venus Moon,μεγαλοψύχους,quixotic,bad
+triple,Mars Venus Moon,ἀκρίτως ἀναλίσκοντας,beginning in confusion,bad
+triple,Mars Venus Moon,μὴ ἐπιτιθέντας τέλος πράγμασιν,putting no end to their affairs,bad
+triple,Mars Venus Moon,ἁδρεπηβόλους,have great plans,neutral
+triple,Mars Venus Moon,καταφρονητάς,contemptuous,bad
+triple,Mars Venus Moon,πλανήτας,wandering,bad
+triple,Mars Venus Moon,θρασεῖς,bold,good
+triple,Mars Venus Moon,δημοσίους,public,good
+triple,Mars Venus Moon,στρατιωτικούς,warlike,bad
+triple,Mars Venus Moon,ἀδιαφόρους ταῖς χρήσεσιν ἀρρενικῶν καὶ θηλυκῶν,indiscriminate in use of male and female partners,bad
+triple,Mars Venus Moon,κακολογουμένους,maligned,bad
+triple,Mars Venus Moon,ἐν ἐπηρείαις γινομένους,fall into insulting treatments,bad
+triple,Mars Venus Moon,ἐν κρίσεσι γινομένους,fall into trials,bad
+triple,Mars Venus Moon,φιλίας εἰς ἔχθρας μετατιθέντας διὰ πανουργιῶν ἀφορμάς,change friendships to enmities through criminal attempts,bad
+triple,Mars Venus Moon,τῷ βίῳ σφαλλομένους,fail in their way of life,bad
+triple,Sun Mercury Moon,σεμνούς,revered,good
+triple,Sun Mercury Moon,καθαρίους,pure,good
+triple,Sun Mercury Moon,εὐυποκρίτους,play part well,good
+triple,Sun Mercury Moon,οἰκονομικούς,stewards,good
+triple,Sun Mercury Moon,πίστεων μεταλαμβάνοντας,share in honours,good
+triple,Sun Mercury Moon,τάξεων μεταλαμβάνοντας,share in positions,good
+triple,Sun Mercury Moon,εὐεργετικούς,benefactors,good
+triple,Sun Mercury Moon,μυστηρίων μετόχους,participants in mysteries,neutral
+triple,Sun Mercury Moon,κατορθωτὰς πραγμάτων,troubleshooters,good
+triple,Sun Mercury Moon,πλείστην φαντασίαν τῆς ὑπάρξεως κεκτημένους,put on a great show of possessions,bad
+triple,Sun Mercury Moon,σωματοφύλακες,bodyguards,good
+triple,Sun Mercury Moon,εἰσαγγελεῖς,chamberlains,good
+triple,Sun Mercury Moon,χρημάτων τεταγμένοι,in charge of money,good
+triple,Sun Mercury Moon,γραμμάτων τεταγμένοι,in charge of records,good
+triple,Sun Mercury Moon,ψήφων τεταγμένοι,in charge of accounts,good
+triple,Sun Mercury Moon,ὁ λόγος ἐπισχύσει πρὸς συμβουλίαν,speech effective for advice,good
+triple,Sun Mercury Moon,ὁ λόγος ἐπισχύσει πρὸς διδαχήν,speech effective for instruction,good
+triple,Sun Venus Mercury,πολυμαθεῖς,polymaths,good
+triple,Sun Venus Mercury,πολυπείρους,widely experienced,good
+triple,Sun Venus Mercury,ἀγαθούς,noble,good
+triple,Sun Venus Mercury,τεχνῶν προηγουμένους,prominent in arts,good
+triple,Sun Venus Mercury,ἐπιστημῶν προηγουμένους,prominent in sciences,good
+triple,Sun Venus Mercury,καταξιουμένους πίστεων,worthy of trusts,good
+triple,Sun Venus Mercury,καταξιουμένους τάξεων,worthy of positions,good
+triple,Sun Venus Mercury,εὐμετανοήτους ἐν διαπρασσομένους,repenting of what they've done,neutral
+triple,Sun Venus Mercury,κατὰ καιρὸν ἀνωμαλοῦντας,sometimes wavering,bad
+triple,Sun Venus Mercury,πολυκινήτους,moving in all directions,neutral
+triple,Sun Venus Mercury,ἐν ταῖς καινοποιίαις τῶν πράξεων ἡδομένους,enjoying changes in their occupations,neutral
+triple,Sun Venus Mercury,πολυφίλους,many friends,good
+triple,Sun Venus Mercury,πολυγνώστους,well known,good
+triple,Sun Venus Mercury,ἀπὸ μειζόνων ἐν προκοπῇ γινομένους,succeed through assocations with the great,good
+triple,Sun Venus Mercury,τῷ βίῳ συγκοσμουμένους,honoured with livelihoods,good
+triple,Sun Venus Mercury,τῷ δόξῃ συγκοσμουμένους,honoured with high rank,good
+triple,Sun Venus Mercury,ἐπιψόγους,blameworthy ,bad
+triple,Venus Mercury Moon,ἀγαθούς ,good,good
+triple,Venus Mercury Moon,εὐσυμβιώτους,easy to live with,good
+triple,Venus Mercury Moon,ἁπλοῦς,straightforward,good
+triple,Venus Mercury Moon,μεταδοτικούς,generous,good
+triple,Venus Mercury Moon,φιλογέλωτας,sense of humour,good
+triple,Venus Mercury Moon,πολιτικούς,civic-minded,good
+triple,Venus Mercury Moon,παιδείας μέτοχους,sharers in education,good
+triple,Venus Mercury Moon,ῥυθμῶν μέτοχους,sharers in rhythm,good
+triple,Venus Mercury Moon,μηχανικούς,ingenious,good
+triple,Venus Mercury Moon,πολυπείρους,widely experienced,good
+triple,Venus Mercury Moon,κοσμίους,neat,good
+triple,Venus Mercury Moon,καθαρίους,pure,good
+triple,Venus Mercury Moon,εὐφυεῖς,simple,good
+triple,Venus Mercury Moon,μυστικῶν πραγμάτων συνίστορας,participants in religious ceremonies,neutral
+triple,Venus Mercury Moon,ὑπηρετικούς,helpful,good
+triple,Venus Mercury Moon,ζηλυμένους,envied,bad
+triple,Venus Mercury Moon,φθονουμένους,hated,bad
+triple,Venus Mercury Moon,ἀνωμάλους περὶ βίον,unstable in livelihood,bad
+triple,Venus Mercury Moon,ἀδιαφόρους περὶ γυναικῶν καὶ ἀνδρῶν ἐμιμιξίας,indiscriminate in sex with men and women,bad
+triple,Venus Mercury Moon,εὐπόρους,wealthy,good
+triple,Venus Mercury Moon,συλλεκτικούς,thrifty,good
+triple,Mars Venus Mercury,ὠφελείας,profit,good
+triple,Mars Venus Mercury,δόξας ,high rank,good
+triple,Mars Venus Mercury,πράξεις,occupations,good
+triple,Mars Venus Mercury,εὐεπιβόλους περί δόσεις,shrewd in giving,good
+triple,Mars Venus Mercury,εὐεπιβόλους περί λήψεις,shrewd in receiving,good
+triple,Mars Venus Mercury,εὐεπιβόλους περί τὰς λοιπὰς ἐγχειρήσεις,shrewd in undertaking other business,good
+triple,Mars Venus Mercury,οἰκονομικούς,stewards,good
+triple,Mars Venus Mercury,πανούργους,wicked,bad
+triple,Mars Venus Mercury,πολυπείρους,widely experienced,good
+triple,Mars Venus Mercury,ἀναγομένους ἀπὸ γραμμάτων,start careers with documents,neutral
+triple,Mars Venus Mercury,ἀναγομένους ἀπ᾽ ἀσκήσεων,start careers with training,neutral
+triple,Mars Venus Mercury,ἐπιψόγους,blameworthy,bad
+triple,Mars Venus Mercury,πολυαναλώτους,wasting wealth,bad
+triple,Mars Venus Mercury,εὐμεταδότους,generous,good
+triple,Mars Venus Mercury,ἐγγύαις περικυλιομένους,wallowing in loans,bad
+triple,Mars Venus Mercury,δάνεσι περικυλιομένους,wallowing in debts,bad
+triple,Mars Venus Mercury,ἀδικοῦντας,defaulting,bad
+triple,Mars Venus Mercury,νοσφιστὰς χρημάτων ἀλλοτρίων,embezzlers of others' money,bad
+triple,Mars Venus Mercury,παραινέτας,seducers,bad
+triple,Mars Venus Mercury,ἐπιχαρίτως διαψευδομένους,deceiving with their charm,bad
+triple,Mars Venus Mercury,εὐπόρους,wealthy,good
+triple,Mars Venus Mercury,βασκάνους,malignant,bad
+triple,Mars Venus Mercury,εὐμετανοήτους ἐν διαπρασσομένους,repenting of what they've done,bad
+triple,Mars Sun Moon,θρασεῖς,bold,good
+triple,Mars Sun Moon,ἐπάνδρους,manly,good
+triple,Mars Sun Moon,τολμηρούς,reckless,bad
+triple,Mars Sun Moon,πρακτικοὺς,vigorous,good
+triple,Mars Sun Moon,ἀθλητικοὶ,athletes,good
+triple,Mars Sun Moon,στρατιωτικοί,soldiers,good
+triple,Mars Sun Moon,ἀρχικοί,rulers,good
+triple,Mars Sun Moon,ἡγεμονικοί,governors,good
+triple,Mars Sun Moon,ἀπὸ βιαίων πραγμάτων πορίζοντες,make careers from violent deeds,bad
+triple,Mars Sun Moon,ἀπὸ ἐπιφθόνων πορίζοντες,make careers from hateful deeds,bad
+triple,Mars Sun Moon,ἀπὸ ἐπιμόχθων τεχνῶν πορίζοντες,make careers from laborious crafts,neutral
+triple,Mars Sun Moon,ἀπὸ σκληρουργίας πορίζοντες,make careers from hard materials,neutral
+triple,Mars Sun Moon,ἐναντιώμασι περιτρεπόμενοι,fall into reversals,bad
+triple,Mars Sun Moon,ἐπικινδύνοις πράγμασι περιτρεπόμενοι,fall into dangerous situations,bad
+triple,Mars Sun Moon,ἐν μειζόνων ἔχθρας γίνονται,suffer hostility from the great,bad
+triple,Mars Sun Moon,ἐν μειζόνων ἀιτίας γίνονται,suffer attacks from the great,bad
+triple,Mars Sun Venus,πολυφίλους,many friends,good
+triple,Mars Sun Venus,πολυγνώστους,well known,good
+triple,Mars Sun Venus,καταξιουμένους συστάσεών,worthy of alliances,good
+triple,Mars Sun Venus,καταξιουμένους τιμῶν,worthy of honours,good
+triple,Mars Sun Venus,εὐπόρους,many resources,good
+triple,Mars Sun Venus,φιλοσυνήθεις,love their associates,good
+triple,Mars Sun Venus,ἐπιψόγους,criticised,bad
+triple,Mars Sun Venus,πολυθρυλήτους,gossiped about,bad
+triple,Mars Sun Venus,ἀνεπιμόνους ταῖς φιλίαις,friendships don't last,bad
+triple,Mars Sun Venus,ἀστάτους ταῖς πράξεσιν,accomplisments are fleeting,bad
+triple,Mars Sun Venus,πολλῶν ἐπιθυμητάς,desire much,bad
+triple,Mars Sun Venus,πολυδαπάνους,spend much,bad
+triple,Mars Sun Venus,κακωτὰς γυναικῶν,wrongers of women,bad
+triple,Mars Sun Venus,εὐεπηρεάστους,ready to be insolent,bad
+triple,Mars Sun Venus,ἐναντιὠμασι περιτρεπομένους διὰ ἀκρίτας λογισμῶν,fall into reversals through reckless decisions,bad
+triple,Mars Sun Venus,ἔχθραις περιτρεπομένους διὰ ἀκρίτας λογισμῶν,fall into hostilities through reckless decisions,bad
+triple,Mars Sun Mercury,πολυπείρους,widely experienced,good
+triple,Mars Sun Mercury,ἐπινοηματικοὺς περὶ πράξεων ἀφορμὰς,inventive in business enterprises,good
+triple,Mars Sun Mercury,πολυμερίμνους,careworn,bad
+triple,Mars Sun Mercury,δυσεπιτεύκτους πρὸς τῶν λογισμῶν ἐπιθυμίας,unsuccessful in the goal of their decisions,bad
+triple,Mars Sun Mercury,ἀπροσδοκήτως περιγινομένους,prevail unexpectedly,good
+triple,Mars Sun Mercury,ἀνώμαλοι γνώμαις,mentally unstable,bad
+triple,Mars Sun Mercury,τολμηροί,reckless,bad
+triple,Mars Sun Mercury,πρακτικοί,active,good
+triple,Mars Sun Mercury,ὀξύθυμοι,hot tempered,bad
+triple,Mars Sun Mercury,"πρὸς ἐχθροὺς φερόμενοι αἰτίας, μετανοοῦσιν","after bringing charges against their enemies, they change their minds",bad
+triple,Mars Sun Mercury,δειλὸν ἦθος,cowardly character,bad
+triple,Mars Sun Mercury,εὐκαταφρόνητον ἦθος,despicable character,bad
+triple,Mars Sun Mercury,ἐγκρατεῖς ,control emotions,good
+triple,Mars Sun Mercury,ὑποκριτικοὶ,play a part,good
+triple,Mars Sun Mercury,ἥττονες πρὸς οὓς οὐκ ἐχρῆν καθίστανται,yield to those to whom they shouldn't,bad
+triple,Mars Sun Mercury,ἀνωμάλως περὶ τὸν βίον ,unstable in livelihood,bad
+triple,Mars Sun Mercury,ὑποχείριοι γινόμενοι ἰδίαν μέμψονται τύχην,"when they come into somebody else's control, they curse their own fate",bad
+triple,Mars Mercury Moon,ἐντρεχεῖς,skillful,good
+triple,Mars Mercury Moon,μηχανικούς,ingenious,good
+triple,Mars Mercury Moon,ῥᾳδίως περὶ πράξεις ὁρμωμένους,easily stirred to action,neutral
+triple,Mars Mercury Moon,πολυκινήτους,moving in all directions,neutral
+triple,Mars Mercury Moon,τάχους πράττειν θέλοντας,wanting to act quickly,neutral
+triple,Mars Mercury Moon,ἐγκακωτικούς,remiss,bad
+triple,Mars Mercury Moon,περιέργους,seekers of curious lore,neutral
+triple,Mars Mercury Moon,ἀποκρύφων μύστας συνίστορας,participants in mysteries,neutral
+triple,Mars Mercury Moon,ἀπορρήτων πραγμάτων συνίστορας,partakers of secret knowledge,neutral
+triple,Mars Mercury Moon,κακωτάς,oppressors,bad
+triple,Mars Mercury Moon,βιαίους,violent,bad
+triple,Mars Mercury Moon,ἀνυποτάκτους,insubordinate,bad
+triple,Mars Mercury Moon,ἀλλοτρίων ἐπιθυμητάς,covetous of others' property,bad
+triple,Mars Mercury Moon,αἰτίας περιπίπτοντας,fall into accusations,bad
+triple,Mars Mercury Moon,βλάβαις περιπίπτοντας,fall into suits for damages,bad
+triple,Mars Mercury Moon,κρίσεσί περιπίπτοντας,fall into trials,bad
+triple,Mars Mercury Moon,ἐπικινδύνοις πράγμασιν περιπίπτοντας,fall into dangerous situations,bad
+triple,Mars Mercury Moon,γραπτῶν χάριν ταραχὰς ὑπομένοντας,experience alarms because of documents,bad
+triple,Mars Mercury Moon,ἀργυρικῶν χάριν ταραχὰς ὑπομένοντας,experience alarms because of money,bad
+triple,Mars Mercury Moon,εὐποροῦντας ,wealthy,good
+triple,Mars Mercury Moon,πολυδαπάνους,lavish,good
+triple,Mars Mercury Moon,τῷ βίῳ ἀστοχοῦντας,failing in livelihood,bad
