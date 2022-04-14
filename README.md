@@ -20,6 +20,8 @@ Figures and analysis can be reproduced by running `Reproduce-paper-analysis.R` (
 
 There is also some extra analysis, including looking at real horoscopes from 1-200 CE to see how frequently combinations occur, some mathematical analysis of occurrences of aspects compared to random combinations, and an application of an existing NLP sentiment classifier to English text descriptions. 
 
+Texts are available (Greek - Pingree; English - Riley translation) in `data/texts`. 
+
 ### Repository structure
 
 ```
