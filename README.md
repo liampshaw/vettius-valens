@@ -14,7 +14,7 @@ In Book I of the *Anthology* ([pdf](http://www.csus.edu/indiv/r/rileymt/Vettius%
 
 ## Details
 
-The file `Valens-database.csv' contains assessments of all lexical terms used in descriptions of planetary combinations and an assessment of the term as bad/neutral/good. Alternatively: negative(n)/neutral(m)/positive(p). This database is then used to calculate the overall sentiment of each description `S=(p-n)/(p+m+n)`. We then analyse how consistent these sentiments are using different models. 
+The file `Valens-database.csv` contains assessments of all lexical terms used in descriptions of planetary combinations and an assessment of the term as bad/neutral/good. Alternatively: negative(n)/neutral(m)/positive(p). This database is then used to calculate the overall sentiment of each description `S=(p-n)/(p+m+n)`. We then analyse how consistent these sentiments are using different models. 
  
 Figures and analysis can be reproduced by running `Reproduce-paper-analysis.R` (from within `analysis/R`). 
 
