@@ -37,7 +37,7 @@ getSingleScores <- function(conjunction, mean=TRUE, singles=singles.overall.sent
   prop <- 0
   props <- c()
   for (body in conjunction.bodies){
-    new.prop <- as.numeric(singles[which(singles$PLANET==body), "sentiment"])
+    new.prop <- as.numeric(singles[which(singles$PLANETS==body), "sentiment"])
     prop <- prop +  new.prop
     props <- c(props, new.prop)
   }

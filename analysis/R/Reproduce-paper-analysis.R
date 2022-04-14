@@ -12,10 +12,12 @@ source('functions.R')
 
 # Generate the tables of sentiments. 
 # Saves outputs from raw input data into analysis/intermediate-files
+# Read in main database
+valens.database <- read.csv('../../Valens-database.csv', header=T, stringsAsFactors = F)
 # SINGLE SENTIMENTS
-source('singles-sentiments-load.R')
+source('prepare-single-sentiments.R')
 # DOUBLE SENTIMENTS
-source('doubles-sentiments-load.R')
+source('prepare-double-sentiments.R')
 # TRIPLES SENTIMENTS
 source('triples-sentiments-load.R')
 
