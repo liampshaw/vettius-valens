@@ -6,7 +6,7 @@ import re
 nlp = stanza.Pipeline(lang='en', processors='tokenize,sentiment')
 
 # Read in English translation
-files = glob.glob('/Users/Liam/Dropbox/Personal/Claire/Vettius Valens/Texts for analysis/Riley English Translation (2010)/*.txt')
+files = glob.glob('../../data/texts/English-Riley/*txt')
 output_file = '../intermediate-files/stanza-sentiments.csv'
 
 with open(output_file, 'w') as output_f:
