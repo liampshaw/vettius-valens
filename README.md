@@ -6,11 +6,11 @@ This is a folder with scripts and data to analyse aspects of the astrological th
 
 See the associated paper for more information:
 
-C. S. Hall \& L. P. Shaw. The internal logic of planetary combination in Vettius Valens (2022). [pdf](link_to_be_added)
+C. S. Hall \& L. P. Shaw. The internal logic of planetary combination in Vettius Valens (2022). arXiv:2205.07616 [pdf](https://arxiv.org/pdf/2205.07616.pdf)
 
 ## Background
 
-In Book I of the *Anthology* ([pdf](http://www.csus.edu/indiv/r/rileymt/Vettius%20Valens%20entire.pdf) trans. Mark Riley), Vettius Valens gives lists of predictions associated with planets and combinations of planets (doubles and then triples). Here, we analyse the internal consistency of these predictions. 
+In Book I of the *Anthologies* ([pdf](http://www.csus.edu/indiv/r/rileymt/Vettius%20Valens%20entire.pdf) trans. Mark Riley), Vettius Valens gives lists of predictions associated with planets and combinations of planets (doubles and then triples). Here, we analyse the internal consistency of these predictions. 
 
 ## Details
 
